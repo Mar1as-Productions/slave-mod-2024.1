@@ -1,15 +1,12 @@
 {
-  "group": "slave_mod",
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
-    " 1",
-    "2 "
+    " a",
+    "a "
   ],
   "key": {
-    "1": {
-      "item": "slave_mod:nigraniumingot"
-    },
-    "2": {
+    "a": {
       "item": "slave_mod:nigraniumingot"
     }
   },

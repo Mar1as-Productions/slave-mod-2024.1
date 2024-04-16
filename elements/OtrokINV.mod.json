@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -13,12 +13,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Enslaved Noples Inventory",
+          "name": "label_enslaved_noples_inventory",
+          "text": {
+            "fixedValue": "Enslaved Noples Inventory"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Enslaved Noples Inventory",
           "x": 151,
           "y": 49
         }
@@ -26,12 +28,14 @@
       {
         "type": "label",
         "data": {
-          "text": "Your Inventory",
+          "name": "label_your_inventory",
+          "text": {
+            "fixedValue": "Your Inventory"
+          },
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Your Inventory",
           "x": 177,
           "y": 101
         }
@@ -40,12 +44,13 @@
         "type": "outputslot",
         "data": {
           "id": 0,
-          "disableStackInteraction": false,
+          "disablePickup": {
+            "fixedValue": false
+          },
           "dropItemsWhenNotBound": true,
           "onTakenFromSlot": {
             "name": "Invclose"
           },
-          "name": "Slot #0",
           "x": 200,
           "y": 72
         }

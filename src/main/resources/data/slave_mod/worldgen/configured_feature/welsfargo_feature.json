@@ -1,0 +1,14 @@
+{
+  "type": "slave_mod:structure_feature",
+  "config": {
+    "structure": "slave_mod:otrokar",
+    "random_rotation": true,
+    "random_mirror": true,
+    "ignored_blocks": "minecraft:structure_block",
+    "offset": [
+      0,
+      1,
+      0
+    ]
+  }
+}

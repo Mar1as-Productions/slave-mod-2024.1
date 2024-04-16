@@ -1,82 +1,35 @@
 
 package mp.slave_mod.block;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.core.BlockPos;
 
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.BlockItem;
-import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.block.material.PushReaction;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
-
-import mp.slave_mod.itemgroup.SlaveModItemGroup;
-import mp.slave_mod.SlaveModModElements;
-
-import java.util.List;
-import java.util.Collections;
-
-@SlaveModModElements.ModElement.Tag
-public class WodencrossbaseblockBlock extends SlaveModModElements.ModElement {
-	@ObjectHolder("slave_mod:wodencrossbaseblock")
-	public static final Block block = null;
-	public WodencrossbaseblockBlock(SlaveModModElements instance) {
-		super(instance, 62);
+public class WodencrossbaseblockBlock extends Block {
+	public WodencrossbaseblockBlock() {
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(-1, 3600000).noOcclusion().pushReaction(PushReaction.BLOCK).isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override
-	public void initElements() {
-		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(SlaveModItemGroup.tab)).setRegistryName(block.getRegistryName()));
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
+		return true;
 	}
 
 	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void clientLoad(FMLClientSetupEvent event) {
-		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
+		return 0;
 	}
-	public static class CustomBlock extends Block {
-		public CustomBlock() {
-			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(-1, 3600000).lightValue(0).notSolid());
-			setRegistryName("wodencrossbaseblock");
-		}
 
-		@Override
-		public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos) {
-			return false;
-		}
-
-		@Override
-		public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
-			return true;
-		}
-
-		@Override
-		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
-			return 0;
-		}
-
-		@Override
-		public PushReaction getPushReaction(BlockState state) {
-			return PushReaction.BLOCK;
-		}
-
-		@Override
-		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
-			if (!dropsOriginal.isEmpty())
-				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(this, 1));
-		}
+	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
 	}
 }

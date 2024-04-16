@@ -1,144 +1,78 @@
 
 package mp.slave_mod.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.World;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.ActionResult;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.core.BlockPos;
 
 import mp.slave_mod.procedures.WhipToolRightClickProcedure;
-import mp.slave_mod.itemgroup.SlaveModItemGroup;
-import mp.slave_mod.SlaveModModElements;
-
-import java.util.Map;
-import java.util.HashMap;
 
 import com.google.common.collect.Multimap;
+import com.google.common.collect.ImmutableMultimap;
 
-@SlaveModModElements.ModElement.Tag
-public class WhipToolItem extends SlaveModModElements.ModElement {
-	@ObjectHolder("slave_mod:whip_tool")
-	public static final Item block = null;
-	public WhipToolItem(SlaveModModElements instance) {
-		super(instance, 101);
+public class WhipToolItem extends Item {
+	public WhipToolItem() {
+		super(new Item.Properties().durability(256));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemToolCustom() {
-			@Override
-			public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
-				ActionResult<ItemStack> retval = super.onItemRightClick(world, entity, hand);
-				ItemStack itemstack = retval.getResult();
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					$_dependencies.put("x", x);
-					$_dependencies.put("y", y);
-					$_dependencies.put("z", z);
-					$_dependencies.put("world", world);
-					WhipToolRightClickProcedure.executeProcedure($_dependencies);
-				}
-				return retval;
-			}
-
-			@Override
-			public ActionResultType onItemUse(ItemUseContext context) {
-				ActionResultType retval = super.onItemUse(context);
-				World world = context.getWorld();
-				BlockPos pos = context.getPos();
-				PlayerEntity entity = context.getPlayer();
-				Direction direction = context.getFace();
-				BlockState blockstate = world.getBlockState(pos);
-				int x = pos.getX();
-				int y = pos.getY();
-				int z = pos.getZ();
-				ItemStack itemstack = context.getItem();
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					$_dependencies.put("x", x);
-					$_dependencies.put("y", y);
-					$_dependencies.put("z", z);
-					$_dependencies.put("world", world);
-					WhipToolRightClickProcedure.executeProcedure($_dependencies);
-				}
-				return retval;
-			}
-
-			@Override
-			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
-				boolean retval = super.hitEntity(itemstack, entity, sourceentity);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-				World world = entity.world;
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					$_dependencies.put("x", x);
-					$_dependencies.put("y", y);
-					$_dependencies.put("z", z);
-					$_dependencies.put("world", world);
-					WhipToolRightClickProcedure.executeProcedure($_dependencies);
-				}
-				return retval;
-			}
-		}.setRegistryName("whip_tool"));
+	public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
+		return 1;
 	}
-	private static class ItemToolCustom extends Item {
-		protected ItemToolCustom() {
-			super(new Item.Properties().group(SlaveModItemGroup.tab).maxDamage(256));
-		}
 
-		@Override
-		public float getDestroySpeed(ItemStack itemstack, BlockState blockstate) {
-			return 1;
-		}
+	@Override
+	public boolean mineBlock(ItemStack itemstack, Level world, BlockState blockstate, BlockPos pos, LivingEntity entity) {
+		itemstack.hurtAndBreak(1, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+		return true;
+	}
 
-		@Override
-		public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
-			stack.damageItem(1, entityLiving, i -> i.sendBreakAnimation(EquipmentSlotType.MAINHAND));
-			return true;
-		}
+	@Override
+	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+		itemstack.hurtAndBreak(2, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+		WhipToolRightClickProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity);
+		return true;
+	}
 
-		@Override
-		public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-			stack.damageItem(2, attacker, i -> i.sendBreakAnimation(EquipmentSlotType.MAINHAND));
-			return true;
-		}
+	@Override
+	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
+		WhipToolRightClickProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
+		return ar;
+	}
 
-		@Override
-		public int getItemEnchantability() {
-			return 2;
-		}
+	@Override
+	public int getEnchantmentValue() {
+		return 2;
+	}
 
-		@Override
-		public Multimap<String, AttributeModifier> getAttributeModifiers(EquipmentSlotType equipmentSlot) {
-			Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot);
-			if (equipmentSlot == EquipmentSlotType.MAINHAND) {
-				multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(),
-						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 2f, AttributeModifier.Operation.ADDITION));
-				multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(),
-						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -2, AttributeModifier.Operation.ADDITION));
-			}
-			return multimap;
+	@Override
+	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot equipmentSlot) {
+		if (equipmentSlot == EquipmentSlot.MAINHAND) {
+			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+			builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
+			builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 3f, AttributeModifier.Operation.ADDITION));
+			builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -2, AttributeModifier.Operation.ADDITION));
+			return builder.build();
 		}
+		return super.getDefaultAttributeModifiers(equipmentSlot);
+	}
+
+	@Override
+	public InteractionResult useOn(UseOnContext context) {
+		super.useOn(context);
+		WhipToolRightClickProcedure.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(), context.getClickedPos().getZ(), context.getPlayer());
+		return InteractionResult.SUCCESS;
 	}
 }

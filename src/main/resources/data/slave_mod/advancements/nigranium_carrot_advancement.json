@@ -15,11 +15,13 @@
     "hidden": true
   },
   "criteria": {
-    "nigranium_carrot_advancement": {
+    "nigranium_carrot_advancement_0": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "item": {
-          "item": "slave_mod:cottonstage_3"
+          "items": [
+            "slave_mod:cottonstage_3"
+          ]
         }
       }
     }

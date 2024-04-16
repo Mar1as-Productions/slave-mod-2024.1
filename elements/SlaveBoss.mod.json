@@ -1,12 +1,12 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "livingentity",
   "definition": {
     "mobName": "Noples Ruler",
     "mobLabel": "",
     "mobModelName": "Modelnoplesruler",
     "mobModelTexture": "noples_ruler.png",
-    "mobModelGlowTexture": "",
+    "modelLayers": [],
     "modelWidth": 0.6,
     "modelHeight": 1.8,
     "modelShadowSize": 0.5,
@@ -50,11 +50,16 @@
     "attackKnockback": 1.35,
     "knockbackResistance": 0.7999999999999999,
     "movementSpeed": 0.4,
+    "stepHeight": 0.6,
     "armorBaseValue": 1.6,
     "trackingRange": 2,
+    "followRange": 16,
     "health": 190,
     "xpAmount": 10,
     "waterMob": false,
+    "pushedByFluids": {
+      "fixedValue": true
+    },
     "flyingMob": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
@@ -91,13 +96,7 @@
     "stepSound": {
       "value": "entity.zombie.step"
     },
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "SPELL_MOB"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 1.000000001490116,
-    "particleAmount": 5,
+    "entityDataEntries": [],
     "whenMobDies": {
       "name": "SlaveBossEntityDies"
     },
@@ -112,6 +111,8 @@
       "value": ""
     },
     "rangedItemType": "Default item",
+    "rangedAttackInterval": 20,
+    "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
     "spawningProbability": 3,

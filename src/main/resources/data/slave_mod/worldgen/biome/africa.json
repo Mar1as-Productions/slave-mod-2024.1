@@ -1,0 +1,171 @@
+{
+  "has_precipitation": false,
+  "temperature": 2,
+  "downfall": 0,
+  "effects": {
+    "foliage_color": 10387789,
+    "grass_color": -3429286,
+    "sky_color": -589884,
+    "fog_color": -589884,
+    "water_color": -13420521,
+    "water_fog_color": -13619176
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "witch",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "creeper",
+        "weight": 100,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "zombie_villager",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "skeleton",
+        "weight": 100,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "spider",
+        "weight": 100,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "donkey",
+        "weight": 8,
+        "minCount": 3,
+        "maxCount": 5
+      },
+      {
+        "type": "zombie",
+        "weight": 100,
+        "minCount": 4,
+        "maxCount": 4
+      }
+    ],
+    "creature": [
+      {
+        "type": "pig",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 7
+      },
+      {
+        "type": "ocelot",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "rabbit",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "cow",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "mule",
+        "weight": 12,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "sheep",
+        "weight": 12,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "chicken",
+        "weight": 20,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "mule",
+        "weight": 8,
+        "minCount": 3,
+        "maxCount": 5
+      }
+    ],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [
+      "minecraft:lake_lava_underground"
+    ],
+    [
+      "minecraft:forest_rock"
+    ],
+    [
+      "minecraft:fossil_upper",
+      "minecraft:fossil_lower",
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
+    [
+      "minecraft:desert_well"
+    ],
+    [],
+    [
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
+      "minecraft:ore_copper",
+      "minecraft:underwater_magma"
+    ],
+    [],
+    [],
+    [
+      "slave_mod:africa_tree",
+      "minecraft:patch_tall_grass",
+      "minecraft:patch_grass_forest",
+      "minecraft:patch_dead_bush_2"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

@@ -1,16 +1,20 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "tool",
   "definition": {
+    "toolType": "Sword",
     "renderType": 0,
+    "blockingRenderType": 0,
     "texture": "nigraniumsword",
     "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
     "name": "Nigranium Sword",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "creativeTab": {
       "value": "CUSTOM:SlaveMod"
     },
-    "toolType": "Sword",
     "harvestLevel": 0,
     "efficiency": 6.5,
     "attackSpeed": 2.0,
@@ -18,7 +22,6 @@
     "damageVsEntity": 6.5,
     "usageCount": 1000,
     "blocksAffected": [],
-    "hasGlow": false,
     "repairItems": [
       {
         "value": "CUSTOM:Nigraniumingot"

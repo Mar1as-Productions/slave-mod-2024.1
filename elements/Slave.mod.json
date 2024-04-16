@@ -1,12 +1,27 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "livingentity",
   "definition": {
     "mobName": "Noples",
     "mobLabel": "",
     "mobModelName": "Biped",
     "mobModelTexture": "slavefinalfinal.png",
-    "mobModelGlowTexture": "",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
+    "solidBoundingBox": {
+      "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
+    },
+    "modelLayers": [],
     "modelWidth": 0.6,
     "modelHeight": 1.8,
     "modelShadowSize": 0.5,
@@ -50,11 +65,19 @@
     "attackKnockback": 1.25,
     "knockbackResistance": 0.65,
     "movementSpeed": 0.4,
+    "stepHeight": 0.6,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
+    "followRange": 16,
     "health": 30,
     "xpAmount": 1,
     "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
+    "pushedByFluids": {
+      "fixedValue": true
+    },
     "flyingMob": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
@@ -91,13 +114,7 @@
     "stepSound": {
       "value": "entity.zombie.step"
     },
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "entityDataEntries": [],
     "whenMobDies": {
       "name": "SlaveEntityDies"
     },
@@ -115,6 +132,8 @@
       "value": ""
     },
     "rangedItemType": "Default item",
+    "rangedAttackInterval": 20,
+    "rangedAttackRadius": 10.0,
     "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
     "spawningProbability": 25,

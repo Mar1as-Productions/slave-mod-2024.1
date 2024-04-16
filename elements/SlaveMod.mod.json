@@ -1,11 +1,11 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "tab",
   "definition": {
     "name": "Slave Mod",
     "icon": {
       "value": "Blocks.GRASS_PATH"
     },
-    "showSearch": false
+    "showSearch": true
   }
 }

@@ -1,47 +1,18 @@
 
 package mp.slave_mod.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
 
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.block.BlockState;
-
-import mp.slave_mod.itemgroup.SlaveModItemGroup;
-import mp.slave_mod.SlaveModModElements;
-
-@SlaveModModElements.ModElement.Tag
-public class HarvestedCottonItem extends SlaveModModElements.ModElement {
-	@ObjectHolder("slave_mod:harvested_cotton")
-	public static final Item block = null;
-	public HarvestedCottonItem(SlaveModModElements instance) {
-		super(instance, 50);
+public class HarvestedCottonItem extends Item {
+	public HarvestedCottonItem() {
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new ItemCustom());
-	}
-	public static class ItemCustom extends Item {
-		public ItemCustom() {
-			super(new Item.Properties().group(SlaveModItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
-			setRegistryName("harvested_cotton");
-		}
-
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
-
-		@Override
-		public int getUseDuration(ItemStack itemstack) {
-			return 0;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
-			return 1F;
-		}
+	public UseAnim getUseAnimation(ItemStack itemstack) {
+		return UseAnim.EAT;
 	}
 }

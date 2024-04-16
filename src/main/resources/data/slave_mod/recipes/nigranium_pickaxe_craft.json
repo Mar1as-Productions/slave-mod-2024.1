@@ -1,25 +1,16 @@
 {
-  "group": "slave_mod",
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
-    "012",
-    " 4 ",
-    " 7 "
+    "aaa",
+    " b ",
+    " b "
   ],
   "key": {
-    "0": {
+    "a": {
       "item": "slave_mod:nigraniumingot"
     },
-    "1": {
-      "item": "slave_mod:nigraniumingot"
-    },
-    "2": {
-      "item": "slave_mod:nigraniumingot"
-    },
-    "4": {
-      "item": "slave_mod:chainpiece"
-    },
-    "7": {
+    "b": {
       "item": "slave_mod:chainpiece"
     }
   },

@@ -1,5 +1,4 @@
 {
-  "id_map": {},
   "mod_elements": [
     {
       "name": "Africa",
@@ -7,8 +6,14 @@
       "sortid": 4,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "africa",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/worldgen/biome/africa.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/africa_tree.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/africa_tree.json"
+        ]
+      },
       "path": "~/Random_stuff"
     },
     {
@@ -17,8 +22,15 @@
       "sortid": 5,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "slave",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/slave_spawn_egg.json",
+          "src/main/java/mp/slave_mod/client/renderer/SlaveRenderer.java",
+          "src/main/java/mp/slave_mod/entity/SlaveEntity.java",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/slave_biome_modifier.json"
+        ]
+      },
       "path": "~/Creatures"
     },
     {
@@ -27,8 +39,13 @@
       "sortid": 6,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "krajina",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/KrajinaItem.java",
+          "src/main/resources/assets/slave_mod/models/item/krajina.json"
+        ]
+      },
       "path": "~/Random_stuff"
     },
     {
@@ -37,19 +54,13 @@
       "sortid": 7,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "africaenter",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/advancements/africaenter.json"
+        ]
+      },
       "path": "~/Random_stuff"
-    },
-    {
-      "name": "Hut",
-      "type": "structure",
-      "sortid": 11,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "hut",
-      "path": "~/Structures"
     },
     {
       "name": "PolishCowPainting",
@@ -57,8 +68,10 @@
       "sortid": 13,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "polish_cow_painting",
+      "metadata": {
+        "files": []
+      },
       "path": "~/Random_stuff"
     },
     {
@@ -67,9 +80,11 @@
       "sortid": 14,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "spear_bullet_hits_block",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/SpearBulletHitsBlockProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -97,9 +112,11 @@
       "sortid": 15,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "spear_ranged_item_used",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/SpearRangedItemUsedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -110,24 +127,16 @@
       "path": "~/Tools/Procedures"
     },
     {
-      "name": "Spear",
-      "type": "rangeditem",
-      "sortid": 14,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "spear",
-      "path": "~/Tools"
-    },
-    {
       "name": "SlaveEntityDies",
       "type": "procedure",
       "sortid": 17,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "slave_entity_dies",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/SlaveEntityDiesProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -155,8 +164,15 @@
       "sortid": 19,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "ranged_slave",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/client/renderer/RangedSlaveRenderer.java",
+          "src/main/resources/assets/slave_mod/models/item/ranged_slave_spawn_egg.json",
+          "src/main/java/mp/slave_mod/entity/RangedSlaveEntity.java",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/ranged_slave_biome_modifier.json"
+        ]
+      },
       "path": "~/Creatures/RangedSlave"
     },
     {
@@ -165,9 +181,11 @@
       "sortid": 20,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "ranged_slave_entity_dies",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/RangedSlaveEntityDiesProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -195,8 +213,15 @@
       "sortid": 21,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "slave_boss",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/forge/biome_modifier/slave_boss_biome_modifier.json",
+          "src/main/java/mp/slave_mod/client/renderer/SlaveBossRenderer.java",
+          "src/main/java/mp/slave_mod/entity/SlaveBossEntity.java",
+          "src/main/resources/assets/slave_mod/models/item/slave_boss_spawn_egg.json"
+        ]
+      },
       "path": "~/Creatures"
     },
     {
@@ -205,9 +230,11 @@
       "sortid": 22,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "slave_boss_entity_dies",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/SlaveBossEntityDiesProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -235,8 +262,15 @@
       "sortid": 23,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "slave_animal",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/entity/SlaveAnimalEntity.java",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/slave_animal_biome_modifier.json",
+          "src/main/java/mp/slave_mod/client/renderer/SlaveAnimalRenderer.java",
+          "src/main/resources/assets/slave_mod/models/item/slave_animal_spawn_egg.json"
+        ]
+      },
       "path": "~/Creatures"
     },
     {
@@ -245,9 +279,11 @@
       "sortid": 24,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "slave_animal_entity_dies",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/SlaveAnimalEntityDiesProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -275,8 +311,10 @@
       "sortid": 25,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "slave_mod",
+      "metadata": {
+        "files": []
+      },
       "path": "~/Random_stuff"
     },
     {
@@ -285,8 +323,16 @@
       "sortid": 28,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nehorici_drevo_oak",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/blockstates/nehorici_drevo_oak.json",
+          "src/main/resources/assets/slave_mod/models/block/nehorici_drevo_oak.json",
+          "src/main/java/mp/slave_mod/block/NehoriciDrevoOakBlock.java",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/nehorici_drevo_oak.json",
+          "src/main/resources/assets/slave_mod/models/item/nehorici_drevo_oak.json"
+        ]
+      },
       "path": "~/Totem"
     },
     {
@@ -295,9 +341,11 @@
       "sortid": 32,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "hut_t_additional_generation_condition",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/HutTAdditionalGenerationConditionProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -325,9 +373,11 @@
       "sortid": 34,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "kk_kactivating_block_right_click",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/KKKactivatingBlockRightClickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -355,93 +405,17 @@
       "sortid": 34,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "kk_kactivating_b_lock",
-      "path": "~/Totem"
-    },
-    {
-      "name": "KKKtotem",
-      "type": "structure",
-      "sortid": 35,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "kk_ktotem",
-      "path": "~/Totem"
-    },
-    {
-      "name": "Rock1",
-      "type": "structure",
-      "sortid": 36,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rock_1",
-      "path": "~/Structures"
-    },
-    {
-      "name": "Rock2",
-      "type": "structure",
-      "sortid": 37,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rock_2",
-      "path": "~/Structures"
-    },
-    {
-      "name": "Rock3",
-      "type": "structure",
-      "sortid": 38,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rock_3",
-      "path": "~/Structures"
-    },
-    {
-      "name": "Rock4",
-      "type": "structure",
-      "sortid": 39,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rock_4",
-      "path": "~/Structures"
-    },
-    {
-      "name": "Zasazení",
-      "type": "procedure",
-      "sortid": 40,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "zasazeni",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/kk_kactivating_b_lock.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/kk_kactivating_b_lock.json",
+          "src/main/resources/assets/slave_mod/blockstates/kk_kactivating_b_lock.json",
+          "src/main/java/mp/slave_mod/block/KKKactivatingBLockBlock.java",
+          "src/main/resources/assets/slave_mod/models/block/kk_kactivating_b_lock.json"
         ]
       },
-      "path": "~/Cotton/Procedures_Cotton"
+      "path": "~/Totem"
     },
     {
       "name": "Cottonseeds",
@@ -449,8 +423,13 @@
       "sortid": 40,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cottonseeds",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/CottonseedsItem.java",
+          "src/main/resources/assets/slave_mod/models/item/cottonseeds.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -459,8 +438,12 @@
       "sortid": 48,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "shoes_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/shoes_recipe.json"
+        ]
+      },
       "path": "~/ARMOR/KKK_armor"
     },
     {
@@ -469,8 +452,12 @@
       "sortid": 49,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "bavlna_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/bavlna_recipe.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -479,8 +466,13 @@
       "sortid": 44,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "bavlna",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/BavlnaItem.java",
+          "src/main/resources/assets/slave_mod/models/item/bavlna.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -488,14 +480,20 @@
       "type": "armor",
       "sortid": 42,
       "compiles": true,
-      "locked_code": true,
-      "ids": {},
+      "locked_code": false,
       "registry_name": "kk_karmor",
       "metadata": {
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/kk_karmor_chestplate.json",
+          "src/main/resources/assets/slave_mod/models/item/kk_karmor_boots.json",
+          "src/main/java/mp/slave_mod/item/KKKarmorItem.java",
+          "src/main/resources/assets/slave_mod/models/item/kk_karmor_helmet.json",
+          "src/main/resources/assets/slave_mod/models/item/kk_karmor_leggings.json"
+        ]
       },
       "path": "~/ARMOR/KKK_armor"
     },
@@ -505,8 +503,12 @@
       "sortid": 45,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "robe_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/robe_recipe.json"
+        ]
+      },
       "path": "~/ARMOR/KKK_armor"
     },
     {
@@ -515,8 +517,12 @@
       "sortid": 47,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "pants_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/pants_recipe.json"
+        ]
+      },
       "path": "~/ARMOR/KKK_armor"
     },
     {
@@ -525,8 +531,12 @@
       "sortid": 46,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "hood_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/hood_recipe.json"
+        ]
+      },
       "path": "~/ARMOR/KKK_armor"
     },
     {
@@ -535,8 +545,16 @@
       "sortid": 42,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cottonstage_0",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_0.json",
+          "src/main/java/mp/slave_mod/block/Cottonstage0Block.java",
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_0.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_0.json",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_0.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -545,8 +563,13 @@
       "sortid": 50,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "harvested_cotton",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/HarvestedCottonItem.java",
+          "src/main/resources/assets/slave_mod/models/item/harvested_cotton.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -555,8 +578,16 @@
       "sortid": 43,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cottonstage_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_1.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_1.json",
+          "src/main/java/mp/slave_mod/block/Cottonstage1Block.java",
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_1.json",
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_1.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -565,8 +596,16 @@
       "sortid": 44,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cottonstage_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_2.json",
+          "src/main/java/mp/slave_mod/block/Cottonstage2Block.java",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_2.json",
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_2.json",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_2.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -575,8 +614,16 @@
       "sortid": 49,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cottonstage_7",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_7.json",
+          "src/main/java/mp/slave_mod/block/Cottonstage7Block.java",
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_7.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_7.json",
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_7.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -585,8 +632,16 @@
       "sortid": 47,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cottonstage_5",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/block/Cottonstage5Block.java",
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_5.json",
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_5.json",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_5.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_5.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -595,8 +650,16 @@
       "sortid": 48,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cottonstage_6",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_6.json",
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_6.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_6.json",
+          "src/main/java/mp/slave_mod/block/Cottonstage6Block.java",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_6.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -605,8 +668,16 @@
       "sortid": 45,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cottonstage_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_3.json",
+          "src/main/java/mp/slave_mod/block/Cottonstage3Block.java",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_3.json",
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_3.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_3.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -615,8 +686,16 @@
       "sortid": 46,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cottonstage_4",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_4.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_4.json",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_4.json",
+          "src/main/java/mp/slave_mod/block/Cottonstage4Block.java",
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_4.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -625,9 +704,11 @@
       "sortid": 52,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cotton_block_neighour_block",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/CottonBlockNeighourBlockProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -655,9 +736,11 @@
       "sortid": 53,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cotton_block_break",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/CottonBlockBreakProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -685,9 +768,11 @@
       "sortid": 51,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "cotton_block_right_click",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/CottonBlockRightClickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -715,9 +800,11 @@
       "sortid": 51,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "growingcotton",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/GrowingcottonProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -740,64 +827,16 @@
       "path": "~/Cotton/Procedures_Cotton"
     },
     {
-      "name": "Rock5",
-      "type": "structure",
-      "sortid": 54,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rock_5",
-      "path": "~/Structures"
-    },
-    {
-      "name": "Rock6",
-      "type": "structure",
-      "sortid": 55,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rock_6",
-      "path": "~/Structures"
-    },
-    {
-      "name": "Rock7",
-      "type": "structure",
-      "sortid": 56,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rock_7",
-      "path": "~/Structures"
-    },
-    {
-      "name": "Rock8",
-      "type": "structure",
-      "sortid": 57,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rock_8",
-      "path": "~/Structures"
-    },
-    {
-      "name": "Rock9",
-      "type": "structure",
-      "sortid": 58,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rock_9",
-      "path": "~/Structures"
-    },
-    {
       "name": "Strach",
       "type": "procedure",
       "sortid": 60,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "strach",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/StrachProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -829,9 +868,11 @@
       "sortid": 61,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "kk_kactivating_b_lock_update_tick",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/KKKactivatingBLockUpdateTickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -859,8 +900,16 @@
       "sortid": 62,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "wodencrossbaseblock",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/block/WodencrossbaseblockBlock.java",
+          "src/main/resources/assets/slave_mod/models/item/wodencrossbaseblock.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/wodencrossbaseblock.json",
+          "src/main/resources/assets/slave_mod/blockstates/wodencrossbaseblock.json",
+          "src/main/resources/assets/slave_mod/models/block/wodencrossbaseblock.json"
+        ]
+      },
       "path": "~/Totem"
     },
     {
@@ -869,8 +918,14 @@
       "sortid": 64,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "otrok",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/otrok_spawn_egg.json",
+          "src/main/java/mp/slave_mod/client/renderer/OtrokRenderer.java",
+          "src/main/java/mp/slave_mod/entity/OtrokEntity.java"
+        ]
+      },
       "path": "~/Creatures/Otrok"
     },
     {
@@ -879,8 +934,14 @@
       "sortid": 65,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "otrok_inv",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/world/inventory/OtrokINVMenu.java",
+          "src/main/java/mp/slave_mod/client/gui/OtrokINVScreen.java",
+          "src/main/java/mp/slave_mod/network/OtrokINVSlotMessage.java"
+        ]
+      },
       "path": "~/Creatures/Otrok"
     },
     {
@@ -889,8 +950,13 @@
       "sortid": 68,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigraniumnugget",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/NigraniumnuggetItem.java",
+          "src/main/resources/assets/slave_mod/models/item/nigraniumnugget.json"
+        ]
+      },
       "path": "~/Items"
     },
     {
@@ -899,8 +965,19 @@
       "sortid": 66,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/nigranium.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/nigranium.json",
+          "src/main/resources/assets/slave_mod/blockstates/nigranium.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/nigranium.json",
+          "src/main/java/mp/slave_mod/block/NigraniumBlock.java",
+          "src/main/resources/assets/slave_mod/models/block/nigranium.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/nigranium.json",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/nigranium_biome_modifier.json"
+        ]
+      },
       "path": "~/Blocks"
     },
     {
@@ -909,8 +986,13 @@
       "sortid": 67,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigraniumingot",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/nigraniumingot.json",
+          "src/main/java/mp/slave_mod/item/NigraniumingotItem.java"
+        ]
+      },
       "path": "~/Items"
     },
     {
@@ -919,8 +1001,12 @@
       "sortid": 71,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "seminka",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/seminka.json"
+        ]
+      },
       "path": "~/Cotton"
     },
     {
@@ -929,8 +1015,12 @@
       "sortid": 67,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigraniumsmelted",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigraniumsmelted.json"
+        ]
+      },
       "path": "~/Items/Recipes"
     },
     {
@@ -939,8 +1029,12 @@
       "sortid": 69,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "ingottonugget",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/ingottonugget.json"
+        ]
+      },
       "path": "~/Items/Recipes"
     },
     {
@@ -949,43 +1043,13 @@
       "sortid": 70,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nuggettoingot",
-      "path": "~/Items/Recipes"
-    },
-    {
-      "name": "Sbìr2",
-      "type": "procedure",
-      "sortid": 65,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "sber_2",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nuggettoingot.json"
         ]
       },
-      "path": "~/Creatures/Otrok"
+      "path": "~/Items/Recipes"
     },
     {
       "name": "Chainpiece",
@@ -993,8 +1057,13 @@
       "sortid": 72,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "chainpiece",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/ChainpieceItem.java",
+          "src/main/resources/assets/slave_mod/models/item/chainpiece.json"
+        ]
+      },
       "path": "~/Tools"
     },
     {
@@ -1003,8 +1072,12 @@
       "sortid": 73,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "chainforenslaving",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/chainforenslaving.json"
+        ]
+      },
       "path": "~/Tools/Recipes"
     },
     {
@@ -1013,8 +1086,13 @@
       "sortid": 74,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "chain",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/chain.json",
+          "src/main/java/mp/slave_mod/item/ChainItem.java"
+        ]
+      },
       "path": "~/Tools"
     },
     {
@@ -1023,8 +1101,12 @@
       "sortid": 75,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "chainfromchainpiece",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/chainfromchainpiece.json"
+        ]
+      },
       "path": "~/Tools/Recipes"
     },
     {
@@ -1033,9 +1115,11 @@
       "sortid": 76,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "slave_animal_right_clicked_on_entity",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/SlaveAnimalRightClickedOnEntityProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1071,10 +1155,12 @@
       "sortid": 87,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "kk_ktotem_additional_generation_condition",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/KKKtotemAdditionalGenerationConditionProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -1102,8 +1188,13 @@
       "sortid": 80,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_axe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/nigranium_axe.json",
+          "src/main/java/mp/slave_mod/item/NigraniumAxeItem.java"
+        ]
+      },
       "path": "~/Tools"
     },
     {
@@ -1112,8 +1203,13 @@
       "sortid": 81,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_hoe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/nigranium_hoe.json",
+          "src/main/java/mp/slave_mod/item/NigraniumHoeItem.java"
+        ]
+      },
       "path": "~/Tools"
     },
     {
@@ -1122,8 +1218,13 @@
       "sortid": 79,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/nigranium_sword.json",
+          "src/main/java/mp/slave_mod/item/NigraniumSwordItem.java"
+        ]
+      },
       "path": "~/Tools"
     },
     {
@@ -1132,8 +1233,12 @@
       "sortid": 84,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_axe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_axe_craft.json"
+        ]
+      },
       "path": "~/Tools/Recipes"
     },
     {
@@ -1142,8 +1247,12 @@
       "sortid": 85,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_hoe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_hoe_craft.json"
+        ]
+      },
       "path": "~/Tools/Recipes"
     },
     {
@@ -1152,8 +1261,12 @@
       "sortid": 82,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_shovel_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_shovel_craft.json"
+        ]
+      },
       "path": "~/Tools/Recipes"
     },
     {
@@ -1162,8 +1275,13 @@
       "sortid": 77,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_pickaxe",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/NigraniumPickaxeItem.java",
+          "src/main/resources/assets/slave_mod/models/item/nigranium_pickaxe.json"
+        ]
+      },
       "path": "~/Tools"
     },
     {
@@ -1172,8 +1290,13 @@
       "sortid": 78,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_shovel",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/nigranium_shovel.json",
+          "src/main/java/mp/slave_mod/item/NigraniumShovelItem.java"
+        ]
+      },
       "path": "~/Tools"
     },
     {
@@ -1182,8 +1305,12 @@
       "sortid": 86,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_sword_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_sword_craft.json"
+        ]
+      },
       "path": "~/Tools/Recipes"
     },
     {
@@ -1192,8 +1319,12 @@
       "sortid": 83,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_pickaxe_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_pickaxe_craft.json"
+        ]
+      },
       "path": "~/Tools/Recipes"
     },
     {
@@ -1202,8 +1333,13 @@
       "sortid": 88,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_shears",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/nigranium_shears.json",
+          "src/main/java/mp/slave_mod/item/NigraniumShearsItem.java"
+        ]
+      },
       "path": "~/Tools"
     },
     {
@@ -1212,8 +1348,12 @@
       "sortid": 89,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_shears_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_shears_craft.json"
+        ]
+      },
       "path": "~/Tools/Recipes"
     },
     {
@@ -1222,8 +1362,14 @@
       "sortid": 90,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "jozef",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/entity/JozefEntity.java",
+          "src/main/java/mp/slave_mod/client/renderer/JozefRenderer.java",
+          "src/main/resources/assets/slave_mod/models/item/jozef_spawn_egg.json"
+        ]
+      },
       "path": "~/Creatures"
     },
     {
@@ -1232,9 +1378,11 @@
       "sortid": 91,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_block_destroyed",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/NigraniumBlockDestroyedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -1262,13 +1410,19 @@
       "sortid": 92,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_armor",
       "metadata": {
         "eh": true,
         "el": true,
         "eb": true,
-        "ec": true
+        "ec": true,
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/nigranium_armor_helmet.json",
+          "src/main/resources/assets/slave_mod/models/item/nigranium_armor_boots.json",
+          "src/main/resources/assets/slave_mod/models/item/nigranium_armor_leggings.json",
+          "src/main/resources/assets/slave_mod/models/item/nigranium_armor_chestplate.json",
+          "src/main/java/mp/slave_mod/item/NigraniumArmorItem.java"
+        ]
       },
       "path": "~/ARMOR/Nigranium_armor"
     },
@@ -1278,8 +1432,12 @@
       "sortid": 93,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_helmet_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_helmet_craft.json"
+        ]
+      },
       "path": "~/ARMOR/Nigranium_armor"
     },
     {
@@ -1288,8 +1446,12 @@
       "sortid": 94,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_chestplate_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_chestplate_craft.json"
+        ]
+      },
       "path": "~/ARMOR/Nigranium_armor"
     },
     {
@@ -1298,8 +1460,12 @@
       "sortid": 95,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_leggings_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_leggings_craft.json"
+        ]
+      },
       "path": "~/ARMOR/Nigranium_armor"
     },
     {
@@ -1308,8 +1474,12 @@
       "sortid": 96,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_boots_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_boots_craft.json"
+        ]
+      },
       "path": "~/ARMOR/Nigranium_armor"
     },
     {
@@ -1318,8 +1488,12 @@
       "sortid": 97,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_blast_smelted",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_blast_smelted.json"
+        ]
+      },
       "path": "~/Items/Recipes"
     },
     {
@@ -1328,9 +1502,11 @@
       "sortid": 98,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "spear_bullet_hits_player",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/SpearBulletHitsPlayerProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "sourceentity",
@@ -1362,9 +1538,11 @@
       "sortid": 99,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "spear_bullet_hits_living_entity",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/SpearBulletHitsLivingEntityProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "sourceentity",
@@ -1396,8 +1574,13 @@
       "sortid": 101,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "whip_tool",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/whip_tool.json",
+          "src/main/java/mp/slave_mod/item/WhipToolItem.java"
+        ]
+      },
       "path": "~/Tools"
     },
     {
@@ -1406,8 +1589,12 @@
       "sortid": 104,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "whiprecipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/whiprecipe.json"
+        ]
+      },
       "path": "~/Tools/Recipes"
     },
     {
@@ -1416,9 +1603,11 @@
       "sortid": 102,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "harvestingagain",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/HarvestingagainProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1454,8 +1643,16 @@
       "sortid": 105,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "enslaved_glowstone",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/block/enslaved_glowstone.json",
+          "src/main/java/mp/slave_mod/block/EnslavedGlowstoneBlock.java",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/enslaved_glowstone.json",
+          "src/main/resources/assets/slave_mod/models/item/enslaved_glowstone.json",
+          "src/main/resources/assets/slave_mod/blockstates/enslaved_glowstone.json"
+        ]
+      },
       "path": "~/Blocks"
     },
     {
@@ -1464,19 +1661,13 @@
       "sortid": 106,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "enslaved_glowstone_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/enslaved_glowstone_craft.json"
+        ]
+      },
       "path": "~/Blocks/Recipes"
-    },
-    {
-      "name": "Nigraniumcarrot",
-      "type": "food",
-      "sortid": 105,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "nigraniumcarrot",
-      "path": "~/Items"
     },
     {
       "name": "NigraniumCarrotRecipe",
@@ -1484,8 +1675,12 @@
       "sortid": 106,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_carrot_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_carrot_recipe.json"
+        ]
+      },
       "path": "~/Items/Recipes"
     },
     {
@@ -1494,8 +1689,12 @@
       "sortid": 108,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "whip_ending_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/whip_ending_recipe.json"
+        ]
+      },
       "path": "~/Items/Recipes"
     },
     {
@@ -1504,8 +1703,13 @@
       "sortid": 107,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "whip_ending_item",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/WhipEndingItemItem.java",
+          "src/main/resources/assets/slave_mod/models/item/whip_ending_item.json"
+        ]
+      },
       "path": "~/Items"
     },
     {
@@ -1514,8 +1718,13 @@
       "sortid": 109,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "carrot_leftover",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/carrot_leftover.json",
+          "src/main/java/mp/slave_mod/item/CarrotLeftoverItem.java"
+        ]
+      },
       "path": "~/Items"
     },
     {
@@ -1524,9 +1733,11 @@
       "sortid": 111,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_carrot_eaten",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/NigraniumCarrotEatenProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1546,9 +1757,11 @@
       "sortid": 112,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "whip_tool_right_click",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/WhipToolRightClickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1580,13 +1793,19 @@
       "sortid": 110,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "ebola_potion_startedapplied",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/EbolaPotionStartedappliedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -1598,9 +1817,11 @@
       "sortid": 109,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_shears_block_destroyed_with_tool",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/NigraniumShearsBlockDestroyedWithToolProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1632,8 +1853,10 @@
       "sortid": 110,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "ebola",
+      "metadata": {
+        "files": []
+      },
       "path": "~/Random_stuff"
     },
     {
@@ -1642,8 +1865,13 @@
       "sortid": 113,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "amulet",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/amulet.json",
+          "src/main/java/mp/slave_mod/item/AmuletItem.java"
+        ]
+      },
       "path": "~/Items/Amulet"
     },
     {
@@ -1652,8 +1880,13 @@
       "sortid": 114,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "empty_amulet",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/EmptyAmuletItem.java",
+          "src/main/resources/assets/slave_mod/models/item/empty_amulet.json"
+        ]
+      },
       "path": "~/Items/Amulet"
     },
     {
@@ -1662,9 +1895,11 @@
       "sortid": 116,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "otrok_entity_dies",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/OtrokEntityDiesProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -1692,9 +1927,11 @@
       "sortid": 117,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "amuletrightclick",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/AmuletrightclickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1726,9 +1963,11 @@
       "sortid": 118,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "empty_amulet_right_click",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/EmptyAmuletRightClickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1760,8 +1999,12 @@
       "sortid": 119,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_carrot_advancement",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/advancements/nigranium_carrot_advancement.json"
+        ]
+      },
       "path": "~/Random_stuff"
     },
     {
@@ -1770,9 +2013,11 @@
       "sortid": 120,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_armor_fire_resistance",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/NigraniumArmorFireResistanceProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1788,8 +2033,14 @@
       "sortid": 123,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_golem",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/entity/NigraniumGolemEntity.java",
+          "src/main/java/mp/slave_mod/client/renderer/NigraniumGolemRenderer.java",
+          "src/main/resources/assets/slave_mod/models/item/nigranium_golem_spawn_egg.json"
+        ]
+      },
       "path": "~/Creatures/Nigranium_golem"
     },
     {
@@ -1798,9 +2049,11 @@
       "sortid": 124,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_golem_spawn",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/NigraniumGolemSpawnProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -1828,9 +2081,11 @@
       "sortid": 125,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_golem_drop",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/NigraniumGolemDropProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -1858,8 +2113,16 @@
       "sortid": 121,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/nigranium_block.json",
+          "src/main/java/mp/slave_mod/block/NigraniumBlockBlock.java",
+          "src/main/resources/assets/slave_mod/blockstates/nigranium_block.json",
+          "src/main/resources/assets/slave_mod/models/block/nigranium_block.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/nigranium_block.json"
+        ]
+      },
       "path": "~/Blocks"
     },
     {
@@ -1868,8 +2131,12 @@
       "sortid": 122,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "nigranium_block_crafting",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/recipes/nigranium_block_crafting.json"
+        ]
+      },
       "path": "~/Blocks/Recipes"
     },
     {
@@ -1878,9 +2145,11 @@
       "sortid": 121,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "kupovaninoplsu",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/KupovaninoplsuProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1912,8 +2181,14 @@
       "sortid": 122,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "otrokar_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/network/OtrokarGUIButtonMessage.java",
+          "src/main/java/mp/slave_mod/client/gui/OtrokarGUIScreen.java",
+          "src/main/java/mp/slave_mod/world/inventory/OtrokarGUIMenu.java"
+        ]
+      },
       "path": "~/Creatures/Enslaver"
     },
     {
@@ -1922,8 +2197,14 @@
       "sortid": 120,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "enslaver",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/entity/EnslaverEntity.java",
+          "src/main/java/mp/slave_mod/client/renderer/EnslaverRenderer.java",
+          "src/main/resources/assets/slave_mod/models/item/enslaver_spawn_egg.json"
+        ]
+      },
       "path": "~/Creatures/Enslaver"
     },
     {
@@ -1932,8 +2213,16 @@
       "sortid": 129,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "ironbarfor_nopleses",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/block/ironbarfor_nopleses.json",
+          "src/main/resources/assets/slave_mod/models/item/ironbarfor_nopleses.json",
+          "src/main/java/mp/slave_mod/block/IronbarforNoplesesBlock.java",
+          "src/main/resources/assets/slave_mod/blockstates/ironbarfor_nopleses.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/ironbarfor_nopleses.json"
+        ]
+      },
       "path": "~/Welsfargo"
     },
     {
@@ -1942,8 +2231,16 @@
       "sortid": 130,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "undestructablespruceplank",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/block/undestructablespruceplank.json",
+          "src/main/java/mp/slave_mod/block/UndestructablespruceplankBlock.java",
+          "src/main/resources/assets/slave_mod/models/item/undestructablespruceplank.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/undestructablespruceplank.json",
+          "src/main/resources/assets/slave_mod/blockstates/undestructablespruceplank.json"
+        ]
+      },
       "path": "~/Welsfargo"
     },
     {
@@ -1952,8 +2249,18 @@
       "sortid": 131,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "undestructableslab",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/block/UndestructableslabBlock.java",
+          "src/main/resources/assets/slave_mod/blockstates/undestructableslab.json",
+          "src/main/resources/assets/slave_mod/models/block/undestructableslab.json",
+          "src/main/resources/assets/slave_mod/models/block/undestructableslab_top.json",
+          "src/main/resources/assets/slave_mod/models/block/undestructableslab_full.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/undestructableslab.json",
+          "src/main/resources/assets/slave_mod/models/item/undestructableslab.json"
+        ]
+      },
       "path": "~/Welsfargo"
     },
     {
@@ -1962,8 +2269,16 @@
       "sortid": 132,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "wheel",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/block/wheel.json",
+          "src/main/resources/assets/slave_mod/blockstates/wheel.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/wheel.json",
+          "src/main/resources/assets/slave_mod/models/item/wheel.json",
+          "src/main/java/mp/slave_mod/block/WheelBlock.java"
+        ]
+      },
       "path": "~/Welsfargo"
     },
     {
@@ -1972,8 +2287,14 @@
       "sortid": 133,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "encaged_otrok",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/encaged_otrok_spawn_egg.json",
+          "src/main/java/mp/slave_mod/entity/EncagedOtrokEntity.java",
+          "src/main/java/mp/slave_mod/client/renderer/EncagedOtrokRenderer.java"
+        ]
+      },
       "path": "~/Welsfargo"
     },
     {
@@ -1982,8 +2303,14 @@
       "sortid": 134,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "encaged_otrok_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/slave_mod/models/item/encaged_otrok_2_spawn_egg.json",
+          "src/main/java/mp/slave_mod/client/renderer/EncagedOtrok2Renderer.java",
+          "src/main/java/mp/slave_mod/entity/EncagedOtrok2Entity.java"
+        ]
+      },
       "path": "~/Welsfargo"
     },
     {
@@ -1992,9 +2319,11 @@
       "sortid": 135,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "bonemealcotton",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/BonemealcottonProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2026,8 +2355,12 @@
       "sortid": 136,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "ebola",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/potion/EbolaMobEffect.java"
+        ]
+      },
       "path": "~/Random_stuff"
     },
     {
@@ -2036,10 +2369,12 @@
       "sortid": 137,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "picture_show_condition",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/PictureShowConditionProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -2067,10 +2402,12 @@
       "sortid": 138,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "pisture_show_condition_2",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/PistureShowCondition2Procedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -2098,10 +2435,12 @@
       "sortid": 139,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "picture_show_condition_3",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/PictureShowCondition3Procedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -2129,10 +2468,12 @@
       "sortid": 140,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "picture_show_condition_done",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/PictureShowConditionDoneProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -2160,10 +2501,12 @@
       "sortid": 141,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "background_show_condition",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/BackgroundShowConditionProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -2191,9 +2534,11 @@
       "sortid": 142,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "enslaver_on_entity_tick_update",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/EnslaverOnEntityTickUpdateProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2225,9 +2570,11 @@
       "sortid": 143,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "invclose",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/InvcloseProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2243,9 +2590,11 @@
       "sortid": 144,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "spear_bullet_hits_anything",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/SpearBulletHitsAnythingProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2277,13 +2626,19 @@
       "sortid": 145,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "ebola_active_tick_condition",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/EbolaActiveTickConditionProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -2295,8 +2650,15 @@
       "sortid": 146,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "negromancer",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/entity/NegromancerEntity.java",
+          "src/main/java/mp/slave_mod/client/renderer/NegromancerRenderer.java",
+          "src/main/resources/assets/slave_mod/models/item/negromancer_spawn_egg.json",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/negromancer_biome_modifier.json"
+        ]
+      },
       "path": "~/Creatures/Negromancer"
     },
     {
@@ -2305,8 +2667,14 @@
       "sortid": 147,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "negro_minion",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/entity/NegroMinionEntity.java",
+          "src/main/resources/assets/slave_mod/models/item/negro_minion_spawn_egg.json",
+          "src/main/java/mp/slave_mod/client/renderer/NegroMinionRenderer.java"
+        ]
+      },
       "path": "~/Creatures/Negromancer"
     },
     {
@@ -2315,9 +2683,11 @@
       "sortid": 147,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "spawn_negro_minion",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/SpawnNegroMinionProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -2345,9 +2715,11 @@
       "sortid": 148,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "negromancer_entity_is_hurt",
       "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/NegromancerEntityIsHurtProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2378,17 +2750,335 @@
       "path": "~/Creatures/Negromancer"
     },
     {
-      "name": "Welsfargo",
-      "type": "structure",
+      "name": "HutFeature",
+      "type": "feature",
       "sortid": 149,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
-      "registry_name": "welsfargo",
+      "registry_name": "hut_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/forge/biome_modifier/hut_feature_biome_modifier.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/hut_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/hut_feature.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures"
+    },
+    {
+      "name": "SpearProjectile",
+      "type": "projectile",
+      "sortid": 150,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spear_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/entity/SpearProjectileEntity.java"
+        ]
+      },
+      "path": "~/Tools"
+    },
+    {
+      "name": "Spear",
+      "type": "item",
+      "sortid": 151,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spear",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/SpearItem.java",
+          "src/main/resources/assets/slave_mod/models/item/spear.json"
+        ]
+      },
+      "path": "~/Tools"
+    },
+    {
+      "name": "KKKtotemFeature",
+      "type": "feature",
+      "sortid": 152,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kk_ktotem_feature",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/world/features/KKKtotemFeatureFeature.java",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/kk_ktotem_feature_biome_modifier.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/kk_ktotem_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/kk_ktotem_feature.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Totem"
+    },
+    {
+      "name": "Rock1Feature",
+      "type": "feature",
+      "sortid": 153,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_1_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/rock_1_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/rock_1_feature.json",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/rock_1_feature_biome_modifier.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures"
+    },
+    {
+      "name": "Rock2Feature",
+      "type": "feature",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_2_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/rock_2_feature.json",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/rock_2_feature_biome_modifier.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/rock_2_feature.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures"
+    },
+    {
+      "name": "Rock3Feature",
+      "type": "feature",
+      "sortid": 155,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_3_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/forge/biome_modifier/rock_3_feature_biome_modifier.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/rock_3_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/rock_3_feature.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures"
+    },
+    {
+      "name": "Rock4Feature",
+      "type": "feature",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_4_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/forge/biome_modifier/rock_4_feature_biome_modifier.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/rock_4_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/rock_4_feature.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures"
+    },
+    {
+      "name": "Rock5Feature",
+      "type": "feature",
+      "sortid": 157,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_5_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/rock_5_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/rock_5_feature.json",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/rock_5_feature_biome_modifier.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures"
+    },
+    {
+      "name": "Rock6Feature",
+      "type": "feature",
+      "sortid": 158,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_6_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/forge/biome_modifier/rock_6_feature_biome_modifier.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/rock_6_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/rock_6_feature.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures"
+    },
+    {
+      "name": "Rock7Feature",
+      "type": "feature",
+      "sortid": 159,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_7_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/forge/biome_modifier/rock_7_feature_biome_modifier.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/rock_7_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/rock_7_feature.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures"
+    },
+    {
+      "name": "Rock8Feature",
+      "type": "feature",
+      "sortid": 160,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_8_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/forge/biome_modifier/rock_8_feature_biome_modifier.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/rock_8_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/rock_8_feature.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures"
+    },
+    {
+      "name": "Rock9Feature",
+      "type": "feature",
+      "sortid": 161,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rock_9_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/rock_9_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/rock_9_feature.json",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/rock_9_feature_biome_modifier.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures"
+    },
+    {
+      "name": "Nigraniumcarrot",
+      "type": "item",
+      "sortid": 162,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nigraniumcarrot",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/item/NigraniumcarrotItem.java",
+          "src/main/resources/assets/slave_mod/models/item/nigraniumcarrot.json"
+        ]
+      },
+      "path": "~/Items"
+    },
+    {
+      "name": "WelsfargoFeature",
+      "type": "feature",
+      "sortid": 163,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "welsfargo_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/welsfargo_feature.json",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/welsfargo_feature_biome_modifier.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/welsfargo_feature.json"
+        ],
+        "has_nbt_structure": true
+      },
       "path": "~/Welsfargo"
+    },
+    {
+      "name": "NegromancerRangedAttack1",
+      "type": "procedure",
+      "sortid": 164,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "negromancer_ranged_attack_1",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/NegromancerRangedAttack1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Creatures/Negromancer"
+    },
+    {
+      "name": "NegromancerOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 165,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "negromancer_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/NegromancerOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Creatures/Negromancer"
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "NegromancerAttackDelay",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    }
+  ],
   "sound_elements": [
     {
       "name": "krajina",
@@ -2479,6 +3169,47 @@
       "subtitle": ""
     }
   ],
+  "tag_elements": {
+    "BIOMES:minecraft:has_structure/ocean_ruin_warm": [
+      "~CUSTOM:Africa"
+    ],
+    "BIOMES:minecraft:has_structure/stronghold": [
+      "~CUSTOM:Africa"
+    ],
+    "BIOMES:minecraft:has_structure/pillager_outpost": [
+      "~CUSTOM:Africa"
+    ],
+    "BIOMES:minecraft:has_structure/mineshaft": [
+      "~CUSTOM:Africa"
+    ],
+    "ITEMS:minecraft:music_discs": [
+      "~CUSTOM:Krajina"
+    ],
+    "BIOMES:minecraft:has_structure/mineshaft_mesa": [
+      "~CUSTOM:Africa"
+    ],
+    "BLOCKS:minecraft:mineable/axe": [
+      "~CUSTOM:NehoriciDrevoOak"
+    ],
+    "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:NigraniumBlock",
+      "~CUSTOM:EnslavedGlowstone",
+      "~CUSTOM:Nigranium",
+      "~CUSTOM:KKKactivatingBLock"
+    ],
+    "BLOCKS:minecraft:slabs": [
+      "~CUSTOM:Undestructableslab"
+    ],
+    "BIOMES:minecraft:has_structure/shipwreck": [
+      "~CUSTOM:Africa"
+    ],
+    "BIOMES:minecraft:has_structure/ruined_portal_standard": [
+      "~CUSTOM:Africa"
+    ],
+    "BIOMES:minecraft:has_structure/village_plains": [
+      "~CUSTOM:Africa"
+    ]
+  },
   "language_map": {
     "en_us": {
       "item.slave_mod.nigranium_hoe": "Nigranium Hoe",
@@ -2486,15 +3217,22 @@
       "subtitles.retez": "",
       "item.minecraft.tipped_arrow.effect.ebola": "Arrow of Ebola",
       "advancements.nigranium_carrot_advancement.title": "Yummy!...maybe...",
+      "gui.slave_mod.otrokar_gui.label_buy": "Buy",
+      "gui.slave_mod.otrokar_gui.label_sorry_but_i_am_not_able_to": "Sorry but I am not able to",
       "item.slave_mod.nigraniumnugget": "Nigranium Nugget",
+      "gui.slave_mod.otrokar_gui.label_slavery_as": "Slavery a.s.",
       "block.slave_mod.nigranium_block": "Nigranium Block",
       "biome.slave_mod.africa": "Africa",
       "item.slave_mod.bavlnaitem": "Harvested cotton",
       "item.slave_mod.encaged_otrok_spawn_egg": "Encaged Otrok Spawn Egg",
       "item.slave_mod.enslaver_spawn_egg": "Enslaver Spawn Egg",
+      "gui.slave_mod.otrokar_gui.label_empty": "\u003d",
       "subtitles.nazdarfrumrde": "",
+      "painting.slave_mod.polish_cow_painting.author": "Unknown",
       "item.slave_mod.spear": "Spear",
+      "gui.slave_mod.otrokar_gui.label_offer_you_more": "offer you more.",
       "item.minecraft.potion.effect.ebola": "Ebola",
+      "gui.slave_mod.otrok_inv.label_enslaved_noples_inventory": "Enslaved Noples Inventory",
       "entity.slave_mod.slave_boss": "Noples Ruler",
       "itemGroup.tabslave_mod": "Slave Mod",
       "subtitles.jozefdead": "",
@@ -2508,6 +3246,7 @@
       "block.slave_mod.cottonstage_4": "Cotton stage 4",
       "block.slave_mod.cottonstage_1": "Cotton stage 1",
       "block.slave_mod.cottonstage_2": "Cotton stage 2",
+      "painting.slave_mod.polish_cow_painting.title": "Polish Cow Painting",
       "block.slave_mod.cottonstage_7": "Cotton stage 7",
       "block.slave_mod.wodencrossbaseblock": "KKK Totem Base Block",
       "block.slave_mod.cottonstage_5": "Cotton stage 5",
@@ -2523,9 +3262,11 @@
       "subtitles.slavezvuk": "",
       "entity.slave_mod.encaged_otrok_2": "Encaged Otrok 2",
       "item.slave_mod.amulet": "Nigranium Amulet",
+      "gui.slave_mod.otrokar_gui.label_16": "16",
       "item.slave_mod.carrot_leftover": "Carrot Leftover",
       "Slave": "Slave",
       "entity.slave_mod.negromancer": "Negromancer",
+      "item_group.slave_mod.slave_mod": "Slave Mod",
       "item.slave_mod.nigranium_armor_leggings": "Nigranium Leggings",
       "item.slave_mod.bavlna": "Cotton",
       "block.slave_mod.undestructablespruceplank": "Undestructablespruceplank",
@@ -2535,7 +3276,9 @@
       "subtitles.jozefhurt": "",
       "item.slave_mod.nigraniumcarrot": "Nigranium carrot",
       "item.slave_mod.nigranium_shovel": "Nigranium Shovel",
+      "gui.slave_mod.otrok_inv.label_your_inventory": "Your Inventory",
       "item.slave_mod.whip_ending_item": "Whip ending ",
+      "gui.slave_mod.otrokar_gui.label_no_refunds": "No refunds",
       "item.slave_mod.nigranium_armor_helmet": "Nigranium Helmet",
       "item.slave_mod.kk_karmor_helmet": "KKK Hood",
       "entity.slave_mod.otrok": "Enslaved Noples",
@@ -2546,10 +3289,12 @@
       "subtitles.jozefhhh": "",
       "advancements.africaenter.descr": "You did it, you son of a bitch, you did it!",
       "entity.slave_mod.nigranium_golem": "Nigranium Golem",
+      "effect.slave_mod.ebola": "Ebola",
       "block.slave_mod.nigranium": "Nigranium Ore",
       "subtitles.slavehurt": "",
       "subtitles.jozefh": "",
       "entity.slave_mod.negro_minion": "Negro Minion",
+      "gui.slave_mod.otrokar_gui.button_buy": "Buy",
       "item.slave_mod.nigranium_armor_boots": "Nigranium Boots",
       "block.slave_mod.ironbarfor_nopleses": "Unoptainable iron bar",
       "item.slave_mod.negro_minion_spawn_egg": "Negro Minion Spawn Egg",
@@ -2584,20 +3329,27 @@
       "item.minecraft.lingering_potion.effect.ebola": "Lingering Ebola"
     },
     "cs_cz": {
-      "item.slave_mod.nigranium_hoe": "Fejfarová",
-      "subtitles.retez": "Øetìzové zvuky lolol",
+      "item.slave_mod.nigranium_hoe": "Fejfarovï¿½",
+      "subtitles.retez": "ï¿½etï¿½zovï¿½ zvuky lolol",
       "advancements.africaenter.title": "Je z tebe negr",
       "item.minecraft.tipped_arrow.effect.ebola": "Arrow of Ebola",
-      "advancements.nigranium_carrot_advancement.title": "Mòam mòam mòam je to fresh mam to rád",
+      "advancements.nigranium_carrot_advancement.title": "Mï¿½am mï¿½am mï¿½am je to fresh mam to rï¿½d",
+      "gui.slave_mod.otrokar_gui.label_buy": "Buy",
+      "gui.slave_mod.otrokar_gui.label_sorry_but_i_am_not_able_to": "Sorry but I am not able to",
       "item.slave_mod.nigraniumnugget": "Chicken nuggetka",
+      "gui.slave_mod.otrokar_gui.label_slavery_as": "Slavery a.s.",
       "block.slave_mod.nigranium_block": "Negrblok",
       "biome.slave_mod.africa": "Afrika",
       "item.slave_mod.bavlnaitem": "Harvested cotton",
       "item.slave_mod.encaged_otrok_spawn_egg": "Encaged Otrok Spawn Egg",
       "item.slave_mod.enslaver_spawn_egg": "Enslaver Spawn Egg",
-      "subtitles.nazdarfrumrde": "Nazdar frumrde, co pro mì máš",
+      "gui.slave_mod.otrokar_gui.label_empty": "\u003d",
+      "subtitles.nazdarfrumrde": "Nazdar frumrde, co pro mï¿½ mï¿½",
+      "painting.slave_mod.polish_cow_painting.author": "Unknown",
       "item.slave_mod.spear": "Spear",
+      "gui.slave_mod.otrokar_gui.label_offer_you_more": "offer you more.",
       "item.minecraft.potion.effect.ebola": "Ebola",
+      "gui.slave_mod.otrok_inv.label_enslaved_noples_inventory": "Enslaved Noples Inventory",
       "entity.slave_mod.slave_boss": "Noples Ruler",
       "itemGroup.tabslave_mod": "Slave Mod",
       "subtitles.jozefdead": "",
@@ -2611,6 +3363,7 @@
       "block.slave_mod.cottonstage_4": "Cotton stage 4",
       "block.slave_mod.cottonstage_1": "Cotton stage 1",
       "block.slave_mod.cottonstage_2": "Cotton stage 2",
+      "painting.slave_mod.polish_cow_painting.title": "Polish Cow Painting",
       "block.slave_mod.cottonstage_7": "Cotton stage 7",
       "block.slave_mod.wodencrossbaseblock": "KKK Totem Base Block",
       "block.slave_mod.cottonstage_5": "Cotton stage 5",
@@ -2626,9 +3379,11 @@
       "subtitles.slavezvuk": "",
       "entity.slave_mod.encaged_otrok_2": "Encaged Otrok 2",
       "item.slave_mod.amulet": "Nigranium Amulet",
+      "gui.slave_mod.otrokar_gui.label_16": "16",
       "item.slave_mod.carrot_leftover": "Carrot Leftover",
       "Slave": "Slave",
       "entity.slave_mod.negromancer": "Negromancer",
+      "item_group.slave_mod.slave_mod": "Slave Mod",
       "item.slave_mod.nigranium_armor_leggings": "Nigranium Leggings",
       "item.slave_mod.bavlna": "Cotton",
       "block.slave_mod.undestructablespruceplank": "Undestructablespruceplank",
@@ -2638,7 +3393,9 @@
       "subtitles.jozefhurt": "",
       "item.slave_mod.nigraniumcarrot": "Nigranium carrot",
       "item.slave_mod.nigranium_shovel": "Nigranium Shovel",
+      "gui.slave_mod.otrok_inv.label_your_inventory": "Your Inventory",
       "item.slave_mod.whip_ending_item": "Whip ending ",
+      "gui.slave_mod.otrokar_gui.label_no_refunds": "No refunds",
       "item.slave_mod.nigranium_armor_helmet": "Nigranium Helmet",
       "item.slave_mod.kk_karmor_helmet": "KKK Hood",
       "entity.slave_mod.otrok": "Enslaved Noples",
@@ -2649,10 +3406,12 @@
       "subtitles.jozefhhh": "",
       "advancements.africaenter.descr": "You did it, you son of a bitch, you did it!",
       "entity.slave_mod.nigranium_golem": "Nigranium Golem",
+      "effect.slave_mod.ebola": "Ebola",
       "block.slave_mod.nigranium": "Nigranium Ore",
       "subtitles.slavehurt": "",
       "subtitles.jozefh": "",
       "entity.slave_mod.negro_minion": "Negro Minion",
+      "gui.slave_mod.otrokar_gui.button_buy": "Buy",
       "item.slave_mod.nigranium_armor_boots": "Nigranium Boots",
       "block.slave_mod.ironbarfor_nopleses": "Unoptainable iron bar",
       "item.slave_mod.negro_minion_spawn_egg": "Negro Minion Spawn Egg",
@@ -2806,17 +3565,15 @@
     "author": "Mar1as Productions",
     "websiteURL": "https://jirilabus.funsite.cz/",
     "license": "Academic Free License v3.0",
-    "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "modPicture": "ebolensie",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.15.2",
+    "currentGenerator": "forge-1.20.1",
     "credits": "https://jirilabus.funsite.cz/",
-    "modElementsPackage": "mp.slave_mod",
-    "lockBaseModFiles": false
+    "modElementsPackage": "mp.slave_mod"
   },
-  "mcreatorVersion": 202100236710
+  "mcreatorVersion": 202400115821
 }

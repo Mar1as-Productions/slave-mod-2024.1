@@ -1,227 +1,192 @@
+
 package mp.slave_mod.entity;
 
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.common.DungeonHooks;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.server.ServerBossInfo;
-import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.World;
-import net.minecraft.world.BossInfo;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.DamageSource;
-import net.minecraft.network.IPacket;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
-import net.minecraft.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.HurtByTargetGoal;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntitySpawnPlacementRegistry;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.client.renderer.entity.layers.BipedArmorLayer;
-import net.minecraft.client.renderer.entity.BipedRenderer;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.Difficulty;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerBossEvent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
 
+import mp.slave_mod.procedures.NegromancerOnEntityTickUpdateProcedure;
 import mp.slave_mod.procedures.NegromancerEntityIsHurtProcedure;
-import mp.slave_mod.itemgroup.SlaveModItemGroup;
-import mp.slave_mod.item.NigraniumcarrotItem;
-import mp.slave_mod.SlaveModModElements;
+import mp.slave_mod.init.SlaveModModItems;
+import mp.slave_mod.init.SlaveModModEntities;
 
-import java.util.Map;
-import java.util.HashMap;
+public class NegromancerEntity extends Monster implements RangedAttackMob {
+	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.PURPLE, ServerBossEvent.BossBarOverlay.NOTCHED_20);
 
-@SlaveModModElements.ModElement.Tag
-public class NegromancerEntity extends SlaveModModElements.ModElement {
-	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
-			.size(0.6f, 1.8f)).build("negromancer").setRegistryName("negromancer");
-	public NegromancerEntity(SlaveModModElements instance) {
-		super(instance, 146);
-		FMLJavaModLoadingContext.get().getModEventBus().register(this);
+	public NegromancerEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(SlaveModModEntities.NEGROMANCER.get(), world);
+	}
+
+	public NegromancerEntity(EntityType<NegromancerEntity> type, Level world) {
+		super(type, world);
+		setMaxUpStep(0.6f);
+		xpReward = 0;
+		setNoAi(false);
+		setCustomName(Component.literal("Negromancer the Invincible"));
+		setCustomNameVisible(true);
 	}
 
 	@Override
-	public void initElements() {
-		elements.entities.add(() -> entity);
-		elements.items.add(() -> new SpawnEggItem(entity, -16777216, -13421773, new Item.Properties().group(SlaveModItemGroup.tab))
-				.setRegistryName("negromancer_spawn_egg"));
+	public Packet<ClientGamePacketListener> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
-	public void init(FMLCommonSetupEvent event) {
-		for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
-			boolean biomeCriteria = false;
-			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("slave_mod:africa")))
-				biomeCriteria = true;
-			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("badlands")))
-				biomeCriteria = true;
-			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("nether")))
-				biomeCriteria = true;
-			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("swamp")))
-				biomeCriteria = true;
-			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("deep_ocean")))
-				biomeCriteria = true;
-			if (!biomeCriteria)
-				continue;
-			biome.getSpawns(EntityClassification.MONSTER).add(new Biome.SpawnListEntry(entity, 1, 1, 1));
-		}
-		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
-				MonsterEntity::canMonsterSpawn);
-		DungeonHooks.addDungeonMob(entity, 180);
-	}
-
-	@SubscribeEvent
-	@OnlyIn(Dist.CLIENT)
-	public void registerModels(ModelRegistryEvent event) {
-		RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> {
-			BipedRenderer customRender = new BipedRenderer(renderManager, new BipedModel(0), 0.5f) {
-				@Override
-				public ResourceLocation getEntityTexture(Entity entity) {
-					return new ResourceLocation("slave_mod:textures/negromancer.png");
-				}
-			};
-			customRender.addLayer(new BipedArmorLayer(customRender, new BipedModel(0.5f), new BipedModel(1)));
-			return customRender;
+	protected void registerGoals() {
+		super.registerGoals();
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, EncagedOtrokEntity.class, false, false));
+		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false) {
+			@Override
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
+			}
+		});
+		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 0.8));
+		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10f) {
+			@Override
+			public boolean canContinueToUse() {
+				return this.canUse();
+			}
 		});
 	}
-	public static class CustomEntity extends MonsterEntity {
-		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
-			this(entity, world);
-		}
 
-		public CustomEntity(EntityType<CustomEntity> type, World world) {
-			super(type, world);
-			experienceValue = 0;
-			setNoAI(false);
-			setCustomName(new StringTextComponent("Negromancer the Invincible"));
-			setCustomNameVisible(true);
-		}
+	@Override
+	public MobType getMobType() {
+		return MobType.UNDEAD;
+	}
 
-		@Override
-		public IPacket<?> createSpawnPacket() {
-			return NetworkHooks.getEntitySpawningPacket(this);
-		}
+	@Override
+	public double getMyRidingOffset() {
+		return -0.35D;
+	}
 
-		@Override
-		protected void registerGoals() {
-			super.registerGoals();
-			this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, EncagedOtrokEntity.CustomEntity.class, false, false));
-			this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false));
-			this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
-			this.goalSelector.addGoal(4, new RandomWalkingGoal(this, 0.8));
-			this.goalSelector.addGoal(5, new LookRandomlyGoal(this));
-		}
+	protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
+		super.dropCustomDeathLoot(source, looting, recentlyHitIn);
+		this.spawnAtLocation(new ItemStack(SlaveModModItems.NIGRANIUMCARROT.get()));
+	}
 
-		@Override
-		public CreatureAttribute getCreatureAttribute() {
-			return CreatureAttribute.UNDEAD;
-		}
+	@Override
+	public SoundEvent getAmbientSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.destroy"));
+	}
 
-		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
-			super.dropSpecialItems(source, looting, recentlyHitIn);
-			this.entityDropItem(new ItemStack(NigraniumcarrotItem.block));
-		}
+	@Override
+	public void playStepSound(BlockPos pos, BlockState blockIn) {
+		this.playSound(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.break")), 0.15f, 1);
+	}
 
-		@Override
-		public net.minecraft.util.SoundEvent getAmbientSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.destroy"));
-		}
+	@Override
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.ancient_debris.fall"));
+	}
 
-		@Override
-		public void playStepSound(BlockPos pos, BlockState blockIn) {
-			this.playSound((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.break")), 0.15f,
-					1);
-		}
+	@Override
+	public SoundEvent getDeathSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.hit"));
+	}
 
-		@Override
-		public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
-		}
+	@Override
+	public boolean hurt(DamageSource damagesource, float amount) {
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Level world = this.level();
+		Entity entity = this;
+		Entity sourceentity = damagesource.getEntity();
+		Entity immediatesourceentity = damagesource.getDirectEntity();
 
-		@Override
-		public net.minecraft.util.SoundEvent getDeathSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.hit"));
-		}
+		NegromancerEntityIsHurtProcedure.execute(world, x, y, z, entity, sourceentity);
+		return super.hurt(damagesource, amount);
+	}
 
-		@Override
-		public boolean attackEntityFrom(DamageSource source, float amount) {
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-			Entity sourceentity = source.getTrueSource();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("sourceentity", sourceentity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				NegromancerEntityIsHurtProcedure.executeProcedure($_dependencies);
-			}
-			return super.attackEntityFrom(source, amount);
-		}
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		NegromancerOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+	}
 
-		@Override
-		protected void registerAttributes() {
-			super.registerAttributes();
-			if (this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED) != null)
-				this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.5);
-			if (this.getAttribute(SharedMonsterAttributes.MAX_HEALTH) != null)
-				this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(500);
-			if (this.getAttribute(SharedMonsterAttributes.ARMOR) != null)
-				this.getAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(0);
-			if (this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) == null)
-				this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-			this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3);
-			if (this.getAttribute(SharedMonsterAttributes.ATTACK_KNOCKBACK) == null)
-				this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_KNOCKBACK);
-			this.getAttribute(SharedMonsterAttributes.ATTACK_KNOCKBACK).setBaseValue(0.6D);
-		}
+	@Override
+	public void performRangedAttack(LivingEntity target, float flval) {
+		Arrow entityarrow = new Arrow(this.level(), this);
+		double d0 = target.getY() + target.getEyeHeight() - 1.1;
+		double d1 = target.getX() - this.getX();
+		double d3 = target.getZ() - this.getZ();
+		entityarrow.shoot(d1, d0 - entityarrow.getY() + Math.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 1.6F, 12.0F);
+		this.level().addFreshEntity(entityarrow);
+	}
 
-		@Override
-		public boolean isNonBoss() {
-			return false;
-		}
-		private final ServerBossInfo bossInfo = new ServerBossInfo(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.NOTCHED_20);
-		@Override
-		public void addTrackingPlayer(ServerPlayerEntity player) {
-			super.addTrackingPlayer(player);
-			this.bossInfo.addPlayer(player);
-		}
+	@Override
+	public boolean canChangeDimensions() {
+		return false;
+	}
 
-		@Override
-		public void removeTrackingPlayer(ServerPlayerEntity player) {
-			super.removeTrackingPlayer(player);
-			this.bossInfo.removePlayer(player);
-		}
+	@Override
+	public void startSeenByPlayer(ServerPlayer player) {
+		super.startSeenByPlayer(player);
+		this.bossInfo.addPlayer(player);
+	}
 
-		@Override
-		public void updateAITasks() {
-			super.updateAITasks();
-			this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
-		}
+	@Override
+	public void stopSeenByPlayer(ServerPlayer player) {
+		super.stopSeenByPlayer(player);
+		this.bossInfo.removePlayer(player);
+	}
+
+	@Override
+	public void customServerAiStep() {
+		super.customServerAiStep();
+		this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());
+	}
+
+	public static void init() {
+		SpawnPlacements.register(SlaveModModEntities.NEGROMANCER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+		DungeonHooks.addDungeonMob(SlaveModModEntities.NEGROMANCER.get(), 180);
+	}
+
+	public static AttributeSupplier.Builder createAttributes() {
+		AttributeSupplier.Builder builder = Mob.createMobAttributes();
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.5);
+		builder = builder.add(Attributes.MAX_HEALTH, 500);
+		builder = builder.add(Attributes.ARMOR, 0);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.6);
+		return builder;
 	}
 }

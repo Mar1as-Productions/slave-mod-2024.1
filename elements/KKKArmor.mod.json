@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
@@ -30,10 +30,18 @@
     "bodyName": "KKK Robe",
     "leggingsName": "KKK Pants",
     "bootsName": "KKK Shoes",
-    "helmetSpecialInfo": [],
-    "bodySpecialInfo": [],
-    "leggingsSpecialInfo": [],
-    "bootsSpecialInfo": [],
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
     "helmetModelName": "Modelarmor_main2",
     "helmetModelPart": "Hood",
     "helmetModelTexture": "From armor",
@@ -50,6 +58,14 @@
     "bootsModelPartL": "LeftShoe",
     "bootsModelPartR": "RightShoe",
     "bootsModelTexture": "From armor",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
     "helmetImmuneToFire": false,
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,

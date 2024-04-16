@@ -1,9 +1,11 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "painting",
   "definition": {
     "texture": "polishcow.png",
     "width": 64,
-    "height": 32
+    "height": 32,
+    "title": "Polish Cow Painting",
+    "author": "Unknown"
   }
 }
