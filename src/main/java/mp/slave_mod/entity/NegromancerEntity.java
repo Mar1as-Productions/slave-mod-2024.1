@@ -10,9 +10,12 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
@@ -35,11 +38,12 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
+import mp.slave_mod.procedures.NegromancerOnEntityTickUpdateProcedure;
 import mp.slave_mod.procedures.NegromancerEntityIsHurtProcedure;
 import mp.slave_mod.init.SlaveModModItems;
 import mp.slave_mod.init.SlaveModModEntities;
 
-public class NegromancerEntity extends Monster {
+public class NegromancerEntity extends Monster implements RangedAttackMob {
 	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.PURPLE, ServerBossEvent.BossBarOverlay.NOTCHED_20);
 
 	public NegromancerEntity(PlayMessages.SpawnEntity packet, Level world) {
@@ -73,6 +77,12 @@ public class NegromancerEntity extends Monster {
 		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 0.8));
 		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10f) {
+			@Override
+			public boolean canContinueToUse() {
+				return this.canUse();
+			}
+		});
 	}
 
 	@Override
@@ -122,6 +132,22 @@ public class NegromancerEntity extends Monster {
 
 		NegromancerEntityIsHurtProcedure.execute(world, x, y, z, entity, sourceentity);
 		return super.hurt(damagesource, amount);
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		NegromancerOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+	}
+
+	@Override
+	public void performRangedAttack(LivingEntity target, float flval) {
+		Arrow entityarrow = new Arrow(this.level(), this);
+		double d0 = target.getY() + target.getEyeHeight() - 1.1;
+		double d1 = target.getX() - this.getX();
+		double d3 = target.getZ() - this.getZ();
+		entityarrow.shoot(d1, d0 - entityarrow.getY() + Math.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 1.6F, 12.0F);
+		this.level().addFreshEntity(entityarrow);
 	}
 
 	@Override

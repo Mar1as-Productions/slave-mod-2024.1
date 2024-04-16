@@ -161,7 +161,8 @@
     [
       "slave_mod:africa_tree",
       "minecraft:patch_tall_grass",
-      "minecraft:patch_grass_forest"
+      "minecraft:patch_grass_forest",
+      "minecraft:patch_dead_bush_2"
     ],
     [
       "minecraft:freeze_top_layer"

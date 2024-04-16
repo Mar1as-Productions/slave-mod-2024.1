@@ -9,6 +9,9 @@
     "undergroundBlock": {
       "value": "Blocks.DIRT#0"
     },
+    "underwaterBlock": {
+      "value": ""
+    },
     "airColor": {
       "value": -589884,
       "falpha": 0.0
@@ -99,11 +102,12 @@
       "MonsterRooms",
       "ForestGrass",
       "DefaultFlowers",
-      "DesertFeatures"
+      "DesertFeatures",
+      "DeadBushes"
     ],
     "spawnStronghold": true,
     "spawnMineshaft": true,
-    "spawnMineshaftMesa": false,
+    "spawnMineshaftMesa": true,
     "spawnPillagerOutpost": true,
     "villageType": "plains",
     "spawnWoodlandMansion": false,
@@ -120,7 +124,7 @@
     "spawnNetherFossil": false,
     "spawnBastionRemnant": false,
     "spawnEndCity": false,
-    "spawnRuinedPortal": "NONE",
+    "spawnRuinedPortal": "STANDARD",
     "spawnEntries": [
       {
         "entity": {

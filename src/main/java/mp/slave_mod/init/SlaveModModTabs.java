@@ -69,7 +69,5 @@ public class SlaveModModTabs {
 				tabData.accept(SlaveModModItems.NEGRO_MINION_SPAWN_EGG.get());
 				tabData.accept(SlaveModModItems.SPEAR.get());
 				tabData.accept(SlaveModModItems.NIGRANIUMCARROT.get());
-			})
-
-					.build());
+			}).withSearchBar().build());
 }
