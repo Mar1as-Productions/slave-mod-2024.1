@@ -1,0 +1,28 @@
+{
+  "_fv": 60,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "Items.ARROW"
+    },
+    "showParticles": true,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "igniteFire": false,
+    "power": 1.2,
+    "damage": 2.5,
+    "knockback": 3,
+    "entityModel": "Modelspear2",
+    "customModelTexture": "spear.png",
+    "onHitsBlock": {
+      "name": "SpearBulletHitsAnything"
+    },
+    "onHitsPlayer": {
+      "name": "SpearBulletHitsAnything"
+    },
+    "onHitsEntity": {
+      "name": "SpearBulletHitsAnything"
+    }
+  }
+}

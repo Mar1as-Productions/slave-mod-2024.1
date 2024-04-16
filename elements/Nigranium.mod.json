@@ -1,5 +1,5 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "block",
   "definition": {
     "texture": "nigraniumore3",
@@ -11,6 +11,7 @@
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
+    "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "",
@@ -33,7 +34,9 @@
       }
     ],
     "name": "Nigranium Ore",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 3.0,
     "resistance": 10.0,
     "hasGravity": false,
@@ -47,6 +50,7 @@
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
+    "requiresCorrectTool": true,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canRedstoneConnect": false,
@@ -82,28 +86,22 @@
     "breakSound": {
       "value": ""
     },
-    "stepSound": {
-      "value": ""
-    },
-    "placeSound": {
+    "fallSound": {
       "value": ""
     },
     "hitSound": {
       "value": ""
     },
-    "fallSound": {
+    "placeSound": {
+      "value": ""
+    },
+    "stepSound": {
       "value": ""
     },
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 3,
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "isBonemealable": false,
     "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
@@ -124,9 +122,7 @@
     "onDestroyedByPlayer": {
       "name": "NigraniumBlockDestroyed"
     },
-    "spawnWorldTypes": [
-      "Surface"
-    ],
+    "generateFeature": true,
     "restrictionBiomes": [
       {
         "value": "CUSTOM:Africa"
@@ -134,15 +130,19 @@
     ],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE"
-      },
-      {
         "value": "Blocks.STONE#5"
       },
       {
         "value": "Blocks.STONE#1"
+      },
+      {
+        "value": "Blocks.STONE#0"
+      },
+      {
+        "value": "Blocks.STONE#3"
       }
     ],
+    "generationShape": "UNIFORM",
     "frequencyPerChunks": 8,
     "frequencyOnChunk": 6,
     "minGenerateHeight": 10,

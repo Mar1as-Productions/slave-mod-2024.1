@@ -1,6 +1,6 @@
 {
-  "group": "slave_mod",
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "slave_mod:harvested_cotton"

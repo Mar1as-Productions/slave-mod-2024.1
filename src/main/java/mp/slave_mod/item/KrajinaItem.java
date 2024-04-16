@@ -1,42 +1,24 @@
 
 package mp.slave_mod.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.item.Rarity;
-import net.minecraft.item.MusicDiscItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.RecordItem;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.resources.ResourceLocation;
 
-import mp.slave_mod.itemgroup.SlaveModItemGroup;
-import mp.slave_mod.SlaveModModElements;
-
-@SlaveModModElements.ModElement.Tag
-public class KrajinaItem extends SlaveModModElements.ModElement {
-	@ObjectHolder("slave_mod:krajina")
-	public static final Item block = null;
-	public KrajinaItem(SlaveModModElements instance) {
-		super(instance, 6);
+public class KrajinaItem extends RecordItem {
+	public KrajinaItem() {
+		super(0, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("slave_mod:krajina")), new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 0);
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new MusicDiscItemCustom());
-	}
-	public static class MusicDiscItemCustom extends MusicDiscItem {
-		public MusicDiscItemCustom() {
-			super(0, SlaveModModElements.sounds.get(new ResourceLocation("slave_mod:krajina")),
-					new Item.Properties().group(SlaveModItemGroup.tab).maxStackSize(1).rarity(Rarity.RARE));
-			setRegistryName("krajina");
-		}
-
-		@Override
-		@OnlyIn(Dist.CLIENT)
-		public boolean hasEffect(ItemStack itemstack) {
-			return true;
-		}
+	@OnlyIn(Dist.CLIENT)
+	public boolean isFoil(ItemStack itemstack) {
+		return true;
 	}
 }

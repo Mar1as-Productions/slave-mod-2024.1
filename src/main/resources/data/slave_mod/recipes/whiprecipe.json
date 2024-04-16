@@ -1,25 +1,19 @@
 {
-  "group": "slave_mod",
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
-    "  2",
-    " 45",
-    "6 8"
+    "  a",
+    " ba",
+    "b c"
   ],
   "key": {
-    "2": {
+    "a": {
       "item": "minecraft:lead"
     },
-    "4": {
+    "b": {
       "item": "minecraft:stick"
     },
-    "5": {
-      "item": "minecraft:lead"
-    },
-    "6": {
-      "item": "minecraft:stick"
-    },
-    "8": {
+    "c": {
       "item": "slave_mod:whip_ending_item"
     }
   },

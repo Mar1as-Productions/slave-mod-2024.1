@@ -2,288 +2,211 @@
 package mp.slave_mod.entity;
 
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.network.NetworkHooks;
-import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.network.PlayMessages;
+import net.minecraftforge.network.NetworkHooks;
 
-import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.World;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Hand;
-import net.minecraft.util.DamageSource;
-import net.minecraft.network.IPacket;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.item.SpawnEggItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.passive.TameableEntity;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.entity.ai.goal.RandomSwimmingGoal;
-import net.minecraft.entity.ai.goal.PanicGoal;
-import net.minecraft.entity.ai.goal.LookRandomlyGoal;
-import net.minecraft.entity.ai.goal.FollowParentGoal;
-import net.minecraft.entity.ai.goal.EatGrassGoal;
-import net.minecraft.entity.ai.goal.BreedGoal;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ILivingEntityData;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntitySpawnPlacementRegistry;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.CreatureAttribute;
-import net.minecraft.entity.AgeableEntity;
-import net.minecraft.client.renderer.entity.model.BipedModel;
-import net.minecraft.client.renderer.entity.layers.BipedArmorLayer;
-import net.minecraft.client.renderer.entity.BipedRenderer;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.PanicGoal;
+import net.minecraft.world.entity.ai.goal.FollowParentGoal;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.EatBlockGoal;
+import net.minecraft.world.entity.ai.goal.BreedGoal;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.core.BlockPos;
 
 import mp.slave_mod.procedures.SlaveAnimalRightClickedOnEntityProcedure;
 import mp.slave_mod.procedures.SlaveAnimalEntityDiesProcedure;
-import mp.slave_mod.itemgroup.SlaveModItemGroup;
-import mp.slave_mod.SlaveModModElements;
+import mp.slave_mod.init.SlaveModModEntities;
 
-import java.util.Map;
-import java.util.HashMap;
+public class SlaveAnimalEntity extends TamableAnimal {
+	public SlaveAnimalEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(SlaveModModEntities.SLAVE_ANIMAL.get(), world);
+	}
 
-@SlaveModModElements.ModElement.Tag
-public class SlaveAnimalEntity extends SlaveModModElements.ModElement {
-	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.CREATURE)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
-			.size(0.6f, 1.8f)).build("slave_animal").setRegistryName("slave_animal");
-	public SlaveAnimalEntity(SlaveModModElements instance) {
-		super(instance, 23);
-		FMLJavaModLoadingContext.get().getModEventBus().register(this);
+	public SlaveAnimalEntity(EntityType<SlaveAnimalEntity> type, Level world) {
+		super(type, world);
+		setMaxUpStep(0.6f);
+		xpReward = 1;
+		setNoAi(false);
+		setPersistenceRequired();
 	}
 
 	@Override
-	public void initElements() {
-		elements.entities.add(() -> entity);
-		elements.items.add(() -> new SpawnEggItem(entity, -14467048, -13949916, new Item.Properties().group(SlaveModItemGroup.tab))
-				.setRegistryName("slave_animal_spawn_egg"));
+	public Packet<ClientGamePacketListener> getAddEntityPacket() {
+		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
-	public void init(FMLCommonSetupEvent event) {
-		for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
-			boolean biomeCriteria = false;
-			if (ForgeRegistries.BIOMES.getKey(biome).equals(new ResourceLocation("slave_mod:africa")))
-				biomeCriteria = true;
-			if (!biomeCriteria)
-				continue;
-			biome.getSpawns(EntityClassification.CREATURE).add(new Biome.SpawnListEntry(entity, 20, 4, 7));
-		}
-		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos,
-						random) -> (world.getBlockState(pos.down()).getMaterial() == Material.ORGANIC && world.getLightSubtracted(pos, 0) > 8));
+	protected void registerGoals() {
+		super.registerGoals();
+		this.goalSelector.addGoal(1, new PanicGoal(this, 1.5));
+		this.goalSelector.addGoal(2, new FollowParentGoal(this, 0.8));
+		this.goalSelector.addGoal(3, new EatBlockGoal(this));
+		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(5, new RandomSwimmingGoal(this, 5, 40));
+		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(7, new FloatGoal(this));
+		this.goalSelector.addGoal(8, new BreedGoal(this, 100000));
 	}
 
-	@SubscribeEvent
-	@OnlyIn(Dist.CLIENT)
-	public void registerModels(ModelRegistryEvent event) {
-		RenderingRegistry.registerEntityRenderingHandler(entity, renderManager -> {
-			BipedRenderer customRender = new BipedRenderer(renderManager, new BipedModel(0), 0.5f) {
-				@Override
-				public ResourceLocation getEntityTexture(Entity entity) {
-					return new ResourceLocation("slave_mod:textures/slavefinalfinal.png");
-				}
-			};
-			customRender.addLayer(new BipedArmorLayer(customRender, new BipedModel(0.5f), new BipedModel(1)));
-			return customRender;
-		});
+	@Override
+	public MobType getMobType() {
+		return MobType.ILLAGER;
 	}
-	public static class CustomEntity extends TameableEntity {
-		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
-			this(entity, world);
-		}
 
-		public CustomEntity(EntityType<CustomEntity> type, World world) {
-			super(type, world);
-			experienceValue = 1;
-			setNoAI(false);
-			enablePersistence();
-		}
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
+	}
 
-		@Override
-		public IPacket<?> createSpawnPacket() {
-			return NetworkHooks.getEntitySpawningPacket(this);
-		}
+	@Override
+	public double getMyRidingOffset() {
+		return -0.35D;
+	}
 
-		@Override
-		protected void registerGoals() {
-			super.registerGoals();
-			this.goalSelector.addGoal(1, new PanicGoal(this, 1.5));
-			this.goalSelector.addGoal(2, new FollowParentGoal(this, 0.8));
-			this.goalSelector.addGoal(3, new EatGrassGoal(this));
-			this.goalSelector.addGoal(4, new RandomWalkingGoal(this, 1));
-			this.goalSelector.addGoal(5, new RandomSwimmingGoal(this, 5, 40));
-			this.goalSelector.addGoal(6, new LookRandomlyGoal(this));
-			this.goalSelector.addGoal(7, new SwimGoal(this));
-			this.goalSelector.addGoal(8, new BreedGoal(this, 100000));
-		}
+	@Override
+	public SoundEvent getAmbientSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("slave_mod:slavezvuk"));
+	}
 
-		@Override
-		public CreatureAttribute getCreatureAttribute() {
-			return CreatureAttribute.ILLAGER;
-		}
+	@Override
+	public void playStepSound(BlockPos pos, BlockState blockIn) {
+		this.playSound(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.sheep.step")), 0.15f, 1);
+	}
 
-		@Override
-		public boolean canDespawn(double distanceToClosestPlayer) {
+	@Override
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("slave_mod:slavehurt"));
+	}
+
+	@Override
+	public SoundEvent getDeathSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("slave_mod:slavedead"));
+	}
+
+	@Override
+	public boolean hurt(DamageSource damagesource, float amount) {
+		if (damagesource.is(DamageTypes.FALL))
 			return false;
-		}
+		if (damagesource.is(DamageTypes.CACTUS))
+			return false;
+		if (damagesource.is(DamageTypes.DROWN))
+			return false;
+		return super.hurt(damagesource, amount);
+	}
 
-		@Override
-		public net.minecraft.util.SoundEvent getAmbientSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("slave_mod:slavezvuk"));
-		}
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		SlaveAnimalEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+	}
 
-		@Override
-		public void playStepSound(BlockPos pos, BlockState blockIn) {
-			this.playSound((net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.sheep.step")), 0.15f,
-					1);
-		}
-
-		@Override
-		public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("slave_mod:slavehurt"));
-		}
-
-		@Override
-		public net.minecraft.util.SoundEvent getDeathSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("slave_mod:slavedead"));
-		}
-
-		@Override
-		public boolean attackEntityFrom(DamageSource source, float amount) {
-			if (source == DamageSource.FALL)
-				return false;
-			if (source == DamageSource.CACTUS)
-				return false;
-			if (source == DamageSource.DROWN)
-				return false;
-			return super.attackEntityFrom(source, amount);
-		}
-
-		@Override
-		public void onDeath(DamageSource source) {
-			super.onDeath(source);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity sourceentity = source.getTrueSource();
-			Entity entity = this;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				SlaveAnimalEntityDiesProcedure.executeProcedure($_dependencies);
-			}
-		}
-
-		@Override
-		public boolean processInteract(PlayerEntity sourceentity, Hand hand) {
-			ItemStack itemstack = sourceentity.getHeldItem(hand);
-			boolean retval = true;
-			Item item = itemstack.getItem();
-			if (itemstack.getItem() instanceof SpawnEggItem) {
-				retval = super.processInteract(sourceentity, hand);
-			} else if (this.world.isRemote) {
-				retval = this.isTamed() && this.isOwner(sourceentity) || this.isBreedingItem(itemstack);
-			} else {
-				if (this.isTamed()) {
-					if (this.isOwner(sourceentity)) {
-						if (item.isFood() && this.isBreedingItem(itemstack) && this.getHealth() < this.getMaxHealth()) {
-							this.consumeItemFromStack(sourceentity, itemstack);
-							this.heal((float) item.getFood().getHealing());
-							retval = true;
-						} else if (this.isBreedingItem(itemstack) && this.getHealth() < this.getMaxHealth()) {
-							this.consumeItemFromStack(sourceentity, itemstack);
-							this.heal(4);
-							retval = true;
-						} else {
-							retval = super.processInteract(sourceentity, hand);
-						}
-					}
-				} else if (this.isBreedingItem(itemstack)) {
-					this.consumeItemFromStack(sourceentity, itemstack);
-					if (this.rand.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, sourceentity)) {
-						this.setTamedBy(sourceentity);
-						this.world.setEntityState(this, (byte) 7);
+	@Override
+	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
+		ItemStack itemstack = sourceentity.getItemInHand(hand);
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+		Item item = itemstack.getItem();
+		if (itemstack.getItem() instanceof SpawnEggItem) {
+			retval = super.mobInteract(sourceentity, hand);
+		} else if (this.level().isClientSide()) {
+			retval = (this.isTame() && this.isOwnedBy(sourceentity) || this.isFood(itemstack)) ? InteractionResult.sidedSuccess(this.level().isClientSide()) : InteractionResult.PASS;
+		} else {
+			if (this.isTame()) {
+				if (this.isOwnedBy(sourceentity)) {
+					if (item.isEdible() && this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+						this.usePlayerItem(sourceentity, hand, itemstack);
+						this.heal((float) item.getFoodProperties().getNutrition());
+						retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+					} else if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+						this.usePlayerItem(sourceentity, hand, itemstack);
+						this.heal(4);
+						retval = InteractionResult.sidedSuccess(this.level().isClientSide());
 					} else {
-						this.world.setEntityState(this, (byte) 6);
+						retval = super.mobInteract(sourceentity, hand);
 					}
-					this.enablePersistence();
-					retval = true;
-				} else {
-					retval = super.processInteract(sourceentity, hand);
-					if (retval)
-						this.enablePersistence();
 				}
+			} else if (this.isFood(itemstack)) {
+				this.usePlayerItem(sourceentity, hand, itemstack);
+				if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, sourceentity)) {
+					this.tame(sourceentity);
+					this.level().broadcastEntityEvent(this, (byte) 7);
+				} else {
+					this.level().broadcastEntityEvent(this, (byte) 6);
+				}
+				this.setPersistenceRequired();
+				retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+			} else {
+				retval = super.mobInteract(sourceentity, hand);
+				if (retval == InteractionResult.SUCCESS || retval == InteractionResult.CONSUME)
+					this.setPersistenceRequired();
 			}
-			sourceentity.startRiding(this);
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			Entity entity = this;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("sourceentity", sourceentity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				SlaveAnimalRightClickedOnEntityProcedure.executeProcedure($_dependencies);
-			}
-			return retval;
 		}
+		sourceentity.startRiding(this);
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level();
 
-		@Override
-		protected void registerAttributes() {
-			super.registerAttributes();
-			if (this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED) != null)
-				this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3);
-			if (this.getAttribute(SharedMonsterAttributes.MAX_HEALTH) != null)
-				this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(15);
-			if (this.getAttribute(SharedMonsterAttributes.ARMOR) != null)
-				this.getAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(0);
-			if (this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) == null)
-				this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-			this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5);
-			if (this.getAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE) == null)
-				this.getAttributes().registerAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE);
-			this.getAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).setBaseValue(0.05D);
-			if (this.getAttribute(SharedMonsterAttributes.ATTACK_KNOCKBACK) == null)
-				this.getAttributes().registerAttribute(SharedMonsterAttributes.ATTACK_KNOCKBACK);
-			this.getAttribute(SharedMonsterAttributes.ATTACK_KNOCKBACK).setBaseValue(0.85D);
-		}
+		SlaveAnimalRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
+		return retval;
+	}
 
-		@Override
-		public AgeableEntity createChild(AgeableEntity ageable) {
-			CustomEntity retval = (CustomEntity) entity.create(this.world);
-			retval.onInitialSpawn(this.world, this.world.getDifficultyForLocation(new BlockPos(retval)), SpawnReason.BREEDING,
-					(ILivingEntityData) null, (CompoundNBT) null);
-			return retval;
-		}
+	@Override
+	public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
+		SlaveAnimalEntity retval = SlaveModModEntities.SLAVE_ANIMAL.get().create(serverWorld);
+		retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
+		return retval;
+	}
 
-		@Override
-		public boolean isBreedingItem(ItemStack stack) {
-			if (stack == null)
-				return false;
-			return false;
-		}
+	@Override
+	public boolean isFood(ItemStack stack) {
+		return Ingredient.of().test(stack);
+	}
+
+	public static void init() {
+		SpawnPlacements.register(SlaveModModEntities.SLAVE_ANIMAL.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				(entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && world.getRawBrightness(pos, 0) > 8));
+	}
+
+	public static AttributeSupplier.Builder createAttributes() {
+		AttributeSupplier.Builder builder = Mob.createMobAttributes();
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+		builder = builder.add(Attributes.MAX_HEALTH, 15);
+		builder = builder.add(Attributes.ARMOR, 0);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 5);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.05);
+		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.85);
+		return builder;
 	}
 }

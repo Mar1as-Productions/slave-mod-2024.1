@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "slave_mod:items/nigraniumpicaxe"
+    "layer0": "slave_mod:item/nigraniumpicaxe"
   }
 }

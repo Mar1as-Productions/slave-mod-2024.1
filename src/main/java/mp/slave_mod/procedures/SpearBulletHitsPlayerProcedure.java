@@ -1,60 +1,23 @@
 package mp.slave_mod.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
 
-import mp.slave_mod.item.SpearItem;
-import mp.slave_mod.SlaveModModElements;
-import mp.slave_mod.SlaveModMod;
+import mp.slave_mod.init.SlaveModModItems;
 
-import java.util.Map;
-
-@SlaveModModElements.ModElement.Tag
-public class SpearBulletHitsPlayerProcedure extends SlaveModModElements.ModElement {
-	public SpearBulletHitsPlayerProcedure(SlaveModModElements instance) {
-		super(instance, 98);
-	}
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("sourceentity") == null) {
-			if (!dependencies.containsKey("sourceentity"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency sourceentity for procedure SpearBulletHitsPlayer!");
+public class SpearBulletHitsPlayerProcedure {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity sourceentity) {
+		if (sourceentity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency x for procedure SpearBulletHitsPlayer!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency y for procedure SpearBulletHitsPlayer!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency z for procedure SpearBulletHitsPlayer!");
-			return;
-		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency world for procedure SpearBulletHitsPlayer!");
-			return;
-		}
-		Entity sourceentity = (Entity) dependencies.get("sourceentity");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (((((sourceentity instanceof PlayerEntity) ? ((PlayerEntity) sourceentity).abilities.isCreativeMode : false) == (false))
-				&& (sourceentity instanceof PlayerEntity))) {
-			if (!world.getWorld().isRemote) {
-				ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(SpearItem.block));
-				entityToSpawn.setPickupDelay((int) 10);
-				world.addEntity(entityToSpawn);
+		if ((sourceentity instanceof Player _plr ? _plr.getAbilities().instabuild : false) == false && sourceentity instanceof Player) {
+			if (world instanceof ServerLevel _level) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(SlaveModModItems.SPEAR.get()));
+				entityToSpawn.setPickUpDelay(10);
+				_level.addFreshEntity(entityToSpawn);
 			}
 		}
 	}

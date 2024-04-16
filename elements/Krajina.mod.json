@@ -1,17 +1,24 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "musicdisc",
   "definition": {
-    "texture": "krajina",
     "name": "V krajine zapomnienia",
+    "rarity": "RARE",
+    "texture": "krajina",
     "description": "The best music disc in Minecraft.",
     "creativeTab": {
       "value": "CUSTOM:SlaveMod"
     },
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": true
+    },
     "music": {
       "value": "CUSTOM:krajina"
     },
-    "specialInfo": [],
-    "hasGlow": true
+    "lengthInTicks": 0,
+    "analogOutput": 0
   }
 }

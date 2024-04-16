@@ -1,9 +1,9 @@
 {
   "parent": "slave_mod:custom/spear2",
   "textures": {
-    "1": "slave_mod:blocks/tyc",
-    "2": "slave_mod:blocks/mezi",
-    "3": "slave_mod:blocks/ostri2",
-    "particle": "slave_mod:items/speaar"
+    "1": "slave_mod:block/tyc",
+    "2": "slave_mod:block/mezi",
+    "3": "slave_mod:block/ostri2",
+    "particle": "slave_mod:item/speaar"
   }
 }

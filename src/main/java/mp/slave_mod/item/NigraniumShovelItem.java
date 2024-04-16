@@ -1,52 +1,40 @@
 
 package mp.slave_mod.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
 
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
+import mp.slave_mod.init.SlaveModModItems;
 
-import mp.slave_mod.itemgroup.SlaveModItemGroup;
-import mp.slave_mod.SlaveModModElements;
-
-@SlaveModModElements.ModElement.Tag
-public class NigraniumShovelItem extends SlaveModModElements.ModElement {
-	@ObjectHolder("slave_mod:nigranium_shovel")
-	public static final Item block = null;
-	public NigraniumShovelItem(SlaveModModElements instance) {
-		super(instance, 78);
-	}
-
-	@Override
-	public void initElements() {
-		elements.items.add(() -> new ShovelItem(new IItemTier() {
-			public int getMaxUses() {
+public class NigraniumShovelItem extends ShovelItem {
+	public NigraniumShovelItem() {
+		super(new Tier() {
+			public int getUses() {
 				return 1000;
 			}
 
-			public float getEfficiency() {
+			public float getSpeed() {
 				return 6.5f;
 			}
 
-			public float getAttackDamage() {
+			public float getAttackDamageBonus() {
 				return 2f;
 			}
 
-			public int getHarvestLevel() {
+			public int getLevel() {
 				return 3;
 			}
 
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 30;
 			}
 
-			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(NigraniumingotItem.block), new ItemStack(NigraniumShovelItem.block));
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(SlaveModModItems.NIGRANIUMINGOT.get()), new ItemStack(SlaveModModItems.NIGRANIUM_SHOVEL.get()));
 			}
-		}, 1, -2f, new Item.Properties().group(SlaveModItemGroup.tab)) {
-		}.setRegistryName("nigranium_shovel"));
+		}, 1, -2f, new Item.Properties());
 	}
 }

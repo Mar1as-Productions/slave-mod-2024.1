@@ -1,25 +1,26 @@
 modLoader="javafml"
-loaderVersion="[31,)"
+loaderVersion="[47,)"
+license="Academic Free License v3.0"
 
 [[mods]]
 modId="slave_mod"
 version="0.1"
 displayName="Slave Mod By Marias Productions XD"
-credits="https://jirilabus.funsite.cz/"
 displayURL="https://jirilabus.funsite.cz/"
 logoFile="logo.png"
+credits="https://jirilabus.funsite.cz/"
 authors="Mar1as Productions"
-description='''
-Very cool mod everyone should try at least once in their lives
-'''
+description="Very cool mod everyone should try at least once in their lives"
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
 
 [[dependencies.slave_mod]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.20.1]"
     ordering="NONE"
     side="BOTH"
-
 
 
 

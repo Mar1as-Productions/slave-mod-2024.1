@@ -1,8 +1,9 @@
 {
   "parent": "slave_mod:custom/ironbar",
   "textures": {
-    "all": "slave_mod:blocks/texture",
-    "particle": "slave_mod:blocks/texture",
-    "0": "slave_mod:blocks/texture"
-  }
+    "all": "slave_mod:block/texture",
+    "particle": "slave_mod:block/texture",
+    "0": "slave_mod:block/texture"
+  },
+  "render_type": "solid"
 }

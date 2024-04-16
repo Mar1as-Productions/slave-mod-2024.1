@@ -1,110 +1,117 @@
 
 package mp.slave_mod.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.World;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundEvent;
 
 import mp.slave_mod.procedures.NigraniumArmorFireResistanceProcedure;
-import mp.slave_mod.itemgroup.SlaveModItemGroup;
-import mp.slave_mod.SlaveModModElements;
+import mp.slave_mod.init.SlaveModModItems;
 
-import java.util.Map;
-import java.util.HashMap;
+import com.google.common.collect.Iterables;
 
-@SlaveModModElements.ModElement.Tag
-public class NigraniumArmorItem extends SlaveModModElements.ModElement {
-	@ObjectHolder("slave_mod:nigranium_armor_helmet")
-	public static final Item helmet = null;
-	@ObjectHolder("slave_mod:nigranium_armor_chestplate")
-	public static final Item body = null;
-	@ObjectHolder("slave_mod:nigranium_armor_leggings")
-	public static final Item legs = null;
-	@ObjectHolder("slave_mod:nigranium_armor_boots")
-	public static final Item boots = null;
-	public NigraniumArmorItem(SlaveModModElements instance) {
-		super(instance, 92);
-	}
-
-	@Override
-	public void initElements() {
-		IArmorMaterial armormaterial = new IArmorMaterial() {
-			public int getDurability(EquipmentSlotType slot) {
-				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 30;
+public abstract class NigraniumArmorItem extends ArmorItem {
+	public NigraniumArmorItem(ArmorItem.Type type, Item.Properties properties) {
+		super(new ArmorMaterial() {
+			@Override
+			public int getDurabilityForType(ArmorItem.Type type) {
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 30;
 			}
 
-			public int getDamageReductionAmount(EquipmentSlotType slot) {
-				return new int[]{2, 6, 8, 2}[slot.getIndex()];
+			@Override
+			public int getDefenseForType(ArmorItem.Type type) {
+				return new int[]{2, 6, 8, 2}[type.getSlot().getIndex()];
 			}
 
-			public int getEnchantability() {
+			@Override
+			public int getEnchantmentValue() {
 				return 30;
 			}
 
-			public net.minecraft.util.SoundEvent getSoundEvent() {
-				return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(""));
+			@Override
+			public SoundEvent getEquipSound() {
+				return SoundEvents.EMPTY;
 			}
 
-			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(NigraniumingotItem.block));
+			@Override
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(SlaveModModItems.NIGRANIUMINGOT.get()));
 			}
 
-			@OnlyIn(Dist.CLIENT)
+			@Override
 			public String getName() {
 				return "nigranium_armor";
 			}
 
+			@Override
 			public float getToughness() {
 				return 1f;
 			}
-		};
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(SlaveModItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "slave_mod:textures/models/armor/nigraniumarmor_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-		}.setRegistryName("nigranium_armor_helmet"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(SlaveModItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "slave_mod:textures/models/armor/nigraniumarmor_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-		}.setRegistryName("nigranium_armor_chestplate"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(SlaveModItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "slave_mod:textures/models/armor/nigraniumarmor_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
-		}.setRegistryName("nigranium_armor_leggings"));
-		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(SlaveModItemGroup.tab)) {
-			@Override
-			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-				return "slave_mod:textures/models/armor/nigraniumarmor_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-			}
 
 			@Override
-			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					NigraniumArmorFireResistanceProcedure.executeProcedure($_dependencies);
-				}
+			public float getKnockbackResistance() {
+				return 0f;
 			}
-		}.setRegistryName("nigranium_armor_boots"));
+		}, type, properties);
+	}
+
+	public static class Helmet extends NigraniumArmorItem {
+		public Helmet() {
+			super(ArmorItem.Type.HELMET, new Item.Properties());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "slave_mod:textures/models/armor/nigraniumarmor_layer_1.png";
+		}
+	}
+
+	public static class Chestplate extends NigraniumArmorItem {
+		public Chestplate() {
+			super(ArmorItem.Type.CHESTPLATE, new Item.Properties());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "slave_mod:textures/models/armor/nigraniumarmor_layer_1.png";
+		}
+	}
+
+	public static class Leggings extends NigraniumArmorItem {
+		public Leggings() {
+			super(ArmorItem.Type.LEGGINGS, new Item.Properties());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "slave_mod:textures/models/armor/nigraniumarmor_layer_2.png";
+		}
+	}
+
+	public static class Boots extends NigraniumArmorItem {
+		public Boots() {
+			super(ArmorItem.Type.BOOTS, new Item.Properties());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "slave_mod:textures/models/armor/nigraniumarmor_layer_1.png";
+		}
+
+		@Override
+		public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+			super.inventoryTick(itemstack, world, entity, slot, selected);
+			if (entity instanceof Player player && Iterables.contains(player.getArmorSlots(), itemstack)) {
+				NigraniumArmorFireResistanceProcedure.execute(entity);
+			}
+		}
 	}
 }

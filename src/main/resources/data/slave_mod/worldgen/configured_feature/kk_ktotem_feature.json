@@ -1,0 +1,9 @@
+{
+  "type": "slave_mod:kk_ktotem_feature",
+  "config": {
+    "structure": "slave_mod:kkkkriz10",
+    "random_rotation": true,
+    "random_mirror": true,
+    "ignored_blocks": "minecraft:structure_block"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "slave_mod:africa",
+  "spawners": {
+    "type": "slave_mod:slave_boss",
+    "weight": 3,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

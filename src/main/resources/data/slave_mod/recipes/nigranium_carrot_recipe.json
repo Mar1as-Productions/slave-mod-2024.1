@@ -1,38 +1,17 @@
 {
-  "group": "slave_mod",
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "aaa",
+    "aba",
+    "aaa"
   ],
   "key": {
-    "0": {
+    "a": {
       "item": "slave_mod:nigraniumnugget"
     },
-    "1": {
-      "item": "slave_mod:nigraniumnugget"
-    },
-    "2": {
-      "item": "slave_mod:nigraniumnugget"
-    },
-    "3": {
-      "item": "slave_mod:nigraniumnugget"
-    },
-    "4": {
+    "b": {
       "item": "minecraft:carrot"
-    },
-    "5": {
-      "item": "slave_mod:nigraniumnugget"
-    },
-    "6": {
-      "item": "slave_mod:nigraniumnugget"
-    },
-    "7": {
-      "item": "slave_mod:nigraniumnugget"
-    },
-    "8": {
-      "item": "slave_mod:nigraniumnugget"
     }
   },
   "result": {

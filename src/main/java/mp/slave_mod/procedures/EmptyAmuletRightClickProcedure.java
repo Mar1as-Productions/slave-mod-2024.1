@@ -1,195 +1,110 @@
 package mp.slave_mod.procedures;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Hand;
-import net.minecraft.state.IProperty;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.effect.LightningBoltEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.BlockPos;
 
-import mp.slave_mod.item.AmuletItem;
-import mp.slave_mod.block.WodencrossbaseblockBlock;
-import mp.slave_mod.block.NehoriciDrevoOakBlock;
-import mp.slave_mod.SlaveModModElements;
-import mp.slave_mod.SlaveModMod;
+import mp.slave_mod.init.SlaveModModItems;
+import mp.slave_mod.init.SlaveModModBlocks;
 
 import java.util.Map;
 
-@SlaveModModElements.ModElement.Tag
-public class EmptyAmuletRightClickProcedure extends SlaveModModElements.ModElement {
-	public EmptyAmuletRightClickProcedure(SlaveModModElements instance) {
-		super(instance, 118);
-	}
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency entity for procedure EmptyAmuletRightClick!");
+public class EmptyAmuletRightClickProcedure {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency x for procedure EmptyAmuletRightClick!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency y for procedure EmptyAmuletRightClick!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency z for procedure EmptyAmuletRightClick!");
-			return;
-		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency world for procedure EmptyAmuletRightClick!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((((world.getBlockState(new BlockPos((int) x, (int) (y - 5), (int) z))).getBlock() == NehoriciDrevoOakBlock.block) && (((world
-				.getBlockState(new BlockPos((int) x, (int) (y - 4), (int) z))).getBlock() == NehoriciDrevoOakBlock.block)
-				&& (((world.getBlockState(new BlockPos((int) x, (int) (y - 3), (int) z))).getBlock() == NehoriciDrevoOakBlock.block) && (((world
-						.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == NehoriciDrevoOakBlock.block)
-						&& (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == NehoriciDrevoOakBlock.block)
-								&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock() == NehoriciDrevoOakBlock.block)
-										&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 2))))
-												.getBlock() == NehoriciDrevoOakBlock.block)
-												&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1))))
-														.getBlock() == NehoriciDrevoOakBlock.block)
-														&& (((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 2))))
-																.getBlock() == NehoriciDrevoOakBlock.block)
-																&& (((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)))
-																		.getBlock() == NehoriciDrevoOakBlock.block)
-																		&& (((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z)))
-																				.getBlock() == NehoriciDrevoOakBlock.block)
-																				&& (((world
-																						.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) z)))
-																								.getBlock() == Blocks.FIRE)
-																						&& (((world.getBlockState(
-																								new BlockPos((int) x, (int) (y + 1), (int) (z + 1))))
-																										.getBlock() == Blocks.FIRE)
-																								&& (((world.getBlockState(new BlockPos((int) x,
-																										(int) (y + 1), (int) (z + 2))))
-																												.getBlock() == Blocks.FIRE)
-																										&& (((world.getBlockState(new BlockPos(
-																												(int) x, (int) (y + 1),
-																												(int) (z - 1))))
-																														.getBlock() == Blocks.FIRE)
-																												&& (((world.getBlockState(
-																														new BlockPos((int) x,
-																																(int) (y + 1),
-																																(int) (z - 2))))
-																																		.getBlock() == Blocks.FIRE)
-																														&& ((world.getBlockState(
-																																new BlockPos((int) x,
-																																		(int) (y - 6),
-																																		(int) z)))
-																																				.getBlock() == WodencrossbaseblockBlock.block)))))))))))))))))) {
-			if (entity instanceof LivingEntity) {
-				ItemStack _setstack = new ItemStack(AmuletItem.block);
-				_setstack.setCount((int) 1);
-				((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
-				if (entity instanceof ServerPlayerEntity)
-					((ServerPlayerEntity) entity).inventory.markDirty();
+		if ((world.getBlockState(BlockPos.containing(x, y - 5, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x, y - 4, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get()
+				&& (world.getBlockState(BlockPos.containing(x, y - 3, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x, y - 2, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get()
+				&& (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x, y, z + 1))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get()
+				&& (world.getBlockState(BlockPos.containing(x, y, z + 2))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x, y, z - 1))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get()
+				&& (world.getBlockState(BlockPos.containing(x, y, z - 2))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get()
+				&& (world.getBlockState(BlockPos.containing(x, y + 2, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x, y + 3, z))).getBlock() == Blocks.FIRE
+				&& (world.getBlockState(BlockPos.containing(x, y + 1, z + 1))).getBlock() == Blocks.FIRE && (world.getBlockState(BlockPos.containing(x, y + 1, z + 2))).getBlock() == Blocks.FIRE
+				&& (world.getBlockState(BlockPos.containing(x, y + 1, z - 1))).getBlock() == Blocks.FIRE && (world.getBlockState(BlockPos.containing(x, y + 1, z - 2))).getBlock() == Blocks.FIRE
+				&& (world.getBlockState(BlockPos.containing(x, y - 6, z))).getBlock() == SlaveModModBlocks.WODENCROSSBASEBLOCK.get()) {
+			if (entity instanceof LivingEntity _entity) {
+				ItemStack _setstack = new ItemStack(SlaveModModItems.AMULET.get()).copy();
+				_setstack.setCount(1);
+				_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+				if (_entity instanceof Player _player)
+					_player.getInventory().setChanged();
 			}
-			if (world instanceof ServerWorld)
-				((ServerWorld) world).addLightningBolt(new LightningBoltEntity(world.getWorld(), (int) x, (int) (y + 3), (int) z, true));
-			world.setBlockState(new BlockPos((int) x, (int) (y + 3), (int) z), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 1)), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z + 2)), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 1)), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) (z - 2)), Blocks.AIR.getDefaultState(), 3);
+			if (world instanceof ServerLevel _level) {
+				LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+				entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(x, y + 3, z)));
+				entityToSpawn.setVisualOnly(true);
+				_level.addFreshEntity(entityToSpawn);
+			}
+			world.setBlock(BlockPos.containing(x, y + 3, z), Blocks.AIR.defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x, y + 1, z + 1), Blocks.AIR.defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x, y + 1, z + 2), Blocks.AIR.defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x, y + 1, z - 1), Blocks.AIR.defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x, y + 1, z - 2), Blocks.AIR.defaultBlockState(), 3);
 			{
-				BlockPos _bp = new BlockPos((int) x, (int) (y - 6), (int) z);
-				BlockState _bs = Blocks.AIR.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y - 6, z);
+				BlockState _bs = Blocks.AIR.defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
-				for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.has(_property))
+				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 			}
-		} else if ((((world.getBlockState(new BlockPos((int) x, (int) (y - 5), (int) z))).getBlock() == NehoriciDrevoOakBlock.block) && (((world
-				.getBlockState(new BlockPos((int) x, (int) (y - 4), (int) z))).getBlock() == NehoriciDrevoOakBlock.block)
-				&& (((world.getBlockState(new BlockPos((int) x, (int) (y - 3), (int) z))).getBlock() == NehoriciDrevoOakBlock.block) && (((world
-						.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock() == NehoriciDrevoOakBlock.block)
-						&& (((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == NehoriciDrevoOakBlock.block)
-								&& (((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock() == NehoriciDrevoOakBlock.block)
-										&& (((world.getBlockState(new BlockPos((int) (x + 2), (int) y, (int) z)))
-												.getBlock() == NehoriciDrevoOakBlock.block)
-												&& (((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z)))
-														.getBlock() == NehoriciDrevoOakBlock.block)
-														&& (((world.getBlockState(new BlockPos((int) (x - 2), (int) y, (int) z)))
-																.getBlock() == NehoriciDrevoOakBlock.block)
-																&& (((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)))
-																		.getBlock() == NehoriciDrevoOakBlock.block)
-																		&& (((world.getBlockState(new BlockPos((int) x, (int) (y + 2), (int) z)))
-																				.getBlock() == NehoriciDrevoOakBlock.block)
-																				&& (((world
-																						.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) z)))
-																								.getBlock() == Blocks.FIRE)
-																						&& (((world.getBlockState(
-																								new BlockPos((int) (x + 1), (int) (y + 1), (int) z)))
-																										.getBlock() == Blocks.FIRE)
-																								&& (((world.getBlockState(new BlockPos((int) (x + 2),
-																										(int) (y + 1), (int) z)))
-																												.getBlock() == Blocks.FIRE)
-																										&& (((world.getBlockState(new BlockPos(
-																												(int) (x - 1), (int) (y + 1),
-																												(int) z))).getBlock() == Blocks.FIRE)
-																												&& (((world.getBlockState(
-																														new BlockPos((int) (x - 2),
-																																(int) (y + 1),
-																																(int) z)))
-																																		.getBlock() == Blocks.FIRE)
-																														&& ((world.getBlockState(
-																																new BlockPos((int) x,
-																																		(int) (y - 6),
-																																		(int) z)))
-																																				.getBlock() == WodencrossbaseblockBlock.block)))))))))))))))))) {
-			if (entity instanceof LivingEntity) {
-				ItemStack _setstack = new ItemStack(AmuletItem.block);
-				_setstack.setCount((int) 1);
-				((LivingEntity) entity).setHeldItem(Hand.MAIN_HAND, _setstack);
-				if (entity instanceof ServerPlayerEntity)
-					((ServerPlayerEntity) entity).inventory.markDirty();
+		} else if ((world.getBlockState(BlockPos.containing(x, y - 5, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x, y - 4, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get()
+				&& (world.getBlockState(BlockPos.containing(x, y - 3, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x, y - 2, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get()
+				&& (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x + 1, y, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get()
+				&& (world.getBlockState(BlockPos.containing(x + 2, y, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x - 1, y, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get()
+				&& (world.getBlockState(BlockPos.containing(x - 2, y, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get()
+				&& (world.getBlockState(BlockPos.containing(x, y + 2, z))).getBlock() == SlaveModModBlocks.NEHORICI_DREVO_OAK.get() && (world.getBlockState(BlockPos.containing(x, y + 3, z))).getBlock() == Blocks.FIRE
+				&& (world.getBlockState(BlockPos.containing(x + 1, y + 1, z))).getBlock() == Blocks.FIRE && (world.getBlockState(BlockPos.containing(x + 2, y + 1, z))).getBlock() == Blocks.FIRE
+				&& (world.getBlockState(BlockPos.containing(x - 1, y + 1, z))).getBlock() == Blocks.FIRE && (world.getBlockState(BlockPos.containing(x - 2, y + 1, z))).getBlock() == Blocks.FIRE
+				&& (world.getBlockState(BlockPos.containing(x, y - 6, z))).getBlock() == SlaveModModBlocks.WODENCROSSBASEBLOCK.get()) {
+			if (entity instanceof LivingEntity _entity) {
+				ItemStack _setstack = new ItemStack(SlaveModModItems.AMULET.get()).copy();
+				_setstack.setCount(1);
+				_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+				if (_entity instanceof Player _player)
+					_player.getInventory().setChanged();
 			}
-			if (world instanceof ServerWorld)
-				((ServerWorld) world).addLightningBolt(new LightningBoltEntity(world.getWorld(), (int) x, (int) (y + 3), (int) z, true));
-			world.setBlockState(new BlockPos((int) x, (int) (y + 3), (int) z), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) (x + 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) (x + 2), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) (x - 1), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
-			world.setBlockState(new BlockPos((int) (x - 2), (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
+			if (world instanceof ServerLevel _level) {
+				LightningBolt entityToSpawn = EntityType.LIGHTNING_BOLT.create(_level);
+				entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(x, y + 3, z)));
+				entityToSpawn.setVisualOnly(true);
+				_level.addFreshEntity(entityToSpawn);
+			}
+			world.setBlock(BlockPos.containing(x, y + 3, z), Blocks.AIR.defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x + 1, y + 1, z), Blocks.AIR.defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x + 2, y + 1, z), Blocks.AIR.defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x - 1, y + 1, z), Blocks.AIR.defaultBlockState(), 3);
+			world.setBlock(BlockPos.containing(x - 2, y + 1, z), Blocks.AIR.defaultBlockState(), 3);
 			{
-				BlockPos _bp = new BlockPos((int) x, (int) (y - 6), (int) z);
-				BlockState _bs = Blocks.AIR.getDefaultState();
+				BlockPos _bp = BlockPos.containing(x, y - 6, z);
+				BlockState _bs = Blocks.AIR.defaultBlockState();
 				BlockState _bso = world.getBlockState(_bp);
-				for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-					IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-					if (_property != null && _bs.has(_property))
+				for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+					Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+					if (_property != null && _bs.getValue(_property) != null)
 						try {
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
+							_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 						} catch (Exception e) {
 						}
 				}
-				world.setBlockState(_bp, _bs, 3);
+				world.setBlock(_bp, _bs, 3);
 			}
 		}
 	}

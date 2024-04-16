@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "slave_mod:africa",
+    "badlands",
+    "nether_wastes",
+    "swamp",
+    "deep_ocean"
+  ],
+  "spawners": {
+    "type": "slave_mod:negromancer",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

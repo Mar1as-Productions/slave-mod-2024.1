@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "slave_mod:blocks/enslaved_glowstone",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "slave_mod:enslaved_glowstone"
+        }
+      ]
+    }
+  ]
+}

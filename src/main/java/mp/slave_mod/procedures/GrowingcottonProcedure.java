@@ -1,186 +1,150 @@
 package mp.slave_mod.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.state.IProperty;
-import net.minecraft.block.BlockState;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.core.BlockPos;
 
-import mp.slave_mod.block.Cottonstage7Block;
-import mp.slave_mod.block.Cottonstage6Block;
-import mp.slave_mod.block.Cottonstage5Block;
-import mp.slave_mod.block.Cottonstage4Block;
-import mp.slave_mod.block.Cottonstage3Block;
-import mp.slave_mod.block.Cottonstage2Block;
-import mp.slave_mod.block.Cottonstage1Block;
-import mp.slave_mod.block.Cottonstage0Block;
-import mp.slave_mod.SlaveModModElements;
-import mp.slave_mod.SlaveModMod;
+import mp.slave_mod.init.SlaveModModBlocks;
 
 import java.util.Map;
 
-@SlaveModModElements.ModElement.Tag
-public class GrowingcottonProcedure extends SlaveModModElements.ModElement {
-	public GrowingcottonProcedure(SlaveModModElements instance) {
-		super(instance, 51);
-	}
-
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency x for procedure Growingcotton!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency y for procedure Growingcotton!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency z for procedure Growingcotton!");
-			return;
-		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				SlaveModMod.LOGGER.warn("Failed to load dependency world for procedure Growingcotton!");
-			return;
-		}
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
+public class GrowingcottonProcedure {
+	public static void execute(LevelAccessor world, double x, double y, double z) {
 		boolean found = false;
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
-		if (!world.getWorld().isRemote) {
-			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-			TileEntity _tileEntity = world.getTileEntity(_bp);
+		if (!world.isClientSide()) {
+			BlockPos _bp = BlockPos.containing(x, y, z);
+			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
-			if (_tileEntity != null)
-				_tileEntity.getTileData().putDouble("Timer", ((new Object() {
-					public double getValue(IWorld world, BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getDouble(tag);
+			if (_blockEntity != null)
+				_blockEntity.getPersistentData().putDouble("Timer", (new Object() {
+					public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+						BlockEntity blockEntity = world.getBlockEntity(pos);
+						if (blockEntity != null)
+							return blockEntity.getPersistentData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Timer")) + 1));
-			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}.getValue(world, BlockPos.containing(x, y, z), "Timer") + 1));
+			if (world instanceof Level _level)
+				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
-		if (((new Object() {
-			public double getValue(IWorld world, BlockPos pos, String tag) {
-				TileEntity tileEntity = world.getTileEntity(pos);
-				if (tileEntity != null)
-					return tileEntity.getTileData().getDouble(tag);
+		if (new Object() {
+			public double getValue(LevelAccessor world, BlockPos pos, String tag) {
+				BlockEntity blockEntity = world.getBlockEntity(pos);
+				if (blockEntity != null)
+					return blockEntity.getPersistentData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "Timer")) <= 5)) {
-			if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Cottonstage0Block.block)) {
+		}.getValue(world, BlockPos.containing(x, y, z), "Timer") <= 5) {
+			if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlaveModModBlocks.COTTONSTAGE_0.get()) {
 				{
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = Cottonstage1Block.block.getDefaultState();
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockState _bs = SlaveModModBlocks.COTTONSTAGE_1.get().defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
-					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-						IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-						if (_property != null && _bs.has(_property))
+					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+						if (_property != null && _bs.getValue(_property) != null)
 							try {
-								_bs = _bs.with(_property, (Comparable) entry.getValue());
+								_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 							} catch (Exception e) {
 							}
 					}
-					world.setBlockState(_bp, _bs, 3);
+					world.setBlock(_bp, _bs, 3);
 				}
-			} else if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Cottonstage1Block.block)) {
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlaveModModBlocks.COTTONSTAGE_1.get()) {
 				{
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = Cottonstage2Block.block.getDefaultState();
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockState _bs = SlaveModModBlocks.COTTONSTAGE_2.get().defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
-					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-						IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-						if (_property != null && _bs.has(_property))
+					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+						if (_property != null && _bs.getValue(_property) != null)
 							try {
-								_bs = _bs.with(_property, (Comparable) entry.getValue());
+								_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 							} catch (Exception e) {
 							}
 					}
-					world.setBlockState(_bp, _bs, 3);
+					world.setBlock(_bp, _bs, 3);
 				}
-			} else if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Cottonstage2Block.block)) {
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlaveModModBlocks.COTTONSTAGE_2.get()) {
 				{
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = Cottonstage3Block.block.getDefaultState();
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockState _bs = SlaveModModBlocks.COTTONSTAGE_3.get().defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
-					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-						IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-						if (_property != null && _bs.has(_property))
+					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+						if (_property != null && _bs.getValue(_property) != null)
 							try {
-								_bs = _bs.with(_property, (Comparable) entry.getValue());
+								_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 							} catch (Exception e) {
 							}
 					}
-					world.setBlockState(_bp, _bs, 3);
+					world.setBlock(_bp, _bs, 3);
 				}
-			} else if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Cottonstage4Block.block)) {
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlaveModModBlocks.COTTONSTAGE_4.get()) {
 				{
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = Cottonstage5Block.block.getDefaultState();
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockState _bs = SlaveModModBlocks.COTTONSTAGE_5.get().defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
-					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-						IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-						if (_property != null && _bs.has(_property))
+					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+						if (_property != null && _bs.getValue(_property) != null)
 							try {
-								_bs = _bs.with(_property, (Comparable) entry.getValue());
+								_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 							} catch (Exception e) {
 							}
 					}
-					world.setBlockState(_bp, _bs, 3);
+					world.setBlock(_bp, _bs, 3);
 				}
-			} else if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Cottonstage5Block.block)) {
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlaveModModBlocks.COTTONSTAGE_5.get()) {
 				{
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = Cottonstage7Block.block.getDefaultState();
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockState _bs = SlaveModModBlocks.COTTONSTAGE_7.get().defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
-					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-						IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-						if (_property != null && _bs.has(_property))
+					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+						if (_property != null && _bs.getValue(_property) != null)
 							try {
-								_bs = _bs.with(_property, (Comparable) entry.getValue());
+								_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 							} catch (Exception e) {
 							}
 					}
-					world.setBlockState(_bp, _bs, 3);
+					world.setBlock(_bp, _bs, 3);
 				}
-			} else if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Cottonstage3Block.block)) {
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlaveModModBlocks.COTTONSTAGE_3.get()) {
 				{
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = Cottonstage7Block.block.getDefaultState();
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockState _bs = SlaveModModBlocks.COTTONSTAGE_7.get().defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
-					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-						IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-						if (_property != null && _bs.has(_property))
+					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+						if (_property != null && _bs.getValue(_property) != null)
 							try {
-								_bs = _bs.with(_property, (Comparable) entry.getValue());
+								_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 							} catch (Exception e) {
 							}
 					}
-					world.setBlockState(_bp, _bs, 3);
+					world.setBlock(_bp, _bs, 3);
 				}
-			} else if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == Cottonstage6Block.block)) {
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == SlaveModModBlocks.COTTONSTAGE_6.get()) {
 				{
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = Cottonstage5Block.block.getDefaultState();
+					BlockPos _bp = BlockPos.containing(x, y, z);
+					BlockState _bs = SlaveModModBlocks.COTTONSTAGE_5.get().defaultBlockState();
 					BlockState _bso = world.getBlockState(_bp);
-					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-						IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-						if (_property != null && _bs.has(_property))
+					for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+						Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+						if (_property != null && _bs.getValue(_property) != null)
 							try {
-								_bs = _bs.with(_property, (Comparable) entry.getValue());
+								_bs = _bs.setValue(_property, (Comparable) entry.getValue());
 							} catch (Exception e) {
 							}
 					}
-					world.setBlockState(_bp, _bs, 3);
+					world.setBlock(_bp, _bs, 3);
 				}
 			}
 		}

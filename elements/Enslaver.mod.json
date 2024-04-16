@@ -1,12 +1,12 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "livingentity",
   "definition": {
     "mobName": "Enslaver",
     "mobLabel": "",
     "mobModelName": "Villager",
     "mobModelTexture": "pan_candie_skin.png",
-    "mobModelGlowTexture": "",
+    "modelLayers": [],
     "modelWidth": 0.6,
     "modelHeight": 1.9500000000000002,
     "modelShadowSize": 0.5,
@@ -50,11 +50,16 @@
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.3,
+    "stepHeight": 0.6,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
+    "followRange": 16,
     "health": 20,
     "xpAmount": 0,
     "waterMob": false,
+    "pushedByFluids": {
+      "fixedValue": true
+    },
     "flyingMob": false,
     "guiBoundTo": "OtrokarGUI",
     "inventorySize": 9,
@@ -91,13 +96,7 @@
     "stepSound": {
       "value": ""
     },
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "EXPLOSION_NORMAL"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "entityDataEntries": [],
     "onMobTickUpdate": {
       "name": "EnslaverOnEntityTickUpdate"
     },
@@ -112,6 +111,8 @@
       "value": ""
     },
     "rangedItemType": "Default item",
+    "rangedAttackInterval": 20,
+    "rangedAttackRadius": 10.0,
     "spawnThisMob": false,
     "doesDespawnWhenIdle": false,
     "spawningProbability": 20,

@@ -1,27 +1,12 @@
 {
-  "group": "slave_mod",
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "pattern": [
-    "012",
-    "345"
+    "aaa",
+    "aaa"
   ],
   "key": {
-    "0": {
-      "item": "slave_mod:bavlna"
-    },
-    "1": {
-      "item": "slave_mod:bavlna"
-    },
-    "2": {
-      "item": "slave_mod:bavlna"
-    },
-    "3": {
-      "item": "slave_mod:bavlna"
-    },
-    "4": {
-      "item": "slave_mod:bavlna"
-    },
-    "5": {
+    "a": {
       "item": "slave_mod:bavlna"
     }
   },

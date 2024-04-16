@@ -1,12 +1,12 @@
 {
-  "_fv": 24,
+  "_fv": 60,
   "_type": "livingentity",
   "definition": {
     "mobName": "Nigranium Golem",
     "mobLabel": "",
     "mobModelName": "Modelirongolem",
     "mobModelTexture": "nigraniumgolem1.png",
-    "mobModelGlowTexture": "",
+    "modelLayers": [],
     "modelWidth": 1.4,
     "modelHeight": 2.7,
     "modelShadowSize": 1.4000000000000001,
@@ -50,11 +50,16 @@
     "attackKnockback": 1.6,
     "knockbackResistance": 1.5,
     "movementSpeed": 0.2,
+    "stepHeight": 0.6,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
+    "followRange": 16,
     "health": 75,
     "xpAmount": 0,
     "waterMob": false,
+    "pushedByFluids": {
+      "fixedValue": true
+    },
     "flyingMob": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
@@ -91,13 +96,7 @@
     "stepSound": {
       "value": "entity.irongolem.step"
     },
-    "spawnParticles": false,
-    "particleToSpawn": {
-      "value": "ELDER_GUARDIAN"
-    },
-    "particleSpawningShape": "Spread",
-    "particleSpawningRadious": 0.5,
-    "particleAmount": 4,
+    "entityDataEntries": [],
     "whenMobDies": {
       "name": "NigraniumGolemDrop"
     },
@@ -112,6 +111,8 @@
       "value": ""
     },
     "rangedItemType": "Default item",
+    "rangedAttackInterval": 20,
+    "rangedAttackRadius": 10.0,
     "spawnThisMob": false,
     "doesDespawnWhenIdle": false,
     "spawningProbability": 20,

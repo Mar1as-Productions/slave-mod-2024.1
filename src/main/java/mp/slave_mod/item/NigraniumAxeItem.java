@@ -1,52 +1,40 @@
 
 package mp.slave_mod.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.AxeItem;
 
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.AxeItem;
+import mp.slave_mod.init.SlaveModModItems;
 
-import mp.slave_mod.itemgroup.SlaveModItemGroup;
-import mp.slave_mod.SlaveModModElements;
-
-@SlaveModModElements.ModElement.Tag
-public class NigraniumAxeItem extends SlaveModModElements.ModElement {
-	@ObjectHolder("slave_mod:nigranium_axe")
-	public static final Item block = null;
-	public NigraniumAxeItem(SlaveModModElements instance) {
-		super(instance, 80);
-	}
-
-	@Override
-	public void initElements() {
-		elements.items.add(() -> new AxeItem(new IItemTier() {
-			public int getMaxUses() {
+public class NigraniumAxeItem extends AxeItem {
+	public NigraniumAxeItem() {
+		super(new Tier() {
+			public int getUses() {
 				return 1000;
 			}
 
-			public float getEfficiency() {
+			public float getSpeed() {
 				return 6.5f;
 			}
 
-			public float getAttackDamage() {
+			public float getAttackDamageBonus() {
 				return 4f;
 			}
 
-			public int getHarvestLevel() {
+			public int getLevel() {
 				return 3;
 			}
 
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 30;
 			}
 
-			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(NigraniumingotItem.block), new ItemStack(NigraniumAxeItem.block));
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(SlaveModModItems.NIGRANIUMINGOT.get()), new ItemStack(SlaveModModItems.NIGRANIUM_AXE.get()));
 			}
-		}, 1, -2.15f, new Item.Properties().group(SlaveModItemGroup.tab)) {
-		}.setRegistryName("nigranium_axe"));
+		}, 1, -2.15f, new Item.Properties());
 	}
 }

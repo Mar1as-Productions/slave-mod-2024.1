@@ -1,12 +1,13 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "slave_mod:blocks/nigraniumore3",
-    "up": "slave_mod:blocks/nigraniumore3",
-    "north": "slave_mod:blocks/nigraniumore3",
-    "east": "slave_mod:blocks/nigraniumore3",
-    "south": "slave_mod:blocks/nigraniumore3",
-    "west": "slave_mod:blocks/nigraniumore3",
-    "particle": "slave_mod:blocks/nigraniumore3"
-  }
+    "down": "slave_mod:block/nigraniumore3",
+    "up": "slave_mod:block/nigraniumore3",
+    "north": "slave_mod:block/nigraniumore3",
+    "east": "slave_mod:block/nigraniumore3",
+    "south": "slave_mod:block/nigraniumore3",
+    "west": "slave_mod:block/nigraniumore3",
+    "particle": "slave_mod:block/nigraniumore3"
+  },
+  "render_type": "solid"
 }
