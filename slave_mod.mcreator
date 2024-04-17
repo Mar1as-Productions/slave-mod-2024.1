@@ -336,38 +336,6 @@
       "path": "~/Totem"
     },
     {
-      "name": "HutTAdditionalGenerationCondition",
-      "type": "procedure",
-      "sortid": 55,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hut_t_additional_generation_condition",
-      "metadata": {
-        "files": [
-          "src/main/java/mp/slave_mod/procedures/HutTAdditionalGenerationConditionProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Structures"
-    },
-    {
       "name": "KKKactivatingBlockRightClick",
       "type": "procedure",
       "sortid": 56,
@@ -2750,23 +2718,6 @@
       "path": "~/Creatures/Negromancer"
     },
     {
-      "name": "HutFeature",
-      "type": "feature",
-      "sortid": 133,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "hut_feature",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/slave_mod/forge/biome_modifier/hut_feature_biome_modifier.json",
-          "src/main/resources/data/slave_mod/worldgen/configured_feature/hut_feature.json",
-          "src/main/resources/data/slave_mod/worldgen/placed_feature/hut_feature.json"
-        ],
-        "has_nbt_structure": true
-      },
-      "path": "~/Structures"
-    },
-    {
       "name": "SpearProjectile",
       "type": "projectile",
       "sortid": 134,
@@ -2828,7 +2779,7 @@
         ],
         "has_nbt_structure": true
       },
-      "path": "~/Structures"
+      "path": "~/Structures/Rocks"
     },
     {
       "name": "Rock2Feature",
@@ -2845,7 +2796,7 @@
         ],
         "has_nbt_structure": true
       },
-      "path": "~/Structures"
+      "path": "~/Structures/Rocks"
     },
     {
       "name": "Rock3Feature",
@@ -2862,7 +2813,7 @@
         ],
         "has_nbt_structure": true
       },
-      "path": "~/Structures"
+      "path": "~/Structures/Rocks"
     },
     {
       "name": "Rock4Feature",
@@ -2879,7 +2830,7 @@
         ],
         "has_nbt_structure": true
       },
-      "path": "~/Structures"
+      "path": "~/Structures/Rocks"
     },
     {
       "name": "Rock5Feature",
@@ -2896,7 +2847,7 @@
         ],
         "has_nbt_structure": true
       },
-      "path": "~/Structures"
+      "path": "~/Structures/Rocks"
     },
     {
       "name": "Rock6Feature",
@@ -2913,7 +2864,7 @@
         ],
         "has_nbt_structure": true
       },
-      "path": "~/Structures"
+      "path": "~/Structures/Rocks"
     },
     {
       "name": "Rock7Feature",
@@ -2930,7 +2881,7 @@
         ],
         "has_nbt_structure": true
       },
-      "path": "~/Structures"
+      "path": "~/Structures/Rocks"
     },
     {
       "name": "Rock8Feature",
@@ -2947,7 +2898,7 @@
         ],
         "has_nbt_structure": true
       },
-      "path": "~/Structures"
+      "path": "~/Structures/Rocks"
     },
     {
       "name": "Rock9Feature",
@@ -2964,7 +2915,7 @@
         ],
         "has_nbt_structure": true
       },
-      "path": "~/Structures"
+      "path": "~/Structures/Rocks"
     },
     {
       "name": "Nigraniumcarrot",
@@ -3069,6 +3020,22 @@
         ]
       },
       "path": "~/Creatures/Negromancer"
+    },
+    {
+      "name": "HutStructure",
+      "type": "structure",
+      "sortid": 148,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hut_structure",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/worldgen/structure_set/hut_structure.json",
+          "src/main/resources/data/slave_mod/worldgen/template_pool/hut_structure.json",
+          "src/main/resources/data/slave_mod/worldgen/structure/hut_structure.json"
+        ]
+      },
+      "path": "~/Structures"
     }
   ],
   "variable_elements": [
@@ -3213,15 +3180,15 @@
   "language_map": {
     "en_us": {
       "item.slave_mod.nigranium_hoe": "Nigranium Hoe",
-      "subtitles.retez": "",
       "advancements.africaenter.title": "Entered Africa",
+      "subtitles.retez": "",
       "item.minecraft.tipped_arrow.effect.ebola": "Arrow of Ebola",
       "advancements.nigranium_carrot_advancement.title": "Yummy!...maybe...",
       "gui.slave_mod.otrokar_gui.label_buy": "Buy",
       "gui.slave_mod.otrokar_gui.label_sorry_but_i_am_not_able_to": "Sorry but I am not able to",
       "item.slave_mod.nigraniumnugget": "Nigranium Nugget",
-      "block.slave_mod.nigranium_block": "Nigranium Block",
       "gui.slave_mod.otrokar_gui.label_slavery_as": "Slavery a.s.",
+      "block.slave_mod.nigranium_block": "Nigranium Block",
       "biome.slave_mod.africa": "Africa",
       "item.slave_mod.bavlnaitem": "Harvested cotton",
       "item.slave_mod.encaged_otrok_spawn_egg": "Encaged Otrok Spawn Egg",
@@ -3230,8 +3197,8 @@
       "subtitles.nazdarfrumrde": "",
       "painting.slave_mod.polish_cow_painting.author": "Unknown",
       "item.slave_mod.spear": "Spear",
-      "item.minecraft.potion.effect.ebola": "Ebola",
       "gui.slave_mod.otrokar_gui.label_offer_you_more": "offer you more.",
+      "item.minecraft.potion.effect.ebola": "Ebola",
       "gui.slave_mod.otrok_inv.label_enslaved_noples_inventory": "Enslaved Noples Inventory",
       "entity.slave_mod.slave_boss": "Noples Ruler",
       "itemGroup.tabslave_mod": "Slave Mod",
@@ -3241,18 +3208,18 @@
       "item.slave_mod.chain": "Chain",
       "entity.slave_mod.enslaver": "Enslaver",
       "block.slave_mod.kk_kactivating_b_lock": "KKK Totem Activating Block",
-      "entity.slave_mod.slave_animal": "Wild Noples",
       "block.slave_mod.cottonstage_3": "Cotton stage 3",
+      "entity.slave_mod.slave_animal": "Wild Noples",
       "block.slave_mod.cottonstage_4": "Cotton stage 4",
       "block.slave_mod.cottonstage_1": "Cotton stage 1",
       "block.slave_mod.cottonstage_2": "Cotton stage 2",
-      "block.slave_mod.cottonstage_7": "Cotton stage 7",
       "painting.slave_mod.polish_cow_painting.title": "Polish Cow Painting",
+      "block.slave_mod.cottonstage_7": "Cotton stage 7",
       "block.slave_mod.wodencrossbaseblock": "KKK Totem Base Block",
       "block.slave_mod.cottonstage_5": "Cotton stage 5",
       "block.slave_mod.cottonstage_6": "Cotton stage 6",
-      "item.slave_mod.whip_tool": "Whip",
       "item.slave_mod.slave_animal_spawn_egg": "Wild Noples Spawn Egg",
+      "item.slave_mod.whip_tool": "Whip",
       "entity.slave_mod.slave": "Noples",
       "block.slave_mod.cottonstage_0": "Cotton stage 0",
       "item.slave_mod.jozef_spawn_egg": "Yozef Spawn Egg",
@@ -3330,15 +3297,15 @@
     },
     "cs_cz": {
       "item.slave_mod.nigranium_hoe": "Fejfarov�",
-      "advancements.africaenter.title": "Je z tebe negr",
       "subtitles.retez": "�et�zov� zvuky lolol",
+      "advancements.africaenter.title": "Je z tebe negr",
       "item.minecraft.tipped_arrow.effect.ebola": "Arrow of Ebola",
       "advancements.nigranium_carrot_advancement.title": "M�am m�am m�am je to fresh mam to r�d",
       "gui.slave_mod.otrokar_gui.label_buy": "Buy",
       "gui.slave_mod.otrokar_gui.label_sorry_but_i_am_not_able_to": "Sorry but I am not able to",
       "item.slave_mod.nigraniumnugget": "Chicken nuggetka",
-      "block.slave_mod.nigranium_block": "Negrblok",
       "gui.slave_mod.otrokar_gui.label_slavery_as": "Slavery a.s.",
+      "block.slave_mod.nigranium_block": "Negrblok",
       "biome.slave_mod.africa": "Afrika",
       "item.slave_mod.bavlnaitem": "Harvested cotton",
       "item.slave_mod.encaged_otrok_spawn_egg": "Encaged Otrok Spawn Egg",
@@ -3347,8 +3314,8 @@
       "subtitles.nazdarfrumrde": "Nazdar frumrde, co pro m� m�",
       "painting.slave_mod.polish_cow_painting.author": "Unknown",
       "item.slave_mod.spear": "Spear",
-      "item.minecraft.potion.effect.ebola": "Ebola",
       "gui.slave_mod.otrokar_gui.label_offer_you_more": "offer you more.",
+      "item.minecraft.potion.effect.ebola": "Ebola",
       "gui.slave_mod.otrok_inv.label_enslaved_noples_inventory": "Enslaved Noples Inventory",
       "entity.slave_mod.slave_boss": "Noples Ruler",
       "itemGroup.tabslave_mod": "Slave Mod",
@@ -3358,18 +3325,18 @@
       "item.slave_mod.chain": "Chain",
       "entity.slave_mod.enslaver": "Enslaver",
       "block.slave_mod.kk_kactivating_b_lock": "KKK Totem Activating Block",
-      "block.slave_mod.cottonstage_3": "Cotton stage 3",
       "entity.slave_mod.slave_animal": "Wild Noples",
+      "block.slave_mod.cottonstage_3": "Cotton stage 3",
       "block.slave_mod.cottonstage_4": "Cotton stage 4",
       "block.slave_mod.cottonstage_1": "Cotton stage 1",
       "block.slave_mod.cottonstage_2": "Cotton stage 2",
-      "block.slave_mod.cottonstage_7": "Cotton stage 7",
       "painting.slave_mod.polish_cow_painting.title": "Polish Cow Painting",
+      "block.slave_mod.cottonstage_7": "Cotton stage 7",
       "block.slave_mod.wodencrossbaseblock": "KKK Totem Base Block",
       "block.slave_mod.cottonstage_5": "Cotton stage 5",
       "block.slave_mod.cottonstage_6": "Cotton stage 6",
-      "item.slave_mod.slave_animal_spawn_egg": "Wild Noples Spawn Egg",
       "item.slave_mod.whip_tool": "Whip",
+      "item.slave_mod.slave_animal_spawn_egg": "Wild Noples Spawn Egg",
       "entity.slave_mod.slave": "Noples",
       "block.slave_mod.cottonstage_0": "Cotton stage 0",
       "item.slave_mod.jozef_spawn_egg": "Yozef Spawn Egg",
@@ -3511,7 +3478,12 @@
       },
       {
         "name": "Structures",
-        "children": []
+        "children": [
+          {
+            "name": "Rocks",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Totem",
