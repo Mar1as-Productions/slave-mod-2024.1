@@ -53,6 +53,12 @@
         "weight": 100,
         "minCount": 4,
         "maxCount": 4
+      },
+      {
+        "type": "husk",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 4
       }
     ],
     "creature": [
@@ -126,6 +132,7 @@
       "minecraft:lake_lava_underground"
     ],
     [
+      "minecraft:amethyst_geode",
       "minecraft:forest_rock"
     ],
     [

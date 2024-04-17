@@ -10,7 +10,7 @@
       "value": "Blocks.DIRT#0"
     },
     "underwaterBlock": {
-      "value": ""
+      "value": "Blocks.GRAVEL"
     },
     "airColor": {
       "value": -589884,
@@ -52,19 +52,19 @@
     "spawnInCaves": false,
     "spawnBiomeNether": false,
     "genTemperature": {
-      "min": -1.0,
+      "min": 0.5,
       "max": 2.0
     },
     "genHumidity": {
-      "min": -2.0,
-      "max": 1.0
+      "min": -0.25,
+      "max": 0.5001
     },
     "genContinentalness": {
-      "min": -1.49,
-      "max": 2.0
+      "min": -0.75,
+      "max": 1.0
     },
     "genErosion": {
-      "min": -1.3,
+      "min": -1.2998,
       "max": 2.0
     },
     "genWeirdness": {
@@ -72,7 +72,7 @@
       "max": 2.0
     },
     "treesPerChunk": 1,
-    "vanillaTreeType": "Big trees",
+    "vanillaTreeType": "Mega pine trees",
     "treeType": 0,
     "minHeight": 20,
     "treeStem": {
@@ -103,7 +103,8 @@
       "ForestGrass",
       "DefaultFlowers",
       "DesertFeatures",
-      "DeadBushes"
+      "DeadBushes",
+      "AmethystGeodes"
     ],
     "spawnStronghold": true,
     "spawnMineshaft": true,
@@ -260,6 +261,15 @@
         "maxGroup": 5,
         "weight": 8,
         "spawnType": "creature"
+      },
+      {
+        "entity": {
+          "value": "EntityHusk"
+        },
+        "minGroup": 1,
+        "maxGroup": 4,
+        "weight": 10,
+        "spawnType": "monster"
       }
     ]
   }
