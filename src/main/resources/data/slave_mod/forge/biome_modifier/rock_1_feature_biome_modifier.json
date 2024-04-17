@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "slave_mod:africa",
-  "features": "slave_mod:rock_1_feature",
-  "step": "surface_structures"
-}

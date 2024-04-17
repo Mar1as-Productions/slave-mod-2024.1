@@ -1,5 +1,5 @@
 {
-  "type": "slave_mod:kk_ktotem_feature",
+  "type": "slave_mod:structure_feature",
   "config": {
     "structure": "slave_mod:kkkkriz10",
     "random_rotation": true,

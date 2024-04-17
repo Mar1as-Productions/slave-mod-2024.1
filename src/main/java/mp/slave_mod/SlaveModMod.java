@@ -25,7 +25,6 @@ import mp.slave_mod.init.SlaveModModPaintings;
 import mp.slave_mod.init.SlaveModModMobEffects;
 import mp.slave_mod.init.SlaveModModMenus;
 import mp.slave_mod.init.SlaveModModItems;
-import mp.slave_mod.init.SlaveModModFeatures;
 import mp.slave_mod.init.SlaveModModEntities;
 import mp.slave_mod.init.SlaveModModBlocks;
 
@@ -53,7 +52,7 @@ public class SlaveModMod {
 		SlaveModModEntities.REGISTRY.register(bus);
 
 		SlaveModModTabs.REGISTRY.register(bus);
-		SlaveModModFeatures.REGISTRY.register(bus);
+
 		StructureFeature.REGISTRY.register(bus);
 		SlaveModModMobEffects.REGISTRY.register(bus);
 		SlaveModModPotions.REGISTRY.register(bus);
