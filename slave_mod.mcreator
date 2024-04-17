@@ -3,7 +3,7 @@
     {
       "name": "Africa",
       "type": "biome",
-      "sortid": 4,
+      "sortid": 45,
       "compiles": true,
       "locked_code": false,
       "registry_name": "africa",
@@ -19,7 +19,7 @@
     {
       "name": "Slave",
       "type": "livingentity",
-      "sortid": 5,
+      "sortid": 1,
       "compiles": true,
       "locked_code": false,
       "registry_name": "slave",
@@ -36,7 +36,7 @@
     {
       "name": "Krajina",
       "type": "musicdisc",
-      "sortid": 6,
+      "sortid": 39,
       "compiles": true,
       "locked_code": false,
       "registry_name": "krajina",
@@ -51,7 +51,7 @@
     {
       "name": "Africaenter",
       "type": "achievement",
-      "sortid": 7,
+      "sortid": 46,
       "compiles": true,
       "locked_code": false,
       "registry_name": "africaenter",
@@ -65,7 +65,7 @@
     {
       "name": "PolishCowPainting",
       "type": "painting",
-      "sortid": 13,
+      "sortid": 47,
       "compiles": true,
       "locked_code": false,
       "registry_name": "polish_cow_painting",
@@ -77,7 +77,7 @@
     {
       "name": "SpearBulletHitsBlock",
       "type": "procedure",
-      "sortid": 14,
+      "sortid": 48,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spear_bullet_hits_block",
@@ -109,7 +109,7 @@
     {
       "name": "SpearRangedItemUsed",
       "type": "procedure",
-      "sortid": 15,
+      "sortid": 49,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spear_ranged_item_used",
@@ -129,7 +129,7 @@
     {
       "name": "SlaveEntityDies",
       "type": "procedure",
-      "sortid": 17,
+      "sortid": 50,
       "compiles": true,
       "locked_code": false,
       "registry_name": "slave_entity_dies",
@@ -161,7 +161,7 @@
     {
       "name": "RangedSlave",
       "type": "livingentity",
-      "sortid": 19,
+      "sortid": 2,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ranged_slave",
@@ -178,7 +178,7 @@
     {
       "name": "RangedSlaveEntityDies",
       "type": "procedure",
-      "sortid": 20,
+      "sortid": 51,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ranged_slave_entity_dies",
@@ -210,7 +210,7 @@
     {
       "name": "SlaveBoss",
       "type": "livingentity",
-      "sortid": 21,
+      "sortid": 3,
       "compiles": true,
       "locked_code": false,
       "registry_name": "slave_boss",
@@ -227,7 +227,7 @@
     {
       "name": "SlaveBossEntityDies",
       "type": "procedure",
-      "sortid": 22,
+      "sortid": 52,
       "compiles": true,
       "locked_code": false,
       "registry_name": "slave_boss_entity_dies",
@@ -259,7 +259,7 @@
     {
       "name": "SlaveAnimal",
       "type": "livingentity",
-      "sortid": 23,
+      "sortid": 5,
       "compiles": true,
       "locked_code": false,
       "registry_name": "slave_animal",
@@ -276,7 +276,7 @@
     {
       "name": "SlaveAnimalEntityDies",
       "type": "procedure",
-      "sortid": 24,
+      "sortid": 53,
       "compiles": true,
       "locked_code": false,
       "registry_name": "slave_animal_entity_dies",
@@ -308,7 +308,7 @@
     {
       "name": "SlaveMod",
       "type": "tab",
-      "sortid": 25,
+      "sortid": 54,
       "compiles": true,
       "locked_code": false,
       "registry_name": "slave_mod",
@@ -320,7 +320,7 @@
     {
       "name": "NehoriciDrevoOak",
       "type": "block",
-      "sortid": 28,
+      "sortid": 15,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nehorici_drevo_oak",
@@ -338,7 +338,7 @@
     {
       "name": "HutTAdditionalGenerationCondition",
       "type": "procedure",
-      "sortid": 32,
+      "sortid": 55,
       "compiles": true,
       "locked_code": false,
       "registry_name": "hut_t_additional_generation_condition",
@@ -370,7 +370,7 @@
     {
       "name": "KKKactivatingBlockRightClick",
       "type": "procedure",
-      "sortid": 34,
+      "sortid": 56,
       "compiles": true,
       "locked_code": false,
       "registry_name": "kk_kactivating_block_right_click",
@@ -402,7 +402,7 @@
     {
       "name": "KKKactivatingBLock",
       "type": "block",
-      "sortid": 34,
+      "sortid": 16,
       "compiles": true,
       "locked_code": false,
       "registry_name": "kk_kactivating_b_lock",
@@ -420,7 +420,7 @@
     {
       "name": "Cottonseeds",
       "type": "item",
-      "sortid": 40,
+      "sortid": 18,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cottonseeds",
@@ -435,7 +435,7 @@
     {
       "name": "ShoesRecipe",
       "type": "recipe",
-      "sortid": 48,
+      "sortid": 57,
       "compiles": true,
       "locked_code": false,
       "registry_name": "shoes_recipe",
@@ -449,7 +449,7 @@
     {
       "name": "BavlnaRecipe",
       "type": "recipe",
-      "sortid": 49,
+      "sortid": 58,
       "compiles": true,
       "locked_code": false,
       "registry_name": "bavlna_recipe",
@@ -463,7 +463,7 @@
     {
       "name": "Bavlna",
       "type": "item",
-      "sortid": 44,
+      "sortid": 19,
       "compiles": true,
       "locked_code": false,
       "registry_name": "bavlna",
@@ -478,7 +478,7 @@
     {
       "name": "KKKarmor",
       "type": "armor",
-      "sortid": 42,
+      "sortid": 26,
       "compiles": true,
       "locked_code": false,
       "registry_name": "kk_karmor",
@@ -500,7 +500,7 @@
     {
       "name": "RobeRecipe",
       "type": "recipe",
-      "sortid": 45,
+      "sortid": 59,
       "compiles": true,
       "locked_code": false,
       "registry_name": "robe_recipe",
@@ -514,7 +514,7 @@
     {
       "name": "PantsRecipe",
       "type": "recipe",
-      "sortid": 47,
+      "sortid": 60,
       "compiles": true,
       "locked_code": false,
       "registry_name": "pants_recipe",
@@ -528,7 +528,7 @@
     {
       "name": "HoodRecipe",
       "type": "recipe",
-      "sortid": 46,
+      "sortid": 61,
       "compiles": true,
       "locked_code": false,
       "registry_name": "hood_recipe",
@@ -542,7 +542,7 @@
     {
       "name": "Cottonstage0",
       "type": "block",
-      "sortid": 42,
+      "sortid": 62,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cottonstage_0",
@@ -560,7 +560,7 @@
     {
       "name": "HarvestedCotton",
       "type": "item",
-      "sortid": 50,
+      "sortid": 20,
       "compiles": true,
       "locked_code": false,
       "registry_name": "harvested_cotton",
@@ -575,7 +575,7 @@
     {
       "name": "Cottonstage1",
       "type": "block",
-      "sortid": 43,
+      "sortid": 63,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cottonstage_1",
@@ -593,7 +593,7 @@
     {
       "name": "Cottonstage2",
       "type": "block",
-      "sortid": 44,
+      "sortid": 64,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cottonstage_2",
@@ -611,7 +611,7 @@
     {
       "name": "Cottonstage7",
       "type": "block",
-      "sortid": 49,
+      "sortid": 65,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cottonstage_7",
@@ -629,7 +629,7 @@
     {
       "name": "Cottonstage5",
       "type": "block",
-      "sortid": 47,
+      "sortid": 66,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cottonstage_5",
@@ -647,7 +647,7 @@
     {
       "name": "Cottonstage6",
       "type": "block",
-      "sortid": 48,
+      "sortid": 67,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cottonstage_6",
@@ -665,7 +665,7 @@
     {
       "name": "Cottonstage3",
       "type": "block",
-      "sortid": 45,
+      "sortid": 68,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cottonstage_3",
@@ -683,7 +683,7 @@
     {
       "name": "Cottonstage4",
       "type": "block",
-      "sortid": 46,
+      "sortid": 69,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cottonstage_4",
@@ -701,7 +701,7 @@
     {
       "name": "CottonBlockNeighourBlock",
       "type": "procedure",
-      "sortid": 52,
+      "sortid": 70,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cotton_block_neighour_block",
@@ -733,7 +733,7 @@
     {
       "name": "CottonBlockBreak",
       "type": "procedure",
-      "sortid": 53,
+      "sortid": 71,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cotton_block_break",
@@ -765,7 +765,7 @@
     {
       "name": "CottonBlockRightClick",
       "type": "procedure",
-      "sortid": 51,
+      "sortid": 72,
       "compiles": true,
       "locked_code": false,
       "registry_name": "cotton_block_right_click",
@@ -797,7 +797,7 @@
     {
       "name": "Growingcotton",
       "type": "procedure",
-      "sortid": 51,
+      "sortid": 73,
       "compiles": true,
       "locked_code": false,
       "registry_name": "growingcotton",
@@ -829,7 +829,7 @@
     {
       "name": "Strach",
       "type": "procedure",
-      "sortid": 60,
+      "sortid": 74,
       "compiles": true,
       "locked_code": false,
       "registry_name": "strach",
@@ -865,7 +865,7 @@
     {
       "name": "KKKactivatingBLockUpdateTick",
       "type": "procedure",
-      "sortid": 61,
+      "sortid": 75,
       "compiles": true,
       "locked_code": false,
       "registry_name": "kk_kactivating_b_lock_update_tick",
@@ -897,7 +897,7 @@
     {
       "name": "Wodencrossbaseblock",
       "type": "block",
-      "sortid": 62,
+      "sortid": 17,
       "compiles": true,
       "locked_code": false,
       "registry_name": "wodencrossbaseblock",
@@ -915,7 +915,7 @@
     {
       "name": "Otrok",
       "type": "livingentity",
-      "sortid": 64,
+      "sortid": 4,
       "compiles": true,
       "locked_code": false,
       "registry_name": "otrok",
@@ -931,7 +931,7 @@
     {
       "name": "OtrokINV",
       "type": "gui",
-      "sortid": 65,
+      "sortid": 76,
       "compiles": true,
       "locked_code": false,
       "registry_name": "otrok_inv",
@@ -947,7 +947,7 @@
     {
       "name": "Nigraniumnugget",
       "type": "item",
-      "sortid": 68,
+      "sortid": 23,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigraniumnugget",
@@ -962,7 +962,7 @@
     {
       "name": "Nigranium",
       "type": "block",
-      "sortid": 66,
+      "sortid": 21,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium",
@@ -983,7 +983,7 @@
     {
       "name": "Nigraniumingot",
       "type": "item",
-      "sortid": 67,
+      "sortid": 22,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigraniumingot",
@@ -998,7 +998,7 @@
     {
       "name": "Seminka",
       "type": "recipe",
-      "sortid": 71,
+      "sortid": 77,
       "compiles": true,
       "locked_code": false,
       "registry_name": "seminka",
@@ -1012,7 +1012,7 @@
     {
       "name": "Nigraniumsmelted",
       "type": "recipe",
-      "sortid": 67,
+      "sortid": 78,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigraniumsmelted",
@@ -1026,7 +1026,7 @@
     {
       "name": "Ingottonugget",
       "type": "recipe",
-      "sortid": 69,
+      "sortid": 79,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ingottonugget",
@@ -1040,7 +1040,7 @@
     {
       "name": "Nuggettoingot",
       "type": "recipe",
-      "sortid": 70,
+      "sortid": 80,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nuggettoingot",
@@ -1054,7 +1054,7 @@
     {
       "name": "Chainpiece",
       "type": "item",
-      "sortid": 72,
+      "sortid": 34,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chainpiece",
@@ -1069,7 +1069,7 @@
     {
       "name": "Chainforenslaving",
       "type": "recipe",
-      "sortid": 73,
+      "sortid": 81,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chainforenslaving",
@@ -1083,7 +1083,7 @@
     {
       "name": "Chain",
       "type": "item",
-      "sortid": 74,
+      "sortid": 35,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chain",
@@ -1098,7 +1098,7 @@
     {
       "name": "Chainfromchainpiece",
       "type": "recipe",
-      "sortid": 75,
+      "sortid": 82,
       "compiles": true,
       "locked_code": false,
       "registry_name": "chainfromchainpiece",
@@ -1112,7 +1112,7 @@
     {
       "name": "SlaveAnimalRightClickedOnEntity",
       "type": "procedure",
-      "sortid": 76,
+      "sortid": 83,
       "compiles": true,
       "locked_code": false,
       "registry_name": "slave_animal_right_clicked_on_entity",
@@ -1152,7 +1152,7 @@
     {
       "name": "KKKtotemAdditionalGenerationCondition",
       "type": "procedure",
-      "sortid": 87,
+      "sortid": 84,
       "compiles": true,
       "locked_code": false,
       "registry_name": "kk_ktotem_additional_generation_condition",
@@ -1185,7 +1185,7 @@
     {
       "name": "NigraniumAxe",
       "type": "tool",
-      "sortid": 80,
+      "sortid": 31,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_axe",
@@ -1200,7 +1200,7 @@
     {
       "name": "NigraniumHoe",
       "type": "tool",
-      "sortid": 81,
+      "sortid": 33,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_hoe",
@@ -1215,7 +1215,7 @@
     {
       "name": "NigraniumSword",
       "type": "tool",
-      "sortid": 79,
+      "sortid": 29,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_sword",
@@ -1230,7 +1230,7 @@
     {
       "name": "NigraniumAxeCraft",
       "type": "recipe",
-      "sortid": 84,
+      "sortid": 85,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_axe_craft",
@@ -1244,7 +1244,7 @@
     {
       "name": "NigraniumHoeCraft",
       "type": "recipe",
-      "sortid": 85,
+      "sortid": 86,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_hoe_craft",
@@ -1258,7 +1258,7 @@
     {
       "name": "NigraniumShovelCraft",
       "type": "recipe",
-      "sortid": 82,
+      "sortid": 87,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_shovel_craft",
@@ -1272,7 +1272,7 @@
     {
       "name": "NigraniumPickaxe",
       "type": "tool",
-      "sortid": 77,
+      "sortid": 30,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_pickaxe",
@@ -1287,7 +1287,7 @@
     {
       "name": "NigraniumShovel",
       "type": "tool",
-      "sortid": 78,
+      "sortid": 32,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_shovel",
@@ -1302,7 +1302,7 @@
     {
       "name": "NigraniumSwordCraft",
       "type": "recipe",
-      "sortid": 86,
+      "sortid": 88,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_sword_craft",
@@ -1316,7 +1316,7 @@
     {
       "name": "NigraniumPickaxeCraft",
       "type": "recipe",
-      "sortid": 83,
+      "sortid": 89,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_pickaxe_craft",
@@ -1330,7 +1330,7 @@
     {
       "name": "NigraniumShears",
       "type": "tool",
-      "sortid": 88,
+      "sortid": 36,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_shears",
@@ -1345,7 +1345,7 @@
     {
       "name": "NigraniumShearsCraft",
       "type": "recipe",
-      "sortid": 89,
+      "sortid": 90,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_shears_craft",
@@ -1359,7 +1359,7 @@
     {
       "name": "Jozef",
       "type": "livingentity",
-      "sortid": 90,
+      "sortid": 6,
       "compiles": true,
       "locked_code": false,
       "registry_name": "jozef",
@@ -1407,7 +1407,7 @@
     {
       "name": "NigraniumArmor",
       "type": "armor",
-      "sortid": 92,
+      "sortid": 27,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_armor",
@@ -1429,7 +1429,7 @@
     {
       "name": "NigraniumHelmetCraft",
       "type": "recipe",
-      "sortid": 93,
+      "sortid": 92,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_helmet_craft",
@@ -1443,7 +1443,7 @@
     {
       "name": "NigraniumChestplateCraft",
       "type": "recipe",
-      "sortid": 94,
+      "sortid": 93,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_chestplate_craft",
@@ -1457,7 +1457,7 @@
     {
       "name": "NigraniumLeggingsCraft",
       "type": "recipe",
-      "sortid": 95,
+      "sortid": 94,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_leggings_craft",
@@ -1471,7 +1471,7 @@
     {
       "name": "NigraniumBootsCraft",
       "type": "recipe",
-      "sortid": 96,
+      "sortid": 95,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_boots_craft",
@@ -1485,7 +1485,7 @@
     {
       "name": "NigraniumBlastSmelted",
       "type": "recipe",
-      "sortid": 97,
+      "sortid": 96,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_blast_smelted",
@@ -1499,7 +1499,7 @@
     {
       "name": "SpearBulletHitsPlayer",
       "type": "procedure",
-      "sortid": 98,
+      "sortid": 97,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spear_bullet_hits_player",
@@ -1535,7 +1535,7 @@
     {
       "name": "SpearBulletHitsLivingEntity",
       "type": "procedure",
-      "sortid": 99,
+      "sortid": 98,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spear_bullet_hits_living_entity",
@@ -1571,7 +1571,7 @@
     {
       "name": "WhipTool",
       "type": "tool",
-      "sortid": 101,
+      "sortid": 37,
       "compiles": true,
       "locked_code": false,
       "registry_name": "whip_tool",
@@ -1586,7 +1586,7 @@
     {
       "name": "Whiprecipe",
       "type": "recipe",
-      "sortid": 104,
+      "sortid": 99,
       "compiles": true,
       "locked_code": false,
       "registry_name": "whiprecipe",
@@ -1600,7 +1600,7 @@
     {
       "name": "Harvestingagain",
       "type": "procedure",
-      "sortid": 102,
+      "sortid": 100,
       "compiles": true,
       "locked_code": false,
       "registry_name": "harvestingagain",
@@ -1640,7 +1640,7 @@
     {
       "name": "EnslavedGlowstone",
       "type": "block",
-      "sortid": 105,
+      "sortid": 25,
       "compiles": true,
       "locked_code": false,
       "registry_name": "enslaved_glowstone",
@@ -1658,7 +1658,7 @@
     {
       "name": "EnslavedGlowstoneCraft",
       "type": "recipe",
-      "sortid": 106,
+      "sortid": 101,
       "compiles": true,
       "locked_code": false,
       "registry_name": "enslaved_glowstone_craft",
@@ -1672,7 +1672,7 @@
     {
       "name": "NigraniumCarrotRecipe",
       "type": "recipe",
-      "sortid": 106,
+      "sortid": 102,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_carrot_recipe",
@@ -1686,7 +1686,7 @@
     {
       "name": "WhipEndingRecipe",
       "type": "recipe",
-      "sortid": 108,
+      "sortid": 103,
       "compiles": true,
       "locked_code": false,
       "registry_name": "whip_ending_recipe",
@@ -1700,7 +1700,7 @@
     {
       "name": "WhipEndingItem",
       "type": "item",
-      "sortid": 107,
+      "sortid": 38,
       "compiles": true,
       "locked_code": false,
       "registry_name": "whip_ending_item",
@@ -1715,7 +1715,7 @@
     {
       "name": "CarrotLeftover",
       "type": "item",
-      "sortid": 109,
+      "sortid": 104,
       "compiles": true,
       "locked_code": false,
       "registry_name": "carrot_leftover",
@@ -1730,7 +1730,7 @@
     {
       "name": "NigraniumCarrotEaten",
       "type": "procedure",
-      "sortid": 111,
+      "sortid": 105,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_carrot_eaten",
@@ -1754,7 +1754,7 @@
     {
       "name": "WhipToolRightClick",
       "type": "procedure",
-      "sortid": 112,
+      "sortid": 106,
       "compiles": true,
       "locked_code": false,
       "registry_name": "whip_tool_right_click",
@@ -1790,7 +1790,7 @@
     {
       "name": "EbolaPotionStartedapplied",
       "type": "procedure",
-      "sortid": 110,
+      "sortid": 107,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ebola_potion_startedapplied",
@@ -1814,7 +1814,7 @@
     {
       "name": "NigraniumShearsBlockDestroyedWithTool",
       "type": "procedure",
-      "sortid": 109,
+      "sortid": 108,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_shears_block_destroyed_with_tool",
@@ -1850,7 +1850,7 @@
     {
       "name": "EbolaPotionItem",
       "type": "potion",
-      "sortid": 110,
+      "sortid": 109,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ebola",
@@ -1862,7 +1862,7 @@
     {
       "name": "Amulet",
       "type": "item",
-      "sortid": 113,
+      "sortid": 13,
       "compiles": true,
       "locked_code": false,
       "registry_name": "amulet",
@@ -1877,7 +1877,7 @@
     {
       "name": "EmptyAmulet",
       "type": "item",
-      "sortid": 114,
+      "sortid": 14,
       "compiles": true,
       "locked_code": false,
       "registry_name": "empty_amulet",
@@ -1892,7 +1892,7 @@
     {
       "name": "OtrokEntityDies",
       "type": "procedure",
-      "sortid": 116,
+      "sortid": 110,
       "compiles": true,
       "locked_code": false,
       "registry_name": "otrok_entity_dies",
@@ -1924,7 +1924,7 @@
     {
       "name": "Amuletrightclick",
       "type": "procedure",
-      "sortid": 117,
+      "sortid": 111,
       "compiles": true,
       "locked_code": false,
       "registry_name": "amuletrightclick",
@@ -1960,7 +1960,7 @@
     {
       "name": "EmptyAmuletRightClick",
       "type": "procedure",
-      "sortid": 118,
+      "sortid": 112,
       "compiles": true,
       "locked_code": false,
       "registry_name": "empty_amulet_right_click",
@@ -1996,7 +1996,7 @@
     {
       "name": "NigraniumCarrotAdvancement",
       "type": "achievement",
-      "sortid": 119,
+      "sortid": 113,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_carrot_advancement",
@@ -2010,7 +2010,7 @@
     {
       "name": "NigraniumArmorFireResistance",
       "type": "procedure",
-      "sortid": 120,
+      "sortid": 114,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_armor_fire_resistance",
@@ -2030,7 +2030,7 @@
     {
       "name": "NigraniumGolem",
       "type": "livingentity",
-      "sortid": 123,
+      "sortid": 7,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_golem",
@@ -2046,7 +2046,7 @@
     {
       "name": "NigraniumGolemSpawn",
       "type": "procedure",
-      "sortid": 124,
+      "sortid": 115,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_golem_spawn",
@@ -2078,7 +2078,7 @@
     {
       "name": "NigraniumGolemDrop",
       "type": "procedure",
-      "sortid": 125,
+      "sortid": 116,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_golem_drop",
@@ -2110,7 +2110,7 @@
     {
       "name": "NigraniumBlock",
       "type": "block",
-      "sortid": 121,
+      "sortid": 24,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_block",
@@ -2128,7 +2128,7 @@
     {
       "name": "NigraniumBlockCrafting",
       "type": "recipe",
-      "sortid": 122,
+      "sortid": 117,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigranium_block_crafting",
@@ -2142,7 +2142,7 @@
     {
       "name": "Kupovaninoplsu",
       "type": "procedure",
-      "sortid": 121,
+      "sortid": 118,
       "compiles": true,
       "locked_code": false,
       "registry_name": "kupovaninoplsu",
@@ -2178,7 +2178,7 @@
     {
       "name": "OtrokarGUI",
       "type": "gui",
-      "sortid": 122,
+      "sortid": 119,
       "compiles": true,
       "locked_code": false,
       "registry_name": "otrokar_gui",
@@ -2194,7 +2194,7 @@
     {
       "name": "Enslaver",
       "type": "livingentity",
-      "sortid": 120,
+      "sortid": 8,
       "compiles": true,
       "locked_code": false,
       "registry_name": "enslaver",
@@ -2210,7 +2210,7 @@
     {
       "name": "IronbarforNopleses",
       "type": "block",
-      "sortid": 129,
+      "sortid": 41,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ironbarfor_nopleses",
@@ -2228,7 +2228,7 @@
     {
       "name": "Undestructablespruceplank",
       "type": "block",
-      "sortid": 130,
+      "sortid": 42,
       "compiles": true,
       "locked_code": false,
       "registry_name": "undestructablespruceplank",
@@ -2246,7 +2246,7 @@
     {
       "name": "Undestructableslab",
       "type": "block",
-      "sortid": 131,
+      "sortid": 43,
       "compiles": true,
       "locked_code": false,
       "registry_name": "undestructableslab",
@@ -2266,7 +2266,7 @@
     {
       "name": "Wheel",
       "type": "block",
-      "sortid": 132,
+      "sortid": 44,
       "compiles": true,
       "locked_code": false,
       "registry_name": "wheel",
@@ -2284,7 +2284,7 @@
     {
       "name": "EncagedOtrok",
       "type": "livingentity",
-      "sortid": 133,
+      "sortid": 9,
       "compiles": true,
       "locked_code": false,
       "registry_name": "encaged_otrok",
@@ -2300,7 +2300,7 @@
     {
       "name": "EncagedOtrok2",
       "type": "livingentity",
-      "sortid": 134,
+      "sortid": 10,
       "compiles": true,
       "locked_code": false,
       "registry_name": "encaged_otrok_2",
@@ -2316,7 +2316,7 @@
     {
       "name": "Bonemealcotton",
       "type": "procedure",
-      "sortid": 135,
+      "sortid": 120,
       "compiles": true,
       "locked_code": false,
       "registry_name": "bonemealcotton",
@@ -2352,7 +2352,7 @@
     {
       "name": "Ebola",
       "type": "potioneffect",
-      "sortid": 136,
+      "sortid": 121,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ebola",
@@ -2366,7 +2366,7 @@
     {
       "name": "PictureShowCondition",
       "type": "procedure",
-      "sortid": 137,
+      "sortid": 122,
       "compiles": true,
       "locked_code": false,
       "registry_name": "picture_show_condition",
@@ -2399,7 +2399,7 @@
     {
       "name": "PistureShowCondition2",
       "type": "procedure",
-      "sortid": 138,
+      "sortid": 123,
       "compiles": true,
       "locked_code": false,
       "registry_name": "pisture_show_condition_2",
@@ -2432,7 +2432,7 @@
     {
       "name": "PictureShowCondition3",
       "type": "procedure",
-      "sortid": 139,
+      "sortid": 124,
       "compiles": true,
       "locked_code": false,
       "registry_name": "picture_show_condition_3",
@@ -2465,7 +2465,7 @@
     {
       "name": "PictureShowConditionDone",
       "type": "procedure",
-      "sortid": 140,
+      "sortid": 125,
       "compiles": true,
       "locked_code": false,
       "registry_name": "picture_show_condition_done",
@@ -2498,7 +2498,7 @@
     {
       "name": "BackgroundShowCondition",
       "type": "procedure",
-      "sortid": 141,
+      "sortid": 126,
       "compiles": true,
       "locked_code": false,
       "registry_name": "background_show_condition",
@@ -2531,7 +2531,7 @@
     {
       "name": "EnslaverOnEntityTickUpdate",
       "type": "procedure",
-      "sortid": 142,
+      "sortid": 127,
       "compiles": true,
       "locked_code": false,
       "registry_name": "enslaver_on_entity_tick_update",
@@ -2567,7 +2567,7 @@
     {
       "name": "Invclose",
       "type": "procedure",
-      "sortid": 143,
+      "sortid": 128,
       "compiles": true,
       "locked_code": false,
       "registry_name": "invclose",
@@ -2587,7 +2587,7 @@
     {
       "name": "SpearBulletHitsAnything",
       "type": "procedure",
-      "sortid": 144,
+      "sortid": 129,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spear_bullet_hits_anything",
@@ -2623,7 +2623,7 @@
     {
       "name": "EbolaActiveTickCondition",
       "type": "procedure",
-      "sortid": 145,
+      "sortid": 130,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ebola_active_tick_condition",
@@ -2647,7 +2647,7 @@
     {
       "name": "Negromancer",
       "type": "livingentity",
-      "sortid": 146,
+      "sortid": 11,
       "compiles": true,
       "locked_code": false,
       "registry_name": "negromancer",
@@ -2664,7 +2664,7 @@
     {
       "name": "NegroMinion",
       "type": "livingentity",
-      "sortid": 147,
+      "sortid": 12,
       "compiles": true,
       "locked_code": false,
       "registry_name": "negro_minion",
@@ -2680,7 +2680,7 @@
     {
       "name": "SpawnNegroMinion",
       "type": "procedure",
-      "sortid": 147,
+      "sortid": 131,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spawn_negro_minion",
@@ -2712,7 +2712,7 @@
     {
       "name": "NegromancerEntityIsHurt",
       "type": "procedure",
-      "sortid": 148,
+      "sortid": 132,
       "compiles": true,
       "locked_code": false,
       "registry_name": "negromancer_entity_is_hurt",
@@ -2752,7 +2752,7 @@
     {
       "name": "HutFeature",
       "type": "feature",
-      "sortid": 149,
+      "sortid": 133,
       "compiles": true,
       "locked_code": false,
       "registry_name": "hut_feature",
@@ -2769,7 +2769,7 @@
     {
       "name": "SpearProjectile",
       "type": "projectile",
-      "sortid": 150,
+      "sortid": 134,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spear_projectile",
@@ -2783,7 +2783,7 @@
     {
       "name": "Spear",
       "type": "item",
-      "sortid": 151,
+      "sortid": 28,
       "compiles": true,
       "locked_code": false,
       "registry_name": "spear",
@@ -2798,7 +2798,7 @@
     {
       "name": "KKKtotemFeature",
       "type": "feature",
-      "sortid": 152,
+      "sortid": 135,
       "compiles": true,
       "locked_code": false,
       "registry_name": "kk_ktotem_feature",
@@ -2816,7 +2816,7 @@
     {
       "name": "Rock1Feature",
       "type": "feature",
-      "sortid": 153,
+      "sortid": 136,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rock_1_feature",
@@ -2833,7 +2833,7 @@
     {
       "name": "Rock2Feature",
       "type": "feature",
-      "sortid": 154,
+      "sortid": 137,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rock_2_feature",
@@ -2850,7 +2850,7 @@
     {
       "name": "Rock3Feature",
       "type": "feature",
-      "sortid": 155,
+      "sortid": 138,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rock_3_feature",
@@ -2867,7 +2867,7 @@
     {
       "name": "Rock4Feature",
       "type": "feature",
-      "sortid": 156,
+      "sortid": 139,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rock_4_feature",
@@ -2884,7 +2884,7 @@
     {
       "name": "Rock5Feature",
       "type": "feature",
-      "sortid": 157,
+      "sortid": 140,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rock_5_feature",
@@ -2901,7 +2901,7 @@
     {
       "name": "Rock6Feature",
       "type": "feature",
-      "sortid": 158,
+      "sortid": 141,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rock_6_feature",
@@ -2918,7 +2918,7 @@
     {
       "name": "Rock7Feature",
       "type": "feature",
-      "sortid": 159,
+      "sortid": 142,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rock_7_feature",
@@ -2935,7 +2935,7 @@
     {
       "name": "Rock8Feature",
       "type": "feature",
-      "sortid": 160,
+      "sortid": 143,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rock_8_feature",
@@ -2952,7 +2952,7 @@
     {
       "name": "Rock9Feature",
       "type": "feature",
-      "sortid": 161,
+      "sortid": 144,
       "compiles": true,
       "locked_code": false,
       "registry_name": "rock_9_feature",
@@ -2969,7 +2969,7 @@
     {
       "name": "Nigraniumcarrot",
       "type": "item",
-      "sortid": 162,
+      "sortid": 40,
       "compiles": true,
       "locked_code": false,
       "registry_name": "nigraniumcarrot",
@@ -2984,7 +2984,7 @@
     {
       "name": "WelsfargoFeature",
       "type": "feature",
-      "sortid": 163,
+      "sortid": 145,
       "compiles": true,
       "locked_code": false,
       "registry_name": "welsfargo_feature",
@@ -3001,7 +3001,7 @@
     {
       "name": "NegromancerRangedAttack1",
       "type": "procedure",
-      "sortid": 164,
+      "sortid": 146,
       "compiles": true,
       "locked_code": false,
       "registry_name": "negromancer_ranged_attack_1",
@@ -3037,7 +3037,7 @@
     {
       "name": "NegromancerOnEntityTickUpdate",
       "type": "procedure",
-      "sortid": 165,
+      "sortid": 147,
       "compiles": true,
       "locked_code": false,
       "registry_name": "negromancer_on_entity_tick_update",
