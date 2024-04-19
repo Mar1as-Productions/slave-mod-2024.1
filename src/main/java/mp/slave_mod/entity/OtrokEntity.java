@@ -93,6 +93,11 @@ public class OtrokEntity extends PathfinderMob {
 	}
 
 	@Override
+	public double getMyRidingOffset() {
+		return -0.35D;
+	}
+
+	@Override
 	public SoundEvent getAmbientSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("slave_mod:slavezvuk"));
 	}

@@ -18,6 +18,6 @@ public class SlaveAnimalRenderer extends HumanoidMobRenderer<SlaveAnimalEntity, 
 
 	@Override
 	public ResourceLocation getTextureLocation(SlaveAnimalEntity entity) {
-		return new ResourceLocation("slave_mod:textures/entities/slavefinalfinal.png");
+		return new ResourceLocation("slave_mod:textures/entities/otrok.png");
 	}
 }

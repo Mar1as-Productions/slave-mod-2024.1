@@ -5,7 +5,7 @@
     "mobName": "Noples",
     "mobLabel": "",
     "mobModelName": "Biped",
-    "mobModelTexture": "slavefinalfinal.png",
+    "mobModelTexture": "otrok.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
