@@ -122,6 +122,9 @@
     "onDestroyedByPlayer": {
       "name": "NigraniumBlockDestroyed"
     },
+    "onDestroyedByExplosion": {
+      "name": "NigraniumBlockDestroyed"
+    },
     "generateFeature": true,
     "restrictionBiomes": [
       {
@@ -130,22 +133,13 @@
     ],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE#5"
-      },
-      {
-        "value": "Blocks.STONE#1"
-      },
-      {
-        "value": "Blocks.STONE#0"
-      },
-      {
-        "value": "Blocks.STONE#3"
+        "value": "Blocks.STONE"
       }
     ],
     "generationShape": "UNIFORM",
-    "frequencyPerChunks": 8,
-    "frequencyOnChunk": 6,
-    "minGenerateHeight": 10,
+    "frequencyPerChunks": 7,
+    "frequencyOnChunk": 4,
+    "minGenerateHeight": 0,
     "maxGenerateHeight": 45
   }
 }

@@ -39,6 +39,7 @@ public class SlaveModModEntityRenderers {
 		event.registerEntityRenderer(SlaveModModEntities.ENCAGED_OTROK.get(), EncagedOtrokRenderer::new);
 		event.registerEntityRenderer(SlaveModModEntities.ENCAGED_OTROK_2.get(), EncagedOtrok2Renderer::new);
 		event.registerEntityRenderer(SlaveModModEntities.NEGROMANCER.get(), NegromancerRenderer::new);
+		event.registerEntityRenderer(SlaveModModEntities.NEGROMANCER_PROJECTILE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(SlaveModModEntities.NEGRO_MINION.get(), NegroMinionRenderer::new);
 		event.registerEntityRenderer(SlaveModModEntities.SPEAR_PROJECTILE.get(), ThrownItemRenderer::new);
 	}

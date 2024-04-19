@@ -86,19 +86,19 @@
     "ridable": false,
     "canControlForward": false,
     "canControlStrafe": false,
-    "immuneToFire": false,
+    "immuneToFire": true,
     "immuneToArrows": false,
     "immuneToFallDamage": false,
     "immuneToCactus": false,
-    "immuneToDrowning": false,
-    "immuneToLightning": false,
-    "immuneToPotions": false,
+    "immuneToDrowning": true,
+    "immuneToLightning": true,
+    "immuneToPotions": true,
     "immuneToPlayer": false,
     "immuneToExplosion": false,
     "immuneToTrident": false,
     "immuneToAnvil": false,
-    "immuneToWither": false,
-    "immuneToDragonBreath": false,
+    "immuneToWither": true,
+    "immuneToDragonBreath": true,
     "mobDrop": {
       "value": "CUSTOM:Nigraniumcarrot"
     },
@@ -118,6 +118,9 @@
     "whenMobIsHurt": {
       "name": "NegromancerEntityIsHurt"
     },
+    "whenThisMobKillsAnother": {
+      "name": "SpawnNegroMinion"
+    },
     "onMobTickUpdate": {
       "name": "NegromancerOnEntityTickUpdate"
     },
@@ -129,7 +132,7 @@
     "breedTriggerItems": [],
     "ranged": true,
     "rangedAttackItem": {
-      "value": ""
+      "value": "Blocks.AIR"
     },
     "rangedItemType": "Default item",
     "rangedAttackInterval": 20,

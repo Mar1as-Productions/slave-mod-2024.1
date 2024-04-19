@@ -69,5 +69,7 @@ public class SlaveModModTabs {
 				tabData.accept(SlaveModModBlocks.UNDESTRUCTABLESPRUCEPLANK.get().asItem());
 				tabData.accept(SlaveModModBlocks.UNDESTRUCTABLESLAB.get().asItem());
 				tabData.accept(SlaveModModBlocks.WHEEL.get().asItem());
-			}).withSearchBar().build());
+			})
+
+					.build());
 }

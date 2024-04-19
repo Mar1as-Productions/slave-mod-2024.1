@@ -10,7 +10,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -27,6 +27,8 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.AreaEffectCloud;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
@@ -38,6 +40,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
+import mp.slave_mod.procedures.SpawnNegroMinionProcedure;
 import mp.slave_mod.procedures.NegromancerOnEntityTickUpdateProcedure;
 import mp.slave_mod.procedures.NegromancerEntityIsHurtProcedure;
 import mp.slave_mod.init.SlaveModModItems;
@@ -131,7 +134,30 @@ public class NegromancerEntity extends Monster implements RangedAttackMob {
 		Entity immediatesourceentity = damagesource.getDirectEntity();
 
 		NegromancerEntityIsHurtProcedure.execute(world, x, y, z, entity, sourceentity);
+		if (damagesource.is(DamageTypes.IN_FIRE))
+			return false;
+		if (damagesource.getDirectEntity() instanceof ThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud)
+			return false;
+		if (damagesource.is(DamageTypes.DROWN))
+			return false;
+		if (damagesource.is(DamageTypes.LIGHTNING_BOLT))
+			return false;
+		if (damagesource.is(DamageTypes.DRAGON_BREATH))
+			return false;
+		if (damagesource.is(DamageTypes.WITHER) || damagesource.is(DamageTypes.WITHER_SKULL))
+			return false;
 		return super.hurt(damagesource, amount);
+	}
+
+	@Override
+	public boolean fireImmune() {
+		return true;
+	}
+
+	@Override
+	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
+		super.awardKillScore(entity, score, damageSource);
+		SpawnNegroMinionProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
 	}
 
 	@Override
@@ -142,7 +168,7 @@ public class NegromancerEntity extends Monster implements RangedAttackMob {
 
 	@Override
 	public void performRangedAttack(LivingEntity target, float flval) {
-		Arrow entityarrow = new Arrow(this.level(), this);
+		NegromancerEntityProjectile entityarrow = new NegromancerEntityProjectile(SlaveModModEntities.NEGROMANCER_PROJECTILE.get(), this, this.level());
 		double d0 = target.getY() + target.getEyeHeight() - 1.1;
 		double d1 = target.getX() - this.getX();
 		double d3 = target.getZ() - this.getZ();
