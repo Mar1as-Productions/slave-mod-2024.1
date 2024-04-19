@@ -63,7 +63,7 @@ public class NegromancerRangedAttack1Procedure {
 						entityToSpawn.moveTo(Vec3.atBottomCenterOf(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())));;
 						_level.addFreshEntity(entityToSpawn);
 					}
-					entity.setSecondsOnFire(5);
+					entityiterator.setSecondsOnFire(5);
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.IN_FIRE)), 1);
 					if (!world.isClientSide() && world.getServer() != null)
 						world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("vypadni negre"), false);

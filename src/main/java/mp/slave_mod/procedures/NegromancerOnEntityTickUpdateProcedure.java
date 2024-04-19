@@ -16,7 +16,7 @@ public class NegromancerOnEntityTickUpdateProcedure {
 			return;
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.DAMAGE_INDICATOR, x, y, z, 5, 6, 3, 6, 1);
-		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 10, 10, 10), e -> true).isEmpty()) {
+		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).isEmpty()) {
 			SlaveModModVariables.MapVariables.get(world).NegromancerAttackDelay = SlaveModModVariables.MapVariables.get(world).NegromancerAttackDelay + 1;
 			SlaveModModVariables.MapVariables.get(world).syncData(world);
 			if (SlaveModModVariables.MapVariables.get(world).NegromancerAttackDelay == 40) {

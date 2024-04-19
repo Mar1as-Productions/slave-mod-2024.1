@@ -23,7 +23,6 @@ import mp.slave_mod.entity.SlaveAnimalEntity;
 import mp.slave_mod.entity.RangedSlaveEntity;
 import mp.slave_mod.entity.OtrokEntity;
 import mp.slave_mod.entity.NigraniumGolemEntity;
-import mp.slave_mod.entity.NegromancerEntityProjectile;
 import mp.slave_mod.entity.NegromancerEntity;
 import mp.slave_mod.entity.NegroMinionEntity;
 import mp.slave_mod.entity.JozefEntity;
@@ -71,8 +70,6 @@ public class SlaveModModEntities {
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<NegromancerEntity>> NEGROMANCER = register("negromancer", EntityType.Builder.<NegromancerEntity>of(NegromancerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NegromancerEntity::new).fireImmune().sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<NegromancerEntityProjectile>> NEGROMANCER_PROJECTILE = register("projectile_negromancer", EntityType.Builder.<NegromancerEntityProjectile>of(NegromancerEntityProjectile::new, MobCategory.MISC)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(NegromancerEntityProjectile::new).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<NegroMinionEntity>> NEGRO_MINION = register("negro_minion",
 			EntityType.Builder.<NegroMinionEntity>of(NegroMinionEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NegroMinionEntity::new)
 
