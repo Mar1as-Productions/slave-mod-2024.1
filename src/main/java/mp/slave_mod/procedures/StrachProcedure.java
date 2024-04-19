@@ -55,7 +55,7 @@ public class StrachProcedure {
 								|| !world.getEntitiesOfClass(RangedSlaveEntity.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).isEmpty()
 								|| !world.getEntitiesOfClass(SlaveAnimalEntity.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).isEmpty()) {
 							if (entityiterator instanceof SlaveEntity || entityiterator instanceof RangedSlaveEntity || entityiterator instanceof SlaveAnimalEntity) {
-								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.IN_FIRE)), 10);
+								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.IN_FIRE)), 15);
 								entityiterator.setSecondsOnFire(15);
 							}
 						}

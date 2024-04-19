@@ -10,15 +10,6 @@
     "textureLeggings": "kkk_leggings",
     "enableBoots": true,
     "textureBoots": "kkk_boots",
-    "onHelmetTick": {
-      "name": "Strach"
-    },
-    "onBodyTick": {
-      "name": "Strach"
-    },
-    "onLeggingsTick": {
-      "name": "Strach"
-    },
     "onBootsTick": {
       "name": "Strach"
     },
@@ -42,21 +33,21 @@
     "bootsSpecialInformation": {
       "fixedValue": []
     },
-    "helmetModelName": "Modelarmor_main2",
-    "helmetModelPart": "Hood",
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
     "helmetModelTexture": "From armor",
-    "bodyModelName": "Modelarmor_main2",
-    "bodyModelPart": "Robe",
-    "armsModelPartL": "LeftSleeve",
-    "armsModelPartR": "RightSleeve",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
     "bodyModelTexture": "From armor",
-    "leggingsModelName": "Modelarmor_leggings",
-    "leggingsModelPartL": "LeftLeg",
-    "leggingsModelPartR": "RightLeg",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
     "leggingsModelTexture": "From armor",
-    "bootsModelName": "Modelarmor_main2",
-    "bootsModelPartL": "LeftShoe",
-    "bootsModelPartR": "RightShoe",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
     "bootsModelTexture": "From armor",
     "helmetItemRenderType": 0,
     "helmetItemCustomModelName": "Normal",
@@ -70,17 +61,33 @@
     "bodyImmuneToFire": false,
     "leggingsImmuneToFire": false,
     "bootsImmuneToFire": false,
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
     "maxDamage": 25,
     "damageValueHelmet": 2,
-    "damageValueBody": 6,
+    "damageValueBody": 4,
     "damageValueLeggings": 5,
     "damageValueBoots": 2,
     "enchantability": 9,
     "toughness": 0.0,
     "knockbackResistance": 0.0,
     "equipSound": {
-      "value": ""
+      "value": "CUSTOM:retez"
     },
-    "repairItems": []
+    "repairItems": [
+      {
+        "value": "CUSTOM:Bavlna"
+      }
+    ]
   }
 }

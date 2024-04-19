@@ -1,6 +1,8 @@
 
 package mp.slave_mod.item;
 
+import net.minecraftforge.registries.ForgeRegistries;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.ItemStack;
@@ -10,10 +12,11 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.resources.ResourceLocation;
 
 import mp.slave_mod.procedures.StrachProcedure;
+import mp.slave_mod.init.SlaveModModItems;
 
 import com.google.common.collect.Iterables;
 
@@ -27,7 +30,7 @@ public abstract class KKKarmorItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{2, 5, 6, 2}[type.getSlot().getIndex()];
+				return new int[]{2, 5, 4, 2}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -37,12 +40,12 @@ public abstract class KKKarmorItem extends ArmorItem {
 
 			@Override
 			public SoundEvent getEquipSound() {
-				return SoundEvents.EMPTY;
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("slave_mod:retez"));
 			}
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of();
+				return Ingredient.of(new ItemStack(SlaveModModItems.BAVLNA.get()));
 			}
 
 			@Override
@@ -71,14 +74,6 @@ public abstract class KKKarmorItem extends ArmorItem {
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
 			return "slave_mod:textures/models/armor/armorpokus2layer_1_layer_1.png";
 		}
-
-		@Override
-		public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-			super.inventoryTick(itemstack, world, entity, slot, selected);
-			if (entity instanceof Player player && Iterables.contains(player.getArmorSlots(), itemstack)) {
-				StrachProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
-			}
-		}
 	}
 
 	public static class Chestplate extends KKKarmorItem {
@@ -90,14 +85,6 @@ public abstract class KKKarmorItem extends ArmorItem {
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
 			return "slave_mod:textures/models/armor/armorpokus2layer_1_layer_1.png";
 		}
-
-		@Override
-		public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-			super.inventoryTick(itemstack, world, entity, slot, selected);
-			if (entity instanceof Player player && Iterables.contains(player.getArmorSlots(), itemstack)) {
-				StrachProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
-			}
-		}
 	}
 
 	public static class Leggings extends KKKarmorItem {
@@ -108,14 +95,6 @@ public abstract class KKKarmorItem extends ArmorItem {
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
 			return "slave_mod:textures/models/armor/armorpokus2layer_1_layer_2.png";
-		}
-
-		@Override
-		public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
-			super.inventoryTick(itemstack, world, entity, slot, selected);
-			if (entity instanceof Player player && Iterables.contains(player.getArmorSlots(), itemstack)) {
-				StrachProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
-			}
 		}
 	}
 
