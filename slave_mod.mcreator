@@ -46,7 +46,7 @@
           "src/main/resources/assets/slave_mod/models/item/krajina.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/MusicDisks"
     },
     {
       "name": "Africaenter",
@@ -72,7 +72,7 @@
       "metadata": {
         "files": []
       },
-      "path": "~/Misc/Paintings"
+      "path": "~/Items/Paintings"
     },
     {
       "name": "SpearBulletHitsBlock",
@@ -696,7 +696,7 @@
           }
         ]
       },
-      "path": "~/Items/Cotton/Procedures_Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "CottonBlockBreak",
@@ -728,7 +728,7 @@
           }
         ]
       },
-      "path": "~/Items/Cotton/Procedures_Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "CottonBlockRightClick",
@@ -760,7 +760,7 @@
           }
         ]
       },
-      "path": "~/Items/Cotton/Procedures_Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Growingcotton",
@@ -792,7 +792,7 @@
           }
         ]
       },
-      "path": "~/Items/Cotton/Procedures_Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Strach",
@@ -925,7 +925,7 @@
           "src/main/resources/assets/slave_mod/models/item/nigraniumnugget.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Nigranium"
     },
     {
       "name": "Nigranium",
@@ -961,7 +961,7 @@
           "src/main/java/mp/slave_mod/item/NigraniumingotItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Nigranium"
     },
     {
       "name": "Seminka",
@@ -989,7 +989,7 @@
           "src/main/resources/data/slave_mod/recipes/nigraniumsmelted.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Nigranium"
     },
     {
       "name": "Ingottonugget",
@@ -1003,7 +1003,7 @@
           "src/main/resources/data/slave_mod/recipes/ingottonugget.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Nigranium"
     },
     {
       "name": "Nuggettoingot",
@@ -1017,7 +1017,7 @@
           "src/main/resources/data/slave_mod/recipes/nuggettoingot.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Nigranium"
     },
     {
       "name": "Chainpiece",
@@ -1462,7 +1462,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_blast_smelted.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/Nigranium"
     },
     {
       "name": "SpearBulletHitsPlayer",
@@ -1649,7 +1649,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_carrot_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Items/NigraniumCarrot"
     },
     {
       "name": "WhipEndingRecipe",
@@ -1663,7 +1663,7 @@
           "src/main/resources/data/slave_mod/recipes/whip_ending_recipe.json"
         ]
       },
-      "path": "~/Items/Recipes"
+      "path": "~/Tools/Whip"
     },
     {
       "name": "WhipEndingItem",
@@ -1678,7 +1678,7 @@
           "src/main/resources/assets/slave_mod/models/item/whip_ending_item.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Tools/Whip"
     },
     {
       "name": "CarrotLeftover",
@@ -1717,7 +1717,7 @@
           }
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Items/NigraniumCarrot"
     },
     {
       "name": "WhipToolRightClick",
@@ -2315,7 +2315,7 @@
           }
         ]
       },
-      "path": "~/Items/Cotton/Procedures_Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Ebola",
@@ -2610,7 +2610,7 @@
           }
         ]
       },
-      "path": "~/Items/Procedures"
+      "path": "~/Misc/Ebola"
     },
     {
       "name": "Negromancer",
@@ -2869,6 +2869,40 @@
         ]
       },
       "path": "~/Misc/Procedures"
+    },
+    {
+      "name": "NegromancerKilled",
+      "type": "achievement",
+      "sortid": 149,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "negromancer_killed",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/advancements/negromancer_killed.json"
+        ]
+      },
+      "path": "~/Misc/Advancements"
+    },
+    {
+      "name": "NegromancerEntityDies",
+      "type": "procedure",
+      "sortid": 150,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "negromancer_entity_dies",
+      "metadata": {
+        "files": [
+          "src/main/java/mp/slave_mod/procedures/NegromancerEntityDiesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Negromancer"
     }
   ],
   "variable_elements": [
@@ -3000,9 +3034,6 @@
     "BLOCKS:minecraft:slabs": [
       "~CUSTOM:Undestructableslab"
     ],
-    "BIOMES:minecraft:has_structure/shipwreck": [
-      "~CUSTOM:Africa"
-    ],
     "BIOMES:minecraft:has_structure/ruined_portal_standard": [
       "~CUSTOM:Africa"
     ],
@@ -3013,15 +3044,16 @@
   "language_map": {
     "en_us": {
       "item.slave_mod.nigranium_hoe": "Nigranium Hoe",
-      "advancements.africaenter.title": "Entered Africa",
       "subtitles.retez": "",
+      "advancements.africaenter.title": "Entered Africa",
       "item.minecraft.tipped_arrow.effect.ebola": "Arrow of Ebola",
       "advancements.nigranium_carrot_advancement.title": "Yummy!...maybe...",
       "gui.slave_mod.otrokar_gui.label_buy": "Buy",
       "gui.slave_mod.otrokar_gui.label_sorry_but_i_am_not_able_to": "Sorry but I am not able to",
+      "advancements.negromancer_killed.title": "Negromancer Killed",
       "item.slave_mod.nigraniumnugget": "Nigranium Nugget",
-      "gui.slave_mod.otrokar_gui.label_slavery_as": "Slavery a.s.",
       "block.slave_mod.nigranium_block": "Nigranium Block",
+      "gui.slave_mod.otrokar_gui.label_slavery_as": "Slavery a.s.",
       "biome.slave_mod.africa": "Africa",
       "item.slave_mod.bavlnaitem": "Harvested cotton",
       "item.slave_mod.encaged_otrok_spawn_egg": "Encaged Otrok Spawn Egg",
@@ -3030,8 +3062,8 @@
       "subtitles.nazdarfrumrde": "",
       "painting.slave_mod.polish_cow_painting.author": "Unknown",
       "item.slave_mod.spear": "Spear",
-      "gui.slave_mod.otrokar_gui.label_offer_you_more": "offer you more.",
       "item.minecraft.potion.effect.ebola": "Ebola",
+      "gui.slave_mod.otrokar_gui.label_offer_you_more": "offer you more.",
       "gui.slave_mod.otrok_inv.label_enslaved_noples_inventory": "Enslaved Noples Inventory",
       "entity.slave_mod.slave_boss": "Noples Ruler",
       "itemGroup.tabslave_mod": "Slave Mod",
@@ -3041,18 +3073,18 @@
       "item.slave_mod.chain": "Chain",
       "entity.slave_mod.enslaver": "Enslaver",
       "block.slave_mod.kk_kactivating_b_lock": "KKK Totem Activating Block",
-      "block.slave_mod.cottonstage_3": "Cotton stage 3",
       "entity.slave_mod.slave_animal": "Wild Noples",
+      "block.slave_mod.cottonstage_3": "Cotton stage 3",
       "block.slave_mod.cottonstage_4": "Cotton stage 4",
       "block.slave_mod.cottonstage_1": "Cotton stage 1",
       "block.slave_mod.cottonstage_2": "Cotton stage 2",
-      "painting.slave_mod.polish_cow_painting.title": "Polish Cow Painting",
       "block.slave_mod.cottonstage_7": "Cotton stage 7",
+      "painting.slave_mod.polish_cow_painting.title": "Polish Cow Painting",
       "block.slave_mod.wodencrossbaseblock": "KKK Totem Base Block",
       "block.slave_mod.cottonstage_5": "Cotton stage 5",
       "block.slave_mod.cottonstage_6": "Cotton stage 6",
-      "item.slave_mod.slave_animal_spawn_egg": "Wild Noples Spawn Egg",
       "item.slave_mod.whip_tool": "Whip",
+      "item.slave_mod.slave_animal_spawn_egg": "Wild Noples Spawn Egg",
       "entity.slave_mod.slave": "Noples",
       "block.slave_mod.cottonstage_0": "Cotton stage 0",
       "item.slave_mod.jozef_spawn_egg": "Yozef Spawn Egg",
@@ -3121,6 +3153,7 @@
       "item.slave_mod.nigranium_axe": "Nigranium Axe",
       "item.slave_mod.kk_karmor_leggings": "KKK Pants",
       "item.slave_mod.encaged_otrok_2_spawn_egg": "Encaged Otrok 2 Spawn Egg",
+      "advancements.negromancer_killed.descr": "How?",
       "item.slave_mod.empty_amulet": "Empty Nigranium Amulet",
       "subtitles.jozef3": "",
       "subtitles.jozef4": "",
@@ -3133,9 +3166,10 @@
       "subtitles.retez": "�et�zov� zvuky lolol",
       "advancements.africaenter.title": "Je z tebe negr",
       "item.minecraft.tipped_arrow.effect.ebola": "Arrow of Ebola",
-      "advancements.nigranium_carrot_advancement.title": "M�am m�am m�am je to fresh mam to r�d",
       "gui.slave_mod.otrokar_gui.label_buy": "Buy",
+      "advancements.nigranium_carrot_advancement.title": "Mnam mnam mnam je to fresh mam to rad",
       "gui.slave_mod.otrokar_gui.label_sorry_but_i_am_not_able_to": "Sorry but I am not able to",
+      "advancements.negromancer_killed.title": "Negromancer Killed",
       "item.slave_mod.nigraniumnugget": "Chicken nuggetka",
       "gui.slave_mod.otrokar_gui.label_slavery_as": "Slavery a.s.",
       "block.slave_mod.nigranium_block": "Negrblok",
@@ -3238,6 +3272,7 @@
       "item.slave_mod.nigranium_axe": "Nigranium Axe",
       "item.slave_mod.kk_karmor_leggings": "KKK Pants",
       "item.slave_mod.encaged_otrok_2_spawn_egg": "Encaged Otrok 2 Spawn Egg",
+      "advancements.negromancer_killed.descr": "How?",
       "item.slave_mod.empty_amulet": "Empty Nigranium Amulet",
       "subtitles.jozef3": "",
       "subtitles.jozef4": "",
@@ -3346,28 +3381,27 @@
         "name": "Items",
         "children": [
           {
-            "name": "Recipes",
-            "children": []
-          },
-          {
-            "name": "Procedures",
-            "children": []
-          },
-          {
             "name": "Amulet",
             "children": []
           },
           {
             "name": "Cotton",
-            "children": [
-              {
-                "name": "Procedures_Cotton",
-                "children": []
-              }
-            ]
+            "children": []
           },
           {
             "name": "NigraniumCarrot",
+            "children": []
+          },
+          {
+            "name": "Nigranium",
+            "children": []
+          },
+          {
+            "name": "MusicDisks",
+            "children": []
+          },
+          {
+            "name": "Paintings",
             "children": []
           }
         ]
@@ -3386,10 +3420,6 @@
         "children": [
           {
             "name": "Ebola",
-            "children": []
-          },
-          {
-            "name": "Paintings",
             "children": []
           },
           {

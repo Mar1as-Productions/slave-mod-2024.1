@@ -37,16 +37,14 @@ public class NigraniumCarrotEatenProcedure {
 			}
 		}.checkGamemode(entity))) {
 			if (Math.random() <= 0.5) {
-				entity.getPersistentData().putBoolean("ebola", true);
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(SlaveModModMobEffects.EBOLA.get(), 300, 1));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 300, 1));
 				SlaveModMod.queueServerWork(299, () -> {
-					if (entity instanceof LivingEntity _livEnt6 && _livEnt6.hasEffect(SlaveModModMobEffects.EBOLA.get())) {
+					if (entity instanceof LivingEntity _livEnt5 && _livEnt5.hasEffect(SlaveModModMobEffects.EBOLA.get())) {
 						if (entity instanceof LivingEntity _entity)
 							_entity.removeAllEffects();
-						entity.getPersistentData().putBoolean("ebola", false);
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 1));
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())

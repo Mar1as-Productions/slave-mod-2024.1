@@ -6,19 +6,15 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.network.chat.Component;
 
 import mp.slave_mod.procedures.NigraniumCarrotEatenProcedure;
 import mp.slave_mod.init.SlaveModModItems;
-
-import java.util.List;
 
 public class NigraniumcarrotItem extends Item {
 	public NigraniumcarrotItem() {
@@ -34,12 +30,6 @@ public class NigraniumcarrotItem extends Item {
 	@OnlyIn(Dist.CLIENT)
 	public boolean isFoil(ItemStack itemstack) {
 		return true;
-	}
-
-	@Override
-	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("Eat it or yo mamma so fat"));
 	}
 
 	@Override

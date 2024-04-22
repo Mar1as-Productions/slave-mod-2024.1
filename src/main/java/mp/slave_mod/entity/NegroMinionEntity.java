@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.RemoveBlockGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
@@ -56,16 +57,21 @@ public class NegroMinionEntity extends Monster {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, true) {
+		this.goalSelector.addGoal(1, new RemoveBlockGoal(SlaveModModBlocks.COTTONSTAGE_7.get(), this, 1, (int) 10));
+		this.goalSelector.addGoal(2, new RemoveBlockGoal(SlaveModModBlocks.COTTONSTAGE_5.get(), this, 1, (int) 10));
+		this.goalSelector.addGoal(3, new RemoveBlockGoal(SlaveModModBlocks.COTTONSTAGE_3.get(), this, 1, (int) 10));
+		this.goalSelector.addGoal(4, new RemoveBlockGoal(SlaveModModBlocks.COTTONSTAGE_3.get(), this, 1, (int) 10));
+		this.goalSelector.addGoal(5, new RemoveBlockGoal(SlaveModModBlocks.COTTONSTAGE_6.get(), this, 1, (int) 10));
+		this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.goalSelector.addGoal(7, new MeleeAttackGoal(this, 1.2, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
-		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(4, new FloatGoal(this));
-		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(8, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(9, new FloatGoal(this));
+		this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
 	}
 
 	@Override
@@ -128,11 +134,11 @@ public class NegroMinionEntity extends Monster {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 1);
-		builder = builder.add(Attributes.MAX_HEALTH, 10);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.9);
+		builder = builder.add(Attributes.MAX_HEALTH, 8);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 32);
 		return builder;
 	}
 }

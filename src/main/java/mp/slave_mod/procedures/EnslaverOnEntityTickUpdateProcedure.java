@@ -33,7 +33,7 @@ public class EnslaverOnEntityTickUpdateProcedure {
 					}
 				}
 				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("I am leaving now." + (x + "" + (y + "" + z)))), false);
+					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("I am leaving now. " + (x + "" + (y + "" + z)))), false);
 				if (world instanceof Level _level && !_level.isClientSide())
 					_level.explode(null, x, y, z, 0, Level.ExplosionInteraction.NONE);
 			}

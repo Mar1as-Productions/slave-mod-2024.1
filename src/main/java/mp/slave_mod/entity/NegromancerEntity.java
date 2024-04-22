@@ -39,6 +39,7 @@ import net.minecraft.core.BlockPos;
 import mp.slave_mod.procedures.SpawnNegroMinionProcedure;
 import mp.slave_mod.procedures.NegromancerOnEntityTickUpdateProcedure;
 import mp.slave_mod.procedures.NegromancerEntityIsHurtProcedure;
+import mp.slave_mod.procedures.NegromancerEntityDiesProcedure;
 import mp.slave_mod.init.SlaveModModItems;
 import mp.slave_mod.init.SlaveModModEntities;
 
@@ -138,6 +139,12 @@ public class NegromancerEntity extends Monster {
 	}
 
 	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		NegromancerEntityDiesProcedure.execute(this);
+	}
+
+	@Override
 	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
 		super.awardKillScore(entity, score, damageSource);
 		SpawnNegroMinionProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
@@ -184,7 +191,7 @@ public class NegromancerEntity extends Monster {
 		builder = builder.add(Attributes.MAX_HEALTH, 500);
 		builder = builder.add(Attributes.ARMOR, 1);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 5);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 32);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.2);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 1);
 		return builder;

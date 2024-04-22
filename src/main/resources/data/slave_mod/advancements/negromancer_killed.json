@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "slave_mod:enslaved_glowstone"
+    },
+    "title": {
+      "translate": "advancements.negromancer_killed.title"
+    },
+    "description": {
+      "translate": "advancements.negromancer_killed.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "negromancer_killed_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "slave_mod:africaenter"
+}

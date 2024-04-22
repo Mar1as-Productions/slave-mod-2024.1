@@ -108,9 +108,29 @@
     "ambient": [],
     "axolotls": [],
     "underground_water_creature": [],
-    "water_creature": [],
+    "water_creature": [
+      {
+        "type": "cod",
+        "weight": 20,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "salmon",
+        "weight": 20,
+        "minCount": 2,
+        "maxCount": 7
+      }
+    ],
     "water_ambient": [],
-    "misc": []
+    "misc": [
+      {
+        "type": "frog",
+        "weight": 20,
+        "minCount": 5,
+        "maxCount": 10
+      }
+    ]
   },
   "spawn_costs": {},
   "carvers": {
