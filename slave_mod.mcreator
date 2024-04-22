@@ -9,12 +9,12 @@
       "registry_name": "africa",
       "metadata": {
         "files": [
-          "src/main/resources/data/slave_mod/worldgen/placed_feature/africa_tree.json",
           "src/main/resources/data/slave_mod/worldgen/biome/africa.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/africa_tree.json",
           "src/main/resources/data/slave_mod/worldgen/configured_feature/africa_tree.json"
         ]
       },
-      "path": "~/Random_stuff"
+      "path": "~/Misc"
     },
     {
       "name": "Slave",
@@ -25,13 +25,13 @@
       "registry_name": "slave",
       "metadata": {
         "files": [
-          "src/main/java/mp/slave_mod/client/renderer/SlaveRenderer.java",
           "src/main/resources/assets/slave_mod/models/item/slave_spawn_egg.json",
-          "src/main/resources/data/slave_mod/forge/biome_modifier/slave_biome_modifier.json",
-          "src/main/java/mp/slave_mod/entity/SlaveEntity.java"
+          "src/main/java/mp/slave_mod/client/renderer/SlaveRenderer.java",
+          "src/main/java/mp/slave_mod/entity/SlaveEntity.java",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/slave_biome_modifier.json"
         ]
       },
-      "path": "~/Creatures"
+      "path": "~/Mobs/Slaves/Noples"
     },
     {
       "name": "Krajina",
@@ -46,7 +46,7 @@
           "src/main/resources/assets/slave_mod/models/item/krajina.json"
         ]
       },
-      "path": "~/Random_stuff"
+      "path": "~/Items"
     },
     {
       "name": "Africaenter",
@@ -60,7 +60,7 @@
           "src/main/resources/data/slave_mod/advancements/africaenter.json"
         ]
       },
-      "path": "~/Random_stuff"
+      "path": "~/Misc/Advancements"
     },
     {
       "name": "PolishCowPainting",
@@ -72,7 +72,7 @@
       "metadata": {
         "files": []
       },
-      "path": "~/Random_stuff"
+      "path": "~/Misc/Paintings"
     },
     {
       "name": "SpearBulletHitsBlock",
@@ -104,7 +104,7 @@
           }
         ]
       },
-      "path": "~/Tools/Procedures"
+      "path": "~/Tools/Spear"
     },
     {
       "name": "SpearRangedItemUsed",
@@ -124,7 +124,7 @@
           }
         ]
       },
-      "path": "~/Tools/Procedures"
+      "path": "~/Tools/Spear"
     },
     {
       "name": "SlaveEntityDies",
@@ -156,7 +156,7 @@
           }
         ]
       },
-      "path": "~/Creatures"
+      "path": "~/Mobs/Slaves/Noples"
     },
     {
       "name": "RangedSlave",
@@ -168,12 +168,12 @@
       "metadata": {
         "files": [
           "src/main/java/mp/slave_mod/client/renderer/RangedSlaveRenderer.java",
+          "src/main/resources/assets/slave_mod/models/item/ranged_slave_spawn_egg.json",
           "src/main/java/mp/slave_mod/entity/RangedSlaveEntity.java",
-          "src/main/resources/data/slave_mod/forge/biome_modifier/ranged_slave_biome_modifier.json",
-          "src/main/resources/assets/slave_mod/models/item/ranged_slave_spawn_egg.json"
+          "src/main/resources/data/slave_mod/forge/biome_modifier/ranged_slave_biome_modifier.json"
         ]
       },
-      "path": "~/Creatures/RangedSlave"
+      "path": "~/Mobs/Slaves/RangedSlave"
     },
     {
       "name": "RangedSlaveEntityDies",
@@ -205,7 +205,7 @@
           }
         ]
       },
-      "path": "~/Creatures/RangedSlave"
+      "path": "~/Mobs/Slaves/RangedSlave"
     },
     {
       "name": "SlaveBoss",
@@ -216,13 +216,13 @@
       "registry_name": "slave_boss",
       "metadata": {
         "files": [
-          "src/main/java/mp/slave_mod/entity/SlaveBossEntity.java",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/slave_boss_biome_modifier.json",
           "src/main/java/mp/slave_mod/client/renderer/SlaveBossRenderer.java",
-          "src/main/resources/assets/slave_mod/models/item/slave_boss_spawn_egg.json",
-          "src/main/resources/data/slave_mod/forge/biome_modifier/slave_boss_biome_modifier.json"
+          "src/main/java/mp/slave_mod/entity/SlaveBossEntity.java",
+          "src/main/resources/assets/slave_mod/models/item/slave_boss_spawn_egg.json"
         ]
       },
-      "path": "~/Creatures"
+      "path": "~/Mobs/Slaves/SlaveBoss"
     },
     {
       "name": "SlaveBossEntityDies",
@@ -254,7 +254,7 @@
           }
         ]
       },
-      "path": "~/Creatures"
+      "path": "~/Mobs/Slaves/SlaveBoss"
     },
     {
       "name": "SlaveAnimal",
@@ -266,12 +266,12 @@
       "metadata": {
         "files": [
           "src/main/java/mp/slave_mod/entity/SlaveAnimalEntity.java",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/slave_animal_biome_modifier.json",
           "src/main/java/mp/slave_mod/client/renderer/SlaveAnimalRenderer.java",
-          "src/main/resources/assets/slave_mod/models/item/slave_animal_spawn_egg.json",
-          "src/main/resources/data/slave_mod/forge/biome_modifier/slave_animal_biome_modifier.json"
+          "src/main/resources/assets/slave_mod/models/item/slave_animal_spawn_egg.json"
         ]
       },
-      "path": "~/Creatures"
+      "path": "~/Mobs/Slaves/SlaveAnimal"
     },
     {
       "name": "SlaveAnimalEntityDies",
@@ -303,7 +303,7 @@
           }
         ]
       },
-      "path": "~/Creatures"
+      "path": "~/Mobs/Slaves/SlaveAnimal"
     },
     {
       "name": "SlaveMod",
@@ -315,7 +315,7 @@
       "metadata": {
         "files": []
       },
-      "path": "~/Random_stuff"
+      "path": "~/Misc"
     },
     {
       "name": "NehoriciDrevoOak",
@@ -326,14 +326,14 @@
       "registry_name": "nehorici_drevo_oak",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slave_mod/blockstates/nehorici_drevo_oak.json",
           "src/main/resources/assets/slave_mod/models/block/nehorici_drevo_oak.json",
-          "src/main/resources/data/slave_mod/loot_tables/blocks/nehorici_drevo_oak.json",
-          "src/main/resources/assets/slave_mod/models/item/nehorici_drevo_oak.json",
           "src/main/java/mp/slave_mod/block/NehoriciDrevoOakBlock.java",
-          "src/main/resources/assets/slave_mod/blockstates/nehorici_drevo_oak.json"
+          "src/main/resources/data/slave_mod/loot_tables/blocks/nehorici_drevo_oak.json",
+          "src/main/resources/assets/slave_mod/models/item/nehorici_drevo_oak.json"
         ]
       },
-      "path": "~/Totem"
+      "path": "~/Structures/Totem"
     },
     {
       "name": "KKKactivatingBlockRightClick",
@@ -365,7 +365,7 @@
           }
         ]
       },
-      "path": "~/Totem"
+      "path": "~/Structures/Totem"
     },
     {
       "name": "KKKactivatingBLock",
@@ -376,14 +376,14 @@
       "registry_name": "kk_kactivating_b_lock",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slave_mod/models/block/kk_kactivating_b_lock.json",
-          "src/main/java/mp/slave_mod/block/KKKactivatingBLockBlock.java",
           "src/main/resources/assets/slave_mod/models/item/kk_kactivating_b_lock.json",
           "src/main/resources/data/slave_mod/loot_tables/blocks/kk_kactivating_b_lock.json",
-          "src/main/resources/assets/slave_mod/blockstates/kk_kactivating_b_lock.json"
+          "src/main/resources/assets/slave_mod/blockstates/kk_kactivating_b_lock.json",
+          "src/main/java/mp/slave_mod/block/KKKactivatingBLockBlock.java",
+          "src/main/resources/assets/slave_mod/models/block/kk_kactivating_b_lock.json"
         ]
       },
-      "path": "~/Totem"
+      "path": "~/Structures/Totem"
     },
     {
       "name": "Cottonseeds",
@@ -398,7 +398,7 @@
           "src/main/resources/assets/slave_mod/models/item/cottonseeds.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "ShoesRecipe",
@@ -412,7 +412,7 @@
           "src/main/resources/data/slave_mod/recipes/shoes_recipe.json"
         ]
       },
-      "path": "~/ARMOR/KKK_armor"
+      "path": "~/Armor/KkkArmor"
     },
     {
       "name": "BavlnaRecipe",
@@ -426,7 +426,7 @@
           "src/main/resources/data/slave_mod/recipes/bavlna_recipe.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Bavlna",
@@ -441,7 +441,7 @@
           "src/main/resources/assets/slave_mod/models/item/bavlna.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "KKKarmor",
@@ -456,14 +456,14 @@
         "eb": true,
         "ec": true,
         "files": [
-          "src/main/resources/assets/slave_mod/models/item/kk_karmor_helmet.json",
-          "src/main/resources/assets/slave_mod/models/item/kk_karmor_leggings.json",
+          "src/main/resources/assets/slave_mod/models/item/kk_karmor_chestplate.json",
           "src/main/resources/assets/slave_mod/models/item/kk_karmor_boots.json",
           "src/main/java/mp/slave_mod/item/KKKarmorItem.java",
-          "src/main/resources/assets/slave_mod/models/item/kk_karmor_chestplate.json"
+          "src/main/resources/assets/slave_mod/models/item/kk_karmor_helmet.json",
+          "src/main/resources/assets/slave_mod/models/item/kk_karmor_leggings.json"
         ]
       },
-      "path": "~/ARMOR/KKK_armor"
+      "path": "~/Armor/KkkArmor"
     },
     {
       "name": "RobeRecipe",
@@ -477,7 +477,7 @@
           "src/main/resources/data/slave_mod/recipes/robe_recipe.json"
         ]
       },
-      "path": "~/ARMOR/KKK_armor"
+      "path": "~/Armor/KkkArmor"
     },
     {
       "name": "PantsRecipe",
@@ -491,7 +491,7 @@
           "src/main/resources/data/slave_mod/recipes/pants_recipe.json"
         ]
       },
-      "path": "~/ARMOR/KKK_armor"
+      "path": "~/Armor/KkkArmor"
     },
     {
       "name": "HoodRecipe",
@@ -505,7 +505,7 @@
           "src/main/resources/data/slave_mod/recipes/hood_recipe.json"
         ]
       },
-      "path": "~/ARMOR/KKK_armor"
+      "path": "~/Armor/KkkArmor"
     },
     {
       "name": "Cottonstage0",
@@ -516,14 +516,14 @@
       "registry_name": "cottonstage_0",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slave_mod/models/block/cottonstage_0.json",
           "src/main/resources/assets/slave_mod/blockstates/cottonstage_0.json",
+          "src/main/java/mp/slave_mod/block/Cottonstage0Block.java",
           "src/main/resources/assets/slave_mod/models/item/cottonstage_0.json",
           "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_0.json",
-          "src/main/java/mp/slave_mod/block/Cottonstage0Block.java"
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_0.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "HarvestedCotton",
@@ -538,7 +538,7 @@
           "src/main/resources/assets/slave_mod/models/item/harvested_cotton.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Cottonstage1",
@@ -549,14 +549,14 @@
       "registry_name": "cottonstage_1",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slave_mod/models/item/cottonstage_1.json",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_1.json",
           "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_1.json",
-          "src/main/resources/assets/slave_mod/blockstates/cottonstage_1.json",
           "src/main/java/mp/slave_mod/block/Cottonstage1Block.java",
-          "src/main/resources/assets/slave_mod/models/block/cottonstage_1.json"
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_1.json",
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_1.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Cottonstage2",
@@ -567,14 +567,14 @@
       "registry_name": "cottonstage_2",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_2.json",
           "src/main/java/mp/slave_mod/block/Cottonstage2Block.java",
           "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_2.json",
-          "src/main/resources/assets/slave_mod/models/block/cottonstage_2.json",
-          "src/main/resources/assets/slave_mod/models/item/cottonstage_2.json",
-          "src/main/resources/assets/slave_mod/blockstates/cottonstage_2.json"
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_2.json",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_2.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Cottonstage7",
@@ -585,14 +585,14 @@
       "registry_name": "cottonstage_7",
       "metadata": {
         "files": [
-          "src/main/java/mp/slave_mod/block/Cottonstage7Block.java",
-          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_7.json",
-          "src/main/resources/assets/slave_mod/blockstates/cottonstage_7.json",
           "src/main/resources/assets/slave_mod/models/block/cottonstage_7.json",
+          "src/main/java/mp/slave_mod/block/Cottonstage7Block.java",
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_7.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_7.json",
           "src/main/resources/assets/slave_mod/models/item/cottonstage_7.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Cottonstage5",
@@ -603,14 +603,14 @@
       "registry_name": "cottonstage_5",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slave_mod/blockstates/cottonstage_5.json",
-          "src/main/resources/assets/slave_mod/models/item/cottonstage_5.json",
           "src/main/java/mp/slave_mod/block/Cottonstage5Block.java",
-          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_5.json",
-          "src/main/resources/assets/slave_mod/models/block/cottonstage_5.json"
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_5.json",
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_5.json",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_5.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_5.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Cottonstage6",
@@ -621,14 +621,14 @@
       "registry_name": "cottonstage_6",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slave_mod/models/block/cottonstage_6.json",
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_6.json",
           "src/main/resources/assets/slave_mod/blockstates/cottonstage_6.json",
-          "src/main/java/mp/slave_mod/block/Cottonstage6Block.java",
           "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_6.json",
-          "src/main/resources/assets/slave_mod/models/item/cottonstage_6.json"
+          "src/main/java/mp/slave_mod/block/Cottonstage6Block.java",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_6.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Cottonstage3",
@@ -639,14 +639,14 @@
       "registry_name": "cottonstage_3",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slave_mod/models/item/cottonstage_3.json",
           "src/main/resources/assets/slave_mod/blockstates/cottonstage_3.json",
           "src/main/java/mp/slave_mod/block/Cottonstage3Block.java",
           "src/main/resources/assets/slave_mod/models/block/cottonstage_3.json",
+          "src/main/resources/assets/slave_mod/models/item/cottonstage_3.json",
           "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_3.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Cottonstage4",
@@ -657,14 +657,14 @@
       "registry_name": "cottonstage_4",
       "metadata": {
         "files": [
-          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_4.json",
           "src/main/resources/assets/slave_mod/models/item/cottonstage_4.json",
-          "src/main/resources/assets/slave_mod/blockstates/cottonstage_4.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/cottonstage_4.json",
+          "src/main/resources/assets/slave_mod/models/block/cottonstage_4.json",
           "src/main/java/mp/slave_mod/block/Cottonstage4Block.java",
-          "src/main/resources/assets/slave_mod/models/block/cottonstage_4.json"
+          "src/main/resources/assets/slave_mod/blockstates/cottonstage_4.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "CottonBlockNeighourBlock",
@@ -696,7 +696,7 @@
           }
         ]
       },
-      "path": "~/Cotton/Procedures_Cotton"
+      "path": "~/Items/Cotton/Procedures_Cotton"
     },
     {
       "name": "CottonBlockBreak",
@@ -728,7 +728,7 @@
           }
         ]
       },
-      "path": "~/Cotton/Procedures_Cotton"
+      "path": "~/Items/Cotton/Procedures_Cotton"
     },
     {
       "name": "CottonBlockRightClick",
@@ -760,7 +760,7 @@
           }
         ]
       },
-      "path": "~/Cotton/Procedures_Cotton"
+      "path": "~/Items/Cotton/Procedures_Cotton"
     },
     {
       "name": "Growingcotton",
@@ -792,7 +792,7 @@
           }
         ]
       },
-      "path": "~/Cotton/Procedures_Cotton"
+      "path": "~/Items/Cotton/Procedures_Cotton"
     },
     {
       "name": "Strach",
@@ -828,7 +828,7 @@
           }
         ]
       },
-      "path": "~/ARMOR/KKK_armor"
+      "path": "~/Armor/KkkArmor"
     },
     {
       "name": "KKKactivatingBLockUpdateTick",
@@ -860,7 +860,7 @@
           }
         ]
       },
-      "path": "~/Totem"
+      "path": "~/Structures/Totem"
     },
     {
       "name": "Wodencrossbaseblock",
@@ -878,7 +878,7 @@
           "src/main/resources/assets/slave_mod/models/block/wodencrossbaseblock.json"
         ]
       },
-      "path": "~/Totem"
+      "path": "~/Structures/Totem"
     },
     {
       "name": "Otrok",
@@ -890,11 +890,11 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slave_mod/models/item/otrok_spawn_egg.json",
-          "src/main/java/mp/slave_mod/entity/OtrokEntity.java",
-          "src/main/java/mp/slave_mod/client/renderer/OtrokRenderer.java"
+          "src/main/java/mp/slave_mod/client/renderer/OtrokRenderer.java",
+          "src/main/java/mp/slave_mod/entity/OtrokEntity.java"
         ]
       },
-      "path": "~/Creatures/Otrok"
+      "path": "~/Mobs/Slaves/EnslavedNoples"
     },
     {
       "name": "OtrokINV",
@@ -910,7 +910,7 @@
           "src/main/java/mp/slave_mod/network/OtrokINVSlotMessage.java"
         ]
       },
-      "path": "~/Creatures/Otrok"
+      "path": "~/Mobs/Slaves/EnslavedNoples"
     },
     {
       "name": "Nigraniumnugget",
@@ -936,17 +936,17 @@
       "registry_name": "nigranium",
       "metadata": {
         "files": [
-          "src/main/resources/data/slave_mod/worldgen/placed_feature/nigranium.json",
-          "src/main/resources/data/slave_mod/forge/biome_modifier/nigranium_biome_modifier.json",
+          "src/main/resources/assets/slave_mod/models/item/nigranium.json",
           "src/main/resources/data/slave_mod/worldgen/configured_feature/nigranium.json",
-          "src/main/resources/assets/slave_mod/models/block/nigranium.json",
-          "src/main/java/mp/slave_mod/block/NigraniumBlock.java",
           "src/main/resources/assets/slave_mod/blockstates/nigranium.json",
           "src/main/resources/data/slave_mod/loot_tables/blocks/nigranium.json",
-          "src/main/resources/assets/slave_mod/models/item/nigranium.json"
+          "src/main/java/mp/slave_mod/block/NigraniumBlock.java",
+          "src/main/resources/assets/slave_mod/models/block/nigranium.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/nigranium.json",
+          "src/main/resources/data/slave_mod/forge/biome_modifier/nigranium_biome_modifier.json"
         ]
       },
-      "path": "~/Blocks"
+      "path": "~/Blocks/NigraniumBlocks"
     },
     {
       "name": "Nigraniumingot",
@@ -957,8 +957,8 @@
       "registry_name": "nigraniumingot",
       "metadata": {
         "files": [
-          "src/main/java/mp/slave_mod/item/NigraniumingotItem.java",
-          "src/main/resources/assets/slave_mod/models/item/nigraniumingot.json"
+          "src/main/resources/assets/slave_mod/models/item/nigraniumingot.json",
+          "src/main/java/mp/slave_mod/item/NigraniumingotItem.java"
         ]
       },
       "path": "~/Items"
@@ -975,7 +975,7 @@
           "src/main/resources/data/slave_mod/recipes/seminka.json"
         ]
       },
-      "path": "~/Cotton"
+      "path": "~/Items/Cotton"
     },
     {
       "name": "Nigraniumsmelted",
@@ -1032,7 +1032,7 @@
           "src/main/resources/assets/slave_mod/models/item/chainpiece.json"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/Chain"
     },
     {
       "name": "Chainforenslaving",
@@ -1046,7 +1046,7 @@
           "src/main/resources/data/slave_mod/recipes/chainforenslaving.json"
         ]
       },
-      "path": "~/Tools/Recipes"
+      "path": "~/Tools/Chain"
     },
     {
       "name": "Chain",
@@ -1061,7 +1061,7 @@
           "src/main/java/mp/slave_mod/item/ChainItem.java"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/Chain"
     },
     {
       "name": "Chainfromchainpiece",
@@ -1075,7 +1075,7 @@
           "src/main/resources/data/slave_mod/recipes/chainfromchainpiece.json"
         ]
       },
-      "path": "~/Tools/Recipes"
+      "path": "~/Tools/Chain"
     },
     {
       "name": "SlaveAnimalRightClickedOnEntity",
@@ -1115,7 +1115,7 @@
           }
         ]
       },
-      "path": "~/Creatures"
+      "path": "~/Mobs/Slaves/SlaveAnimal"
     },
     {
       "name": "KKKtotemAdditionalGenerationCondition",
@@ -1148,7 +1148,7 @@
           }
         ]
       },
-      "path": "~/Totem"
+      "path": "~/Structures/Totem"
     },
     {
       "name": "NigraniumAxe",
@@ -1163,7 +1163,7 @@
           "src/main/java/mp/slave_mod/item/NigraniumAxeItem.java"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumHoe",
@@ -1178,7 +1178,7 @@
           "src/main/java/mp/slave_mod/item/NigraniumHoeItem.java"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumSword",
@@ -1189,11 +1189,11 @@
       "registry_name": "nigranium_sword",
       "metadata": {
         "files": [
-          "src/main/java/mp/slave_mod/item/NigraniumSwordItem.java",
-          "src/main/resources/assets/slave_mod/models/item/nigranium_sword.json"
+          "src/main/resources/assets/slave_mod/models/item/nigranium_sword.json",
+          "src/main/java/mp/slave_mod/item/NigraniumSwordItem.java"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumAxeCraft",
@@ -1207,7 +1207,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_axe_craft.json"
         ]
       },
-      "path": "~/Tools/Recipes"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumHoeCraft",
@@ -1221,7 +1221,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_hoe_craft.json"
         ]
       },
-      "path": "~/Tools/Recipes"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumShovelCraft",
@@ -1235,7 +1235,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_shovel_craft.json"
         ]
       },
-      "path": "~/Tools/Recipes"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumPickaxe",
@@ -1246,11 +1246,11 @@
       "registry_name": "nigranium_pickaxe",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slave_mod/models/item/nigranium_pickaxe.json",
-          "src/main/java/mp/slave_mod/item/NigraniumPickaxeItem.java"
+          "src/main/java/mp/slave_mod/item/NigraniumPickaxeItem.java",
+          "src/main/resources/assets/slave_mod/models/item/nigranium_pickaxe.json"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumShovel",
@@ -1265,7 +1265,7 @@
           "src/main/java/mp/slave_mod/item/NigraniumShovelItem.java"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumSwordCraft",
@@ -1279,7 +1279,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_sword_craft.json"
         ]
       },
-      "path": "~/Tools/Recipes"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumPickaxeCraft",
@@ -1293,7 +1293,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_pickaxe_craft.json"
         ]
       },
-      "path": "~/Tools/Recipes"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumShears",
@@ -1308,7 +1308,7 @@
           "src/main/java/mp/slave_mod/item/NigraniumShearsItem.java"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "NigraniumShearsCraft",
@@ -1322,7 +1322,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_shears_craft.json"
         ]
       },
-      "path": "~/Tools/Recipes"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "Jozef",
@@ -1333,12 +1333,12 @@
       "registry_name": "jozef",
       "metadata": {
         "files": [
-          "src/main/java/mp/slave_mod/client/renderer/JozefRenderer.java",
           "src/main/java/mp/slave_mod/entity/JozefEntity.java",
+          "src/main/java/mp/slave_mod/client/renderer/JozefRenderer.java",
           "src/main/resources/assets/slave_mod/models/item/jozef_spawn_egg.json"
         ]
       },
-      "path": "~/Creatures"
+      "path": "~/Mobs/Slaves/Jozef"
     },
     {
       "name": "NigraniumBlockDestroyed",
@@ -1370,7 +1370,7 @@
           }
         ]
       },
-      "path": "~/Blocks/Procedures"
+      "path": "~/Blocks/NigraniumBlocks"
     },
     {
       "name": "NigraniumArmor",
@@ -1385,14 +1385,14 @@
         "eb": true,
         "ec": true,
         "files": [
-          "src/main/java/mp/slave_mod/item/NigraniumArmorItem.java",
           "src/main/resources/assets/slave_mod/models/item/nigranium_armor_helmet.json",
-          "src/main/resources/assets/slave_mod/models/item/nigranium_armor_leggings.json",
           "src/main/resources/assets/slave_mod/models/item/nigranium_armor_boots.json",
-          "src/main/resources/assets/slave_mod/models/item/nigranium_armor_chestplate.json"
+          "src/main/resources/assets/slave_mod/models/item/nigranium_armor_leggings.json",
+          "src/main/resources/assets/slave_mod/models/item/nigranium_armor_chestplate.json",
+          "src/main/java/mp/slave_mod/item/NigraniumArmorItem.java"
         ]
       },
-      "path": "~/ARMOR/Nigranium_armor"
+      "path": "~/Armor/NigraniumArmor"
     },
     {
       "name": "NigraniumHelmetCraft",
@@ -1406,7 +1406,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_helmet_craft.json"
         ]
       },
-      "path": "~/ARMOR/Nigranium_armor"
+      "path": "~/Armor/NigraniumArmor"
     },
     {
       "name": "NigraniumChestplateCraft",
@@ -1420,7 +1420,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_chestplate_craft.json"
         ]
       },
-      "path": "~/ARMOR/Nigranium_armor"
+      "path": "~/Armor/NigraniumArmor"
     },
     {
       "name": "NigraniumLeggingsCraft",
@@ -1434,7 +1434,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_leggings_craft.json"
         ]
       },
-      "path": "~/ARMOR/Nigranium_armor"
+      "path": "~/Armor/NigraniumArmor"
     },
     {
       "name": "NigraniumBootsCraft",
@@ -1448,7 +1448,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_boots_craft.json"
         ]
       },
-      "path": "~/ARMOR/Nigranium_armor"
+      "path": "~/Armor/NigraniumArmor"
     },
     {
       "name": "NigraniumBlastSmelted",
@@ -1498,7 +1498,7 @@
           }
         ]
       },
-      "path": "~/Tools/Procedures"
+      "path": "~/Tools/Spear"
     },
     {
       "name": "SpearBulletHitsLivingEntity",
@@ -1534,7 +1534,7 @@
           }
         ]
       },
-      "path": "~/Tools/Procedures"
+      "path": "~/Tools/Spear"
     },
     {
       "name": "WhipTool",
@@ -1545,11 +1545,11 @@
       "registry_name": "whip_tool",
       "metadata": {
         "files": [
-          "src/main/java/mp/slave_mod/item/WhipToolItem.java",
-          "src/main/resources/assets/slave_mod/models/item/whip_tool.json"
+          "src/main/resources/assets/slave_mod/models/item/whip_tool.json",
+          "src/main/java/mp/slave_mod/item/WhipToolItem.java"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/Whip"
     },
     {
       "name": "Whiprecipe",
@@ -1563,7 +1563,7 @@
           "src/main/resources/data/slave_mod/recipes/whiprecipe.json"
         ]
       },
-      "path": "~/Tools/Recipes"
+      "path": "~/Tools/Whip"
     },
     {
       "name": "Harvestingagain",
@@ -1603,7 +1603,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Otrok"
+      "path": "~/Mobs/Slaves/EnslavedNoples"
     },
     {
       "name": "EnslavedGlowstone",
@@ -1615,13 +1615,13 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slave_mod/models/block/enslaved_glowstone.json",
-          "src/main/resources/assets/slave_mod/blockstates/enslaved_glowstone.json",
-          "src/main/resources/data/slave_mod/loot_tables/blocks/enslaved_glowstone.json",
           "src/main/java/mp/slave_mod/block/EnslavedGlowstoneBlock.java",
-          "src/main/resources/assets/slave_mod/models/item/enslaved_glowstone.json"
+          "src/main/resources/data/slave_mod/loot_tables/blocks/enslaved_glowstone.json",
+          "src/main/resources/assets/slave_mod/models/item/enslaved_glowstone.json",
+          "src/main/resources/assets/slave_mod/blockstates/enslaved_glowstone.json"
         ]
       },
-      "path": "~/Blocks"
+      "path": "~/Blocks/NigraniumBlocks"
     },
     {
       "name": "EnslavedGlowstoneCraft",
@@ -1635,7 +1635,7 @@
           "src/main/resources/data/slave_mod/recipes/enslaved_glowstone_craft.json"
         ]
       },
-      "path": "~/Blocks/Recipes"
+      "path": "~/Blocks/NigraniumBlocks"
     },
     {
       "name": "NigraniumCarrotRecipe",
@@ -1693,7 +1693,7 @@
           "src/main/java/mp/slave_mod/item/CarrotLeftoverItem.java"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/NigraniumCarrot"
     },
     {
       "name": "NigraniumCarrotEaten",
@@ -1753,7 +1753,7 @@
           }
         ]
       },
-      "path": "~/Tools/Procedures"
+      "path": "~/Tools/Whip"
     },
     {
       "name": "EbolaPotionStartedapplied",
@@ -1777,7 +1777,7 @@
           }
         ]
       },
-      "path": "~/Random_stuff"
+      "path": "~/Misc/Ebola"
     },
     {
       "name": "NigraniumShearsBlockDestroyedWithTool",
@@ -1813,7 +1813,7 @@
           }
         ]
       },
-      "path": "~/Tools/Procedures"
+      "path": "~/Tools/NigraniumTools"
     },
     {
       "name": "EbolaPotionItem",
@@ -1825,7 +1825,7 @@
       "metadata": {
         "files": []
       },
-      "path": "~/Random_stuff"
+      "path": "~/Misc/Ebola"
     },
     {
       "name": "Amulet",
@@ -1887,7 +1887,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Otrok"
+      "path": "~/Mobs/Slaves/EnslavedNoples"
     },
     {
       "name": "Amuletrightclick",
@@ -1973,7 +1973,7 @@
           "src/main/resources/data/slave_mod/advancements/nigranium_carrot_advancement.json"
         ]
       },
-      "path": "~/Random_stuff"
+      "path": "~/Misc/Advancements"
     },
     {
       "name": "NigraniumArmorFireResistance",
@@ -1993,7 +1993,7 @@
           }
         ]
       },
-      "path": "~/ARMOR/Nigranium_armor"
+      "path": "~/Armor/NigraniumArmor"
     },
     {
       "name": "NigraniumGolem",
@@ -2004,12 +2004,12 @@
       "registry_name": "nigranium_golem",
       "metadata": {
         "files": [
-          "src/main/java/mp/slave_mod/client/renderer/NigraniumGolemRenderer.java",
           "src/main/java/mp/slave_mod/entity/NigraniumGolemEntity.java",
+          "src/main/java/mp/slave_mod/client/renderer/NigraniumGolemRenderer.java",
           "src/main/resources/assets/slave_mod/models/item/nigranium_golem_spawn_egg.json"
         ]
       },
-      "path": "~/Creatures/Nigranium_golem"
+      "path": "~/Mobs/NigraniumGolem"
     },
     {
       "name": "NigraniumGolemSpawn",
@@ -2041,7 +2041,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Nigranium_golem"
+      "path": "~/Mobs/NigraniumGolem"
     },
     {
       "name": "NigraniumGolemDrop",
@@ -2073,7 +2073,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Nigranium_golem"
+      "path": "~/Mobs/NigraniumGolem"
     },
     {
       "name": "NigraniumBlock",
@@ -2086,12 +2086,12 @@
         "files": [
           "src/main/resources/assets/slave_mod/models/item/nigranium_block.json",
           "src/main/java/mp/slave_mod/block/NigraniumBlockBlock.java",
-          "src/main/resources/data/slave_mod/loot_tables/blocks/nigranium_block.json",
+          "src/main/resources/assets/slave_mod/blockstates/nigranium_block.json",
           "src/main/resources/assets/slave_mod/models/block/nigranium_block.json",
-          "src/main/resources/assets/slave_mod/blockstates/nigranium_block.json"
+          "src/main/resources/data/slave_mod/loot_tables/blocks/nigranium_block.json"
         ]
       },
-      "path": "~/Blocks"
+      "path": "~/Blocks/NigraniumBlocks"
     },
     {
       "name": "NigraniumBlockCrafting",
@@ -2105,7 +2105,7 @@
           "src/main/resources/data/slave_mod/recipes/nigranium_block_crafting.json"
         ]
       },
-      "path": "~/Blocks/Recipes"
+      "path": "~/Blocks/NigraniumBlocks"
     },
     {
       "name": "Kupovaninoplsu",
@@ -2141,7 +2141,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Enslaver"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "OtrokarGUI",
@@ -2152,12 +2152,12 @@
       "registry_name": "otrokar_gui",
       "metadata": {
         "files": [
+          "src/main/java/mp/slave_mod/network/OtrokarGUIButtonMessage.java",
           "src/main/java/mp/slave_mod/client/gui/OtrokarGUIScreen.java",
-          "src/main/java/mp/slave_mod/world/inventory/OtrokarGUIMenu.java",
-          "src/main/java/mp/slave_mod/network/OtrokarGUIButtonMessage.java"
+          "src/main/java/mp/slave_mod/world/inventory/OtrokarGUIMenu.java"
         ]
       },
-      "path": "~/Creatures/Enslaver"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "Enslaver",
@@ -2169,11 +2169,11 @@
       "metadata": {
         "files": [
           "src/main/java/mp/slave_mod/entity/EnslaverEntity.java",
-          "src/main/resources/assets/slave_mod/models/item/enslaver_spawn_egg.json",
-          "src/main/java/mp/slave_mod/client/renderer/EnslaverRenderer.java"
+          "src/main/java/mp/slave_mod/client/renderer/EnslaverRenderer.java",
+          "src/main/resources/assets/slave_mod/models/item/enslaver_spawn_egg.json"
         ]
       },
-      "path": "~/Creatures/Enslaver"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "IronbarforNopleses",
@@ -2184,14 +2184,14 @@
       "registry_name": "ironbarfor_nopleses",
       "metadata": {
         "files": [
-          "src/main/resources/data/slave_mod/loot_tables/blocks/ironbarfor_nopleses.json",
-          "src/main/resources/assets/slave_mod/blockstates/ironbarfor_nopleses.json",
+          "src/main/resources/assets/slave_mod/models/block/ironbarfor_nopleses.json",
           "src/main/resources/assets/slave_mod/models/item/ironbarfor_nopleses.json",
           "src/main/java/mp/slave_mod/block/IronbarforNoplesesBlock.java",
-          "src/main/resources/assets/slave_mod/models/block/ironbarfor_nopleses.json"
+          "src/main/resources/assets/slave_mod/blockstates/ironbarfor_nopleses.json",
+          "src/main/resources/data/slave_mod/loot_tables/blocks/ironbarfor_nopleses.json"
         ]
       },
-      "path": "~/Welsfargo"
+      "path": "~/Structures/Welsfargo"
     },
     {
       "name": "Undestructablespruceplank",
@@ -2204,12 +2204,12 @@
         "files": [
           "src/main/resources/assets/slave_mod/models/block/undestructablespruceplank.json",
           "src/main/java/mp/slave_mod/block/UndestructablespruceplankBlock.java",
+          "src/main/resources/assets/slave_mod/models/item/undestructablespruceplank.json",
           "src/main/resources/data/slave_mod/loot_tables/blocks/undestructablespruceplank.json",
-          "src/main/resources/assets/slave_mod/blockstates/undestructablespruceplank.json",
-          "src/main/resources/assets/slave_mod/models/item/undestructablespruceplank.json"
+          "src/main/resources/assets/slave_mod/blockstates/undestructablespruceplank.json"
         ]
       },
-      "path": "~/Welsfargo"
+      "path": "~/Structures/Welsfargo"
     },
     {
       "name": "Undestructableslab",
@@ -2220,16 +2220,16 @@
       "registry_name": "undestructableslab",
       "metadata": {
         "files": [
+          "src/main/java/mp/slave_mod/block/UndestructableslabBlock.java",
           "src/main/resources/assets/slave_mod/blockstates/undestructableslab.json",
           "src/main/resources/assets/slave_mod/models/block/undestructableslab.json",
-          "src/main/resources/assets/slave_mod/models/item/undestructableslab.json",
-          "src/main/resources/data/slave_mod/loot_tables/blocks/undestructableslab.json",
+          "src/main/resources/assets/slave_mod/models/block/undestructableslab_top.json",
           "src/main/resources/assets/slave_mod/models/block/undestructableslab_full.json",
-          "src/main/java/mp/slave_mod/block/UndestructableslabBlock.java",
-          "src/main/resources/assets/slave_mod/models/block/undestructableslab_top.json"
+          "src/main/resources/data/slave_mod/loot_tables/blocks/undestructableslab.json",
+          "src/main/resources/assets/slave_mod/models/item/undestructableslab.json"
         ]
       },
-      "path": "~/Welsfargo"
+      "path": "~/Structures/Welsfargo"
     },
     {
       "name": "Wheel",
@@ -2240,14 +2240,14 @@
       "registry_name": "wheel",
       "metadata": {
         "files": [
+          "src/main/resources/assets/slave_mod/models/block/wheel.json",
           "src/main/resources/assets/slave_mod/blockstates/wheel.json",
           "src/main/resources/data/slave_mod/loot_tables/blocks/wheel.json",
           "src/main/resources/assets/slave_mod/models/item/wheel.json",
-          "src/main/java/mp/slave_mod/block/WheelBlock.java",
-          "src/main/resources/assets/slave_mod/models/block/wheel.json"
+          "src/main/java/mp/slave_mod/block/WheelBlock.java"
         ]
       },
-      "path": "~/Welsfargo"
+      "path": "~/Structures/Welsfargo"
     },
     {
       "name": "EncagedOtrok",
@@ -2259,11 +2259,11 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/slave_mod/models/item/encaged_otrok_spawn_egg.json",
-          "src/main/java/mp/slave_mod/client/renderer/EncagedOtrokRenderer.java",
-          "src/main/java/mp/slave_mod/entity/EncagedOtrokEntity.java"
+          "src/main/java/mp/slave_mod/entity/EncagedOtrokEntity.java",
+          "src/main/java/mp/slave_mod/client/renderer/EncagedOtrokRenderer.java"
         ]
       },
-      "path": "~/Welsfargo"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "EncagedOtrok2",
@@ -2274,12 +2274,12 @@
       "registry_name": "encaged_otrok_2",
       "metadata": {
         "files": [
-          "src/main/java/mp/slave_mod/client/renderer/EncagedOtrok2Renderer.java",
           "src/main/resources/assets/slave_mod/models/item/encaged_otrok_2_spawn_egg.json",
+          "src/main/java/mp/slave_mod/client/renderer/EncagedOtrok2Renderer.java",
           "src/main/java/mp/slave_mod/entity/EncagedOtrok2Entity.java"
         ]
       },
-      "path": "~/Welsfargo"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "Bonemealcotton",
@@ -2315,7 +2315,7 @@
           }
         ]
       },
-      "path": "~/Cotton/Procedures_Cotton"
+      "path": "~/Items/Cotton/Procedures_Cotton"
     },
     {
       "name": "Ebola",
@@ -2329,7 +2329,7 @@
           "src/main/java/mp/slave_mod/potion/EbolaMobEffect.java"
         ]
       },
-      "path": "~/Random_stuff"
+      "path": "~/Misc/Ebola"
     },
     {
       "name": "PictureShowCondition",
@@ -2362,7 +2362,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Enslaver"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "PistureShowCondition2",
@@ -2395,7 +2395,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Enslaver"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "PictureShowCondition3",
@@ -2428,7 +2428,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Enslaver"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "PictureShowConditionDone",
@@ -2461,7 +2461,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Enslaver"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "BackgroundShowCondition",
@@ -2494,7 +2494,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Enslaver"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "EnslaverOnEntityTickUpdate",
@@ -2530,7 +2530,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Enslaver"
+      "path": "~/Mobs/Enslaver"
     },
     {
       "name": "Invclose",
@@ -2550,7 +2550,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Otrok"
+      "path": "~/Mobs/Slaves/EnslavedNoples"
     },
     {
       "name": "SpearBulletHitsAnything",
@@ -2586,7 +2586,7 @@
           }
         ]
       },
-      "path": "~/Tools/Procedures"
+      "path": "~/Tools/Spear"
     },
     {
       "name": "EbolaActiveTickCondition",
@@ -2610,7 +2610,7 @@
           }
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/Procedures"
     },
     {
       "name": "Negromancer",
@@ -2627,7 +2627,7 @@
           "src/main/resources/data/slave_mod/forge/biome_modifier/negromancer_biome_modifier.json"
         ]
       },
-      "path": "~/Creatures/Negromancer"
+      "path": "~/Mobs/Negromancer"
     },
     {
       "name": "NegroMinion",
@@ -2643,7 +2643,7 @@
           "src/main/java/mp/slave_mod/client/renderer/NegroMinionRenderer.java"
         ]
       },
-      "path": "~/Creatures/Negromancer"
+      "path": "~/Mobs/Negromancer"
     },
     {
       "name": "SpawnNegroMinion",
@@ -2675,7 +2675,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Negromancer"
+      "path": "~/Mobs/Negromancer"
     },
     {
       "name": "NegromancerEntityIsHurt",
@@ -2715,7 +2715,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Negromancer"
+      "path": "~/Mobs/Negromancer"
     },
     {
       "name": "SpearProjectile",
@@ -2729,7 +2729,7 @@
           "src/main/java/mp/slave_mod/entity/SpearProjectileEntity.java"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/Spear"
     },
     {
       "name": "Spear",
@@ -2744,7 +2744,7 @@
           "src/main/resources/assets/slave_mod/models/item/spear.json"
         ]
       },
-      "path": "~/Tools"
+      "path": "~/Tools/Spear"
     },
     {
       "name": "KKKtotemFeature",
@@ -2756,12 +2756,12 @@
       "metadata": {
         "files": [
           "src/main/resources/data/slave_mod/forge/biome_modifier/kk_ktotem_feature_biome_modifier.json",
-          "src/main/resources/data/slave_mod/worldgen/configured_feature/kk_ktotem_feature.json",
-          "src/main/resources/data/slave_mod/worldgen/placed_feature/kk_ktotem_feature.json"
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/kk_ktotem_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/kk_ktotem_feature.json"
         ],
         "has_nbt_structure": true
       },
-      "path": "~/Totem"
+      "path": "~/Structures/Totem"
     },
     {
       "name": "Nigraniumcarrot",
@@ -2772,11 +2772,11 @@
       "registry_name": "nigraniumcarrot",
       "metadata": {
         "files": [
-          "src/main/resources/assets/slave_mod/models/item/nigraniumcarrot.json",
-          "src/main/java/mp/slave_mod/item/NigraniumcarrotItem.java"
+          "src/main/java/mp/slave_mod/item/NigraniumcarrotItem.java",
+          "src/main/resources/assets/slave_mod/models/item/nigraniumcarrot.json"
         ]
       },
-      "path": "~/Items"
+      "path": "~/Items/NigraniumCarrot"
     },
     {
       "name": "NegromancerRangedAttack1",
@@ -2812,7 +2812,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Negromancer"
+      "path": "~/Mobs/Negromancer"
     },
     {
       "name": "NegromancerOnEntityTickUpdate",
@@ -2848,7 +2848,7 @@
           }
         ]
       },
-      "path": "~/Creatures/Negromancer"
+      "path": "~/Mobs/Negromancer"
     },
     {
       "name": "AttackSwing",
@@ -2868,7 +2868,7 @@
           }
         ]
       },
-      "path": "~/Random_stuff"
+      "path": "~/Misc/Procedures"
     }
   ],
   "variable_elements": [
@@ -3013,15 +3013,15 @@
   "language_map": {
     "en_us": {
       "item.slave_mod.nigranium_hoe": "Nigranium Hoe",
-      "subtitles.retez": "",
       "advancements.africaenter.title": "Entered Africa",
+      "subtitles.retez": "",
       "item.minecraft.tipped_arrow.effect.ebola": "Arrow of Ebola",
       "advancements.nigranium_carrot_advancement.title": "Yummy!...maybe...",
       "gui.slave_mod.otrokar_gui.label_buy": "Buy",
       "gui.slave_mod.otrokar_gui.label_sorry_but_i_am_not_able_to": "Sorry but I am not able to",
       "item.slave_mod.nigraniumnugget": "Nigranium Nugget",
-      "block.slave_mod.nigranium_block": "Nigranium Block",
       "gui.slave_mod.otrokar_gui.label_slavery_as": "Slavery a.s.",
+      "block.slave_mod.nigranium_block": "Nigranium Block",
       "biome.slave_mod.africa": "Africa",
       "item.slave_mod.bavlnaitem": "Harvested cotton",
       "item.slave_mod.encaged_otrok_spawn_egg": "Encaged Otrok Spawn Egg",
@@ -3030,8 +3030,8 @@
       "subtitles.nazdarfrumrde": "",
       "painting.slave_mod.polish_cow_painting.author": "Unknown",
       "item.slave_mod.spear": "Spear",
-      "item.minecraft.potion.effect.ebola": "Ebola",
       "gui.slave_mod.otrokar_gui.label_offer_you_more": "offer you more.",
+      "item.minecraft.potion.effect.ebola": "Ebola",
       "gui.slave_mod.otrok_inv.label_enslaved_noples_inventory": "Enslaved Noples Inventory",
       "entity.slave_mod.slave_boss": "Noples Ruler",
       "itemGroup.tabslave_mod": "Slave Mod",
@@ -3041,18 +3041,18 @@
       "item.slave_mod.chain": "Chain",
       "entity.slave_mod.enslaver": "Enslaver",
       "block.slave_mod.kk_kactivating_b_lock": "KKK Totem Activating Block",
-      "entity.slave_mod.slave_animal": "Wild Noples",
       "block.slave_mod.cottonstage_3": "Cotton stage 3",
+      "entity.slave_mod.slave_animal": "Wild Noples",
       "block.slave_mod.cottonstage_4": "Cotton stage 4",
       "block.slave_mod.cottonstage_1": "Cotton stage 1",
       "block.slave_mod.cottonstage_2": "Cotton stage 2",
-      "block.slave_mod.cottonstage_7": "Cotton stage 7",
       "painting.slave_mod.polish_cow_painting.title": "Polish Cow Painting",
+      "block.slave_mod.cottonstage_7": "Cotton stage 7",
       "block.slave_mod.wodencrossbaseblock": "KKK Totem Base Block",
       "block.slave_mod.cottonstage_5": "Cotton stage 5",
       "block.slave_mod.cottonstage_6": "Cotton stage 6",
-      "item.slave_mod.whip_tool": "Whip",
       "item.slave_mod.slave_animal_spawn_egg": "Wild Noples Spawn Egg",
+      "item.slave_mod.whip_tool": "Whip",
       "entity.slave_mod.slave": "Noples",
       "block.slave_mod.cottonstage_0": "Cotton stage 0",
       "item.slave_mod.jozef_spawn_egg": "Yozef Spawn Egg",
@@ -3130,15 +3130,15 @@
     },
     "cs_cz": {
       "item.slave_mod.nigranium_hoe": "Fejfarov�",
-      "advancements.africaenter.title": "Je z tebe negr",
       "subtitles.retez": "�et�zov� zvuky lolol",
+      "advancements.africaenter.title": "Je z tebe negr",
       "item.minecraft.tipped_arrow.effect.ebola": "Arrow of Ebola",
       "advancements.nigranium_carrot_advancement.title": "M�am m�am m�am je to fresh mam to r�d",
       "gui.slave_mod.otrokar_gui.label_buy": "Buy",
       "gui.slave_mod.otrokar_gui.label_sorry_but_i_am_not_able_to": "Sorry but I am not able to",
       "item.slave_mod.nigraniumnugget": "Chicken nuggetka",
-      "block.slave_mod.nigranium_block": "Negrblok",
       "gui.slave_mod.otrokar_gui.label_slavery_as": "Slavery a.s.",
+      "block.slave_mod.nigranium_block": "Negrblok",
       "biome.slave_mod.africa": "Afrika",
       "item.slave_mod.bavlnaitem": "Harvested cotton",
       "item.slave_mod.encaged_otrok_spawn_egg": "Encaged Otrok Spawn Egg",
@@ -3147,8 +3147,8 @@
       "subtitles.nazdarfrumrde": "Nazdar frumrde, co pro m� m�",
       "painting.slave_mod.polish_cow_painting.author": "Unknown",
       "item.slave_mod.spear": "Spear",
-      "item.minecraft.potion.effect.ebola": "Ebola",
       "gui.slave_mod.otrokar_gui.label_offer_you_more": "offer you more.",
+      "item.minecraft.potion.effect.ebola": "Ebola",
       "gui.slave_mod.otrok_inv.label_enslaved_noples_inventory": "Enslaved Noples Inventory",
       "entity.slave_mod.slave_boss": "Noples Ruler",
       "itemGroup.tabslave_mod": "Slave Mod",
@@ -3158,18 +3158,18 @@
       "item.slave_mod.chain": "Chain",
       "entity.slave_mod.enslaver": "Enslaver",
       "block.slave_mod.kk_kactivating_b_lock": "KKK Totem Activating Block",
-      "block.slave_mod.cottonstage_3": "Cotton stage 3",
       "entity.slave_mod.slave_animal": "Wild Noples",
+      "block.slave_mod.cottonstage_3": "Cotton stage 3",
       "block.slave_mod.cottonstage_4": "Cotton stage 4",
       "block.slave_mod.cottonstage_1": "Cotton stage 1",
       "block.slave_mod.cottonstage_2": "Cotton stage 2",
-      "block.slave_mod.cottonstage_7": "Cotton stage 7",
       "painting.slave_mod.polish_cow_painting.title": "Polish Cow Painting",
+      "block.slave_mod.cottonstage_7": "Cotton stage 7",
       "block.slave_mod.wodencrossbaseblock": "KKK Totem Base Block",
       "block.slave_mod.cottonstage_5": "Cotton stage 5",
       "block.slave_mod.cottonstage_6": "Cotton stage 6",
-      "item.slave_mod.slave_animal_spawn_egg": "Wild Noples Spawn Egg",
       "item.slave_mod.whip_tool": "Whip",
+      "item.slave_mod.slave_animal_spawn_egg": "Wild Noples Spawn Egg",
       "entity.slave_mod.slave": "Noples",
       "block.slave_mod.cottonstage_0": "Cotton stage 0",
       "item.slave_mod.jozef_spawn_egg": "Yozef Spawn Egg",
@@ -3250,49 +3250,61 @@
     "name": "~",
     "children": [
       {
-        "name": "Cotton",
+        "name": "Armor",
         "children": [
           {
-            "name": "Procedures_Cotton",
-            "children": []
-          }
-        ]
-      },
-      {
-        "name": "ARMOR",
-        "children": [
-          {
-            "name": "KKK_armor",
+            "name": "KkkArmor",
             "children": []
           },
           {
-            "name": "Nigranium_armor",
+            "name": "NigraniumArmor",
             "children": []
           }
         ]
       },
       {
-        "name": "Creatures",
+        "name": "Mobs",
         "children": [
           {
             "name": "Enslaver",
             "children": []
           },
           {
-            "name": "Otrok",
-            "children": []
-          },
-          {
-            "name": "Nigranium_golem",
-            "children": []
-          },
-          {
-            "name": "RangedSlave",
+            "name": "NigraniumGolem",
             "children": []
           },
           {
             "name": "Negromancer",
             "children": []
+          },
+          {
+            "name": "Slaves",
+            "children": [
+              {
+                "name": "Noples",
+                "children": []
+              },
+              {
+                "name": "RangedSlave",
+                "children": []
+              },
+              {
+                "name": "SlaveBoss",
+                "children": []
+              },
+              {
+                "name": "SlaveAnimal",
+                "children": []
+              },
+              {
+                "name": "EnslavedNoples",
+                "children": []
+              },
+              {
+                "name": "Jozef",
+                "children": []
+              }
+            ]
           }
         ]
       },
@@ -3300,22 +3312,35 @@
         "name": "Tools",
         "children": [
           {
-            "name": "Recipes",
+            "name": "NigraniumTools",
             "children": []
           },
           {
-            "name": "Procedures",
+            "name": "Whip",
+            "children": []
+          },
+          {
+            "name": "Spear",
+            "children": []
+          },
+          {
+            "name": "Chain",
             "children": []
           }
         ]
       },
       {
         "name": "Structures",
-        "children": []
-      },
-      {
-        "name": "Totem",
-        "children": []
+        "children": [
+          {
+            "name": "Welsfargo",
+            "children": []
+          },
+          {
+            "name": "Totem",
+            "children": []
+          }
+        ]
       },
       {
         "name": "Items",
@@ -3331,6 +3356,19 @@
           {
             "name": "Amulet",
             "children": []
+          },
+          {
+            "name": "Cotton",
+            "children": [
+              {
+                "name": "Procedures_Cotton",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "NigraniumCarrot",
+            "children": []
           }
         ]
       },
@@ -3338,7 +3376,24 @@
         "name": "Blocks",
         "children": [
           {
-            "name": "Recipes",
+            "name": "NigraniumBlocks",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Misc",
+        "children": [
+          {
+            "name": "Ebola",
+            "children": []
+          },
+          {
+            "name": "Paintings",
+            "children": []
+          },
+          {
+            "name": "Advancements",
             "children": []
           },
           {
@@ -3346,14 +3401,6 @@
             "children": []
           }
         ]
-      },
-      {
-        "name": "Welsfargo",
-        "children": []
-      },
-      {
-        "name": "Random_stuff",
-        "children": []
       }
     ]
   },

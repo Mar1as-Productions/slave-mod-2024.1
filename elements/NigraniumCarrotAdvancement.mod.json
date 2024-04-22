@@ -18,8 +18,8 @@
     "rewardXP": 2,
     "achievementType": "challenge",
     "parent": {
-      "value": "CUSTOM:Africaenter"
+      "value": "CUSTOM:NigraniumCarrotAdvancement"
     },
-    "triggerxml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"advancement_trigger\" x=\"40\" y=\"80\"><next><block type=\"item_consumed\" x=\"51\" y=\"17\"><value name=\"item\"><block type=\"mcitem_all\"><field name=\"value\">CUSTOM:Cottonstage3</field></block></value></block></next></block></xml>"
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"3\" y=\"104\"><next><block type=\"item_consumed\"><value name=\"item\"><block type=\"mcitem_all\"><field name=\"value\">CUSTOM:Nigraniumcarrot</field></block></value></block></next></block></xml>"
   }
 }

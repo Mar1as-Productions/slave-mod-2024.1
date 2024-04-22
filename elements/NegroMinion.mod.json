@@ -5,7 +5,7 @@
     "mobName": "Negro Minion",
     "mobLabel": "",
     "mobModelName": "Biped",
-    "mobModelTexture": "negromancer.png",
+    "mobModelTexture": "negrogod.png",
     "transparentModelCondition": {
       "fixedValue": false
     },

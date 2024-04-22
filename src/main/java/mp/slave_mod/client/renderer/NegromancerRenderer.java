@@ -18,6 +18,6 @@ public class NegromancerRenderer extends HumanoidMobRenderer<NegromancerEntity, 
 
 	@Override
 	public ResourceLocation getTextureLocation(NegromancerEntity entity) {
-		return new ResourceLocation("slave_mod:textures/entities/negromancer.png");
+		return new ResourceLocation("slave_mod:textures/entities/negrogod.png");
 	}
 }

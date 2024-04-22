@@ -20,7 +20,7 @@
       "conditions": {
         "item": {
           "items": [
-            "slave_mod:cottonstage_3"
+            "slave_mod:nigraniumcarrot"
           ]
         }
       }
@@ -29,5 +29,5 @@
   "rewards": {
     "experience": 2
   },
-  "parent": "slave_mod:africaenter"
+  "parent": "slave_mod:nigranium_carrot_advancement"
 }
