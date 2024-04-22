@@ -73,7 +73,7 @@ public class SlaveModModEntities {
 	public static final RegistryObject<EntityType<NegroMinionEntity>> NEGRO_MINION = register("negro_minion",
 			EntityType.Builder.<NegroMinionEntity>of(NegroMinionEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(NegroMinionEntity::new)
 
-					.sized(0.3f, 0.9f));
+					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<SpearProjectileEntity>> SPEAR_PROJECTILE = register("spear_projectile", EntityType.Builder.<SpearProjectileEntity>of(SpearProjectileEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(SpearProjectileEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 

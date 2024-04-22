@@ -10,21 +10,21 @@
       "fixedValue": false
     },
     "isShakingCondition": {
-      "fixedValue": false
+      "fixedValue": true
     },
     "solidBoundingBox": {
       "fixedValue": false
     },
     "visualScale": {
-      "fixedValue": 1.0
+      "fixedValue": 0.5
     },
     "boundingBoxScale": {
-      "fixedValue": 1.0
+      "fixedValue": 0.5
     },
     "modelLayers": [],
-    "modelWidth": 0.30000000000000004,
-    "modelHeight": 0.9,
-    "modelShadowSize": 0.25,
+    "modelWidth": 0.6,
+    "modelHeight": 1.8,
+    "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
@@ -73,7 +73,7 @@
     "xpAmount": 0,
     "waterMob": false,
     "breatheUnderwater": {
-      "fixedValue": false
+      "fixedValue": true
     },
     "pushedByFluids": {
       "fixedValue": true
@@ -100,10 +100,10 @@
     "immuneToWither": false,
     "immuneToDragonBreath": false,
     "mobDrop": {
-      "value": ""
+      "value": "CUSTOM:EnslavedGlowstone"
     },
     "livingSound": {
-      "value": ""
+      "value": "block.anvil.place"
     },
     "hurtSound": {
       "value": "entity.generic.hurt"
@@ -112,7 +112,7 @@
       "value": "entity.generic.death"
     },
     "stepSound": {
-      "value": ""
+      "value": "block.anvil.destroy"
     },
     "entityDataEntries": [],
     "hasAI": true,

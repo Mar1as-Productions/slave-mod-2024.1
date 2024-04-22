@@ -26,7 +26,7 @@ public class NegromancerEntityIsHurtProcedure {
 				|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == SlaveModModItems.NIGRANIUM_AXE.get()
 				|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == SlaveModModItems.NIGRANIUM_HOE.get()
 				|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == SlaveModModItems.NIGRANIUM_SHOVEL.get()) {
-			if (Math.random() <= 0.05) {
+			if (Math.random() <= 0.1) {
 				SpawnNegroMinionProcedure.execute(world, x, y, z);
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, (int) potionTicks, 1, false, true));
