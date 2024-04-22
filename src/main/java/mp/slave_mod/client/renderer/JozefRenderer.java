@@ -18,7 +18,7 @@ public class JozefRenderer extends MobRenderer<JozefEntity, SilverfishModel<Joze
 
 	@Override
 	protected void scale(JozefEntity entity, PoseStack poseStack, float f) {
-		poseStack.scale(1.1f, 1.1f, 1.1f);
+		poseStack.scale(2.5f, 2.5f, 2.5f);
 	}
 
 	@Override

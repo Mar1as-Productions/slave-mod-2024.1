@@ -131,7 +131,7 @@ public class JozefEntity extends Monster {
 
 	@Override
 	public EntityDimensions getDimensions(Pose pose) {
-		return super.getDimensions(pose).scale(1.1f);
+		return super.getDimensions(pose).scale(2.5f);
 	}
 
 	public static void init() {

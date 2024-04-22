@@ -20,7 +20,7 @@ public class NigraniumGolemRenderer extends HumanoidMobRenderer<NigraniumGolemEn
 
 	@Override
 	protected void scale(NigraniumGolemEntity entity, PoseStack poseStack, float f) {
-		poseStack.scale(1.25f, 1.25f, 1.25f);
+		poseStack.scale(1.75f, 1.75f, 1.75f);
 	}
 
 	@Override

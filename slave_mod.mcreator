@@ -1338,7 +1338,7 @@
           "src/main/resources/assets/slave_mod/models/item/jozef_spawn_egg.json"
         ]
       },
-      "path": "~/Mobs/Slaves/Jozef"
+      "path": "~/Mobs/Jozef"
     },
     {
       "name": "NigraniumBlockDestroyed",
@@ -3013,15 +3013,6 @@
     "BIOMES:minecraft:has_structure/pillager_outpost": [
       "~CUSTOM:Africa"
     ],
-    "BIOMES:minecraft:has_structure/mineshaft": [
-      "~CUSTOM:Africa"
-    ],
-    "ITEMS:minecraft:music_discs": [
-      "~CUSTOM:Krajina"
-    ],
-    "BIOMES:minecraft:has_structure/mineshaft_mesa": [
-      "~CUSTOM:Africa"
-    ],
     "BLOCKS:minecraft:mineable/axe": [
       "~CUSTOM:NehoriciDrevoOak"
     ],
@@ -3034,10 +3025,19 @@
     "BLOCKS:minecraft:slabs": [
       "~CUSTOM:Undestructableslab"
     ],
+    "BIOMES:minecraft:has_structure/mineshaft": [
+      "~CUSTOM:Africa"
+    ],
     "BIOMES:minecraft:has_structure/ruined_portal_standard": [
       "~CUSTOM:Africa"
     ],
+    "ITEMS:minecraft:music_discs": [
+      "~CUSTOM:Krajina"
+    ],
     "BIOMES:minecraft:has_structure/village_plains": [
+      "~CUSTOM:Africa"
+    ],
+    "BIOMES:minecraft:has_structure/mineshaft_mesa": [
       "~CUSTOM:Africa"
     ]
   },
@@ -3334,12 +3334,12 @@
               {
                 "name": "EnslavedNoples",
                 "children": []
-              },
-              {
-                "name": "Jozef",
-                "children": []
               }
             ]
+          },
+          {
+            "name": "Jozef",
+            "children": []
           }
         ]
       },

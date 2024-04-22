@@ -151,7 +151,7 @@ public class NigraniumGolemEntity extends PathfinderMob {
 
 	@Override
 	public EntityDimensions getDimensions(Pose pose) {
-		return super.getDimensions(pose).scale(1.25f);
+		return super.getDimensions(pose).scale(1.75f);
 	}
 
 	public static void init() {
