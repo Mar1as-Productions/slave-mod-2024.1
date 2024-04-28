@@ -2903,6 +2903,23 @@
         ]
       },
       "path": "~/Mobs/Negromancer"
+    },
+    {
+      "name": "HutFeature",
+      "type": "feature",
+      "sortid": 151,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hut_feature",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/slave_mod/forge/biome_modifier/hut_feature_biome_modifier.json",
+          "src/main/resources/data/slave_mod/worldgen/configured_feature/hut_feature.json",
+          "src/main/resources/data/slave_mod/worldgen/placed_feature/hut_feature.json"
+        ],
+        "has_nbt_structure": true
+      },
+      "path": "~/Structures/Hut"
     }
   ],
   "variable_elements": [
@@ -3382,6 +3399,10 @@
           },
           {
             "name": "Totem",
+            "children": []
+          },
+          {
+            "name": "Hut",
             "children": []
           }
         ]
