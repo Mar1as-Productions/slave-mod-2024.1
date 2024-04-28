@@ -3013,6 +3013,24 @@
     "BIOMES:minecraft:has_structure/pillager_outpost": [
       "~CUSTOM:Africa"
     ],
+    "BLOCKS:minecraft:needs_iron_tool": [
+      "~CUSTOM:KKKactivatingBLock",
+      "~CUSTOM:NehoriciDrevoOak"
+    ],
+    "BLOCKS:minecraft:needs_diamond_tool": [
+      "~CUSTOM:NigraniumBlock",
+      "~CUSTOM:EnslavedGlowstone",
+      "~CUSTOM:Nigranium"
+    ],
+    "BIOMES:minecraft:has_structure/mineshaft": [
+      "~CUSTOM:Africa"
+    ],
+    "ITEMS:minecraft:music_discs": [
+      "~CUSTOM:Krajina"
+    ],
+    "BIOMES:minecraft:has_structure/mineshaft_mesa": [
+      "~CUSTOM:Africa"
+    ],
     "BLOCKS:minecraft:mineable/axe": [
       "~CUSTOM:NehoriciDrevoOak"
     ],
@@ -3025,19 +3043,10 @@
     "BLOCKS:minecraft:slabs": [
       "~CUSTOM:Undestructableslab"
     ],
-    "BIOMES:minecraft:has_structure/mineshaft": [
-      "~CUSTOM:Africa"
-    ],
     "BIOMES:minecraft:has_structure/ruined_portal_standard": [
       "~CUSTOM:Africa"
     ],
-    "ITEMS:minecraft:music_discs": [
-      "~CUSTOM:Krajina"
-    ],
     "BIOMES:minecraft:has_structure/village_plains": [
-      "~CUSTOM:Africa"
-    ],
-    "BIOMES:minecraft:has_structure/mineshaft_mesa": [
       "~CUSTOM:Africa"
     ]
   },
@@ -3452,5 +3461,5 @@
     "credits": "https://jirilabus.funsite.cz/",
     "modElementsPackage": "mp.slave_mod"
   },
-  "mcreatorVersion": 202400115821
+  "mcreatorVersion": 202400117319
 }

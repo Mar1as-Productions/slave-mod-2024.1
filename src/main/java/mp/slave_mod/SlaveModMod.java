@@ -43,6 +43,8 @@ public class SlaveModMod {
 	public static final String MODID = "slave_mod";
 
 	public SlaveModMod() {
+		// Start of user code block mod constructor
+		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		SlaveModModSounds.REGISTRY.register(bus);
