@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "slave_mod:nigranium_block",
+    "slave_mod:enslaved_glowstone",
+    "slave_mod:nigranium"
+  ]
+}
