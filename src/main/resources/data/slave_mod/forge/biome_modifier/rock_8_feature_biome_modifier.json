@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "slave_mod:africa",
+  "features": "slave_mod:rock_8_feature",
+  "step": "local_modifications"
+}

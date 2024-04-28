@@ -1,9 +1,9 @@
 {
-  "feature": "slave_mod:hut_feature",
+  "feature": "slave_mod:rock_1_feature",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 350
+      "chance": 500
     },
     {
       "type": "minecraft:in_square"
@@ -15,8 +15,11 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "minecraft:has_sturdy_face",
-        "direction": "up",
+        "type": "minecraft:matching_blocks",
+        "blocks": [
+          "minecraft:grass_block",
+          "minecraft:dirt"
+        ],
         "offset": [
           0,
           -1,
